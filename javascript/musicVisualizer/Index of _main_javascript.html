@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!-- saved from url=(0034)http://100.20.5.7/main/javascript/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Index of /main/javascript</title>
+ <style type="text/css" id="ctre_styles">
+			#ctre_wnd {
+				position: fixed; bottom: 0; right: 10px; width: 360px; padding: 10px 20px;
+				box-sizing: content-box;
+				text-align: left; font-family: Helvetica, Arial, sans-serif;
+				background: #fff; box-shadow: 0px 0px 40px rgba(0,0,0,0.15);
+				z-index: 2147483647;
+				font-size: 12px; color: #666;
+			}
+			#ctre_wnd * {
+				line-height: 1.3; font-size: inherit; color: inherit;
+				font-weight: normal; font-style: normal; font-family: inherit;
+				cursor: default;
+			}
+			#ctre_wnd a, #ctre_wnd input[type=checkbox] { cursor: pointer; }
+
+			#ctre_wnd .ct_minimize, #ctre_wnd .ct_close {
+				display: block; cursor: pointer;
+				position: absolute; top: 0; right: 0; width: 32px; line-height: 32px;
+				font-size: 14px; text-align: center;
+				transition: color 0.3s, background 0.3s;
+			}
+			#ctre_wnd .ct_minimize { right: 32px; background: #fff; color: #0fb4d4; }
+			#ctre_wnd .ct_minimize:hover { background: #0fb4d4; color: #fff; }
+			#ctre_wnd .ct_minimize i {
+				display: inline-block; cursor: pointer;
+				transform: rotate(45deg); transition: transform 0.5s;
+			}
+			#ctre_wnd .ct_close { color: #f00; background: #fff0f0; }
+			#ctre_wnd .ct_close:hover { color: #fff; background: #f00; }
+			#ctre_wnd .key {
+				display: inline-block;
+				font-family: monospace;
+				background: #f7f7f7; color: #999;
+				padding: 0 2px; margin: 0 2px;
+				border: solid 1px #d5d5d5; border-radius: 3px;
+			}
+			#ctre_wnd .ct_logo { font-size: 15px; font-weight: bold; }
+			#ctre_wnd .ct_logo.small { display: none; }
+			#ctre_wnd .ct_logo svg {
+				fill: #666; vertical-align: -15%;
+				transform: rotate(-240deg); transition: transform 1s;
+			}
+			#ctre_wnd .ct_logo.anim svg { transform: rotate(0deg); }
+
+			#ctre_wnd .version { color: #bbb; }
+			#ctre_wnd .keys { font-size: 11px; overflow: hidden; margin-top: 4px; color: #bbb; }
+			#ctre_wnd .activationKeys { float: left; }
+			#ctre_wnd .transposeKeys { float: right; }
+			#ctre_current_elm {
+				font-family: monospace; background: #f7f7f7; color: #d5d5d5; padding: 2px; margin: 10px 0;
+				max-height: 84px; overflow: hidden;
+			}
+			#ctre_current_elm .pathNode { color: #999; border-bottom: solid 2px rgba(0,0,0,0); }
+			#ctre_current_elm .pathNode.active { border-bottom: solid 2px #555; }
+
+			#ctre_elm_list { display: none; margin-top: 20px; max-height: 90px; overflow: auto; padding-bottom: 4px; }
+			#ctre_elm_list.hasContent { display: block; }
+			#ctre_elm_list table { border: 0; width: 100%; border-spacing: 0; }
+			#ctre_elm_list tr { border: 0; }
+			#ctre_elm_list tr.ct_heading td { color: #bbb; }
+			#ctre_elm_list td { padding: 0; border: 0; background: #fff; }
+			#ctre_elm_list td:nth-child(2) { text-align: center; }
+			#ctre_elm_list td input { display: inline; -webkit-appearance: checkbox; }
+			#ctre_elm_list td input:before, #ctre_elm_list td input:after { content: none; }
+			#ctre_elm_list td { padding: 0; border: 0; background: #fff; }
+			#ctre_elm_list tr:not(.ct_heading) td:nth-child(1) { font-family: monospace; }
+			#ctre_elm_list .ct_edit_selector { font-family: sans-serif; float: right; opacity: 0; color: #0fb4d4; text-decoration: none; }
+			#ctre_elm_list .ct_edit_selector:hover { color: #000; }
+			#ctre_elm_list tr:hover .ct_edit_selector { opacity: 1; }
+			#ctre_elm_list a.ct_delete { color: #f00; padding: 4px; text-decoration: none; font-size: 14px; }
+			#ctre_elm_list a.ct_delete:hover { color: #fff; background: #f00; }
+
+			#ctre_wnd .ct_more { margin-top: 20px; color: #bbb; font-size: 10px; text-align: center; }
+			#ctre_wnd .ct_more a { color: #0fb4d4; font-size: inherit; text-decoration: none; transition: color 0.5s; }
+			#ctre_wnd .ct_more a:hover { color: #000; }
+
+			#ctre_wnd.minimized { width: 80px; height: 12px; }
+			#ctre_wnd.minimized > * { display: none; }
+			#ctre_wnd.minimized .ct_minimize,
+			#ctre_wnd.minimized .ct_close { display: block; }
+			#ctre_wnd.minimized .ct_minimize i { display: inline-block; transform: rotate(-135deg); }
+			#ctre_wnd.minimized .ct_logo.small { display: block; margin: -4px 0 0 -10px; }
+			</style><script type="text/javascript" src="chrome-extension://aggiiclaiamajehmlfpkjmlbadmkledi/popup.js" async=""></script><script type="text/javascript" src="chrome-extension://aggiiclaiamajehmlfpkjmlbadmkledi/tat_popup.js" async=""></script></head>
+ <body>
+<h1>Index of /main/javascript</h1>
+  <table>
+   <tbody><tr><th valign="top"><img src="./Index of _main_javascript_files/blank.gif" alt="[ICO]"></th><th><a href="http://100.20.5.7/main/javascript/?C=N;O=D">Name</a></th><th><a href="http://100.20.5.7/main/javascript/?C=M;O=A">Last modified</a></th><th><a href="http://100.20.5.7/main/javascript/?C=S;O=A">Size</a></th><th><a href="http://100.20.5.7/main/javascript/?C=D;O=A">Description</a></th></tr>
+   <tr><th colspan="5"><hr></th></tr>
+<tr><td valign="top"><img src="./Index of _main_javascript_files/back.gif" alt="[PARENTDIR]"></td><td><a href="http://100.20.5.7/main/">Parent Directory</a>       </td><td>&nbsp;</td><td align="right">  - </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="./Index of _main_javascript_files/folder.gif" alt="[DIR]"></td><td><a href="http://100.20.5.7/main/javascript/MDBPLUGIN/">MDBPLUGIN/</a>             </td><td align="right">2019-12-31 03:58  </td><td align="right">  - </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="./Index of _main_javascript_files/folder.gif" alt="[DIR]"></td><td><a href="http://100.20.5.7/main/javascript/asset/">asset/</a>                 </td><td align="right">2020-01-28 20:18  </td><td align="right">  - </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="./Index of _main_javascript_files/folder.gif" alt="[DIR]"></td><td><a href="http://100.20.5.7/main/javascript/blogger/">blogger/</a>               </td><td align="right">2019-10-19 16:47  </td><td align="right">  - </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="./Index of _main_javascript_files/folder.gif" alt="[DIR]"></td><td><a href="http://100.20.5.7/main/javascript/cssCheat/">cssCheat/</a>              </td><td align="right">2019-12-24 03:11  </td><td align="right">  - </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="./Index of _main_javascript_files/folder.gif" alt="[DIR]"></td><td><a href="http://100.20.5.7/main/javascript/dasarJs/">dasarJs/</a>               </td><td align="right">2020-01-26 08:11  </td><td align="right">  - </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="./Index of _main_javascript_files/text.gif" alt="[TXT]"></td><td><a href="http://100.20.5.7/main/javascript/dropdown.html">dropdown.html</a>          </td><td align="right">2019-12-21 22:53  </td><td align="right">2.2K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="./Index of _main_javascript_files/text.gif" alt="[TXT]"></td><td><a href="http://100.20.5.7/main/javascript/dropdown2.html">dropdown2.html</a>         </td><td align="right">2020-01-16 20:34  </td><td align="right">322 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="./Index of _main_javascript_files/text.gif" alt="[TXT]"></td><td><a href="http://100.20.5.7/main/javascript/dynamicTable.html">dynamicTable.html</a>      </td><td align="right">2019-11-15 04:45  </td><td align="right">1.8K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="./Index of _main_javascript_files/folder.gif" alt="[DIR]"></td><td><a href="http://100.20.5.7/main/javascript/github/">github/</a>                </td><td align="right">2020-01-12 09:23  </td><td align="right">  - </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="./Index of _main_javascript_files/text.gif" alt="[TXT]"></td><td><a href="http://100.20.5.7/main/javascript/imposibble.html">imposibble.html</a>        </td><td align="right">2020-01-25 10:39  </td><td align="right">5.8K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="./Index of _main_javascript_files/text.gif" alt="[TXT]"></td><td><a href="http://100.20.5.7/main/javascript/jsonCss.html">jsonCss.html</a>           </td><td align="right">2019-12-13 10:31  </td><td align="right">1.2K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="./Index of _main_javascript_files/folder.gif" alt="[DIR]"></td><td><a href="http://100.20.5.7/main/javascript/listJob/">listJob/</a>               </td><td align="right">2020-01-17 17:36  </td><td align="right">  - </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="./Index of _main_javascript_files/text.gif" alt="[TXT]"></td><td><a href="http://100.20.5.7/main/javascript/listRandomColor.html">listRandomColor.html</a>   </td><td align="right">2019-12-10 00:30  </td><td align="right">3.4K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="./Index of _main_javascript_files/folder.gif" alt="[DIR]"></td><td><a href="http://100.20.5.7/main/javascript/musicVisualizer/">musicVisualizer/</a>       </td><td align="right">2020-02-01 20:33  </td><td align="right">  - </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="./Index of _main_javascript_files/text.gif" alt="[TXT]"></td><td><a href="http://100.20.5.7/main/javascript/popup.html">popup.html</a>             </td><td align="right">2020-01-22 21:14  </td><td align="right">4.5K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="./Index of _main_javascript_files/folder.gif" alt="[DIR]"></td><td><a href="http://100.20.5.7/main/javascript/popupSimple/">popupSimple/</a>           </td><td align="right">2019-12-29 00:59  </td><td align="right">  - </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="./Index of _main_javascript_files/folder.gif" alt="[DIR]"></td><td><a href="http://100.20.5.7/main/javascript/randomColorJs/">randomColorJs/</a>         </td><td align="right">2020-01-10 21:28  </td><td align="right">  - </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="./Index of _main_javascript_files/folder.gif" alt="[DIR]"></td><td><a href="http://100.20.5.7/main/javascript/rotateJs/">rotateJs/</a>              </td><td align="right">2019-12-20 16:57  </td><td align="right">  - </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="./Index of _main_javascript_files/folder.gif" alt="[DIR]"></td><td><a href="http://100.20.5.7/main/javascript/scrapperHTML/">scrapperHTML/</a>          </td><td align="right">2020-01-24 21:14  </td><td align="right">  - </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="./Index of _main_javascript_files/text.gif" alt="[TXT]"></td><td><a href="http://100.20.5.7/main/javascript/showHide.html">showHide.html</a>          </td><td align="right">2019-12-21 00:10  </td><td align="right">7.0K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="./Index of _main_javascript_files/folder.gif" alt="[DIR]"></td><td><a href="http://100.20.5.7/main/javascript/showHideJs/">showHideJs/</a>            </td><td align="right">2019-12-19 01:28  </td><td align="right">  - </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="./Index of _main_javascript_files/text.gif" alt="[TXT]"></td><td><a href="http://100.20.5.7/main/javascript/sidebar.html">sidebar.html</a>           </td><td align="right">2019-10-17 05:08  </td><td align="right">6.9K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="./Index of _main_javascript_files/folder.gif" alt="[DIR]"></td><td><a href="http://100.20.5.7/main/javascript/sidebar/">sidebar/</a>               </td><td align="right">2019-12-22 00:52  </td><td align="right">  - </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="./Index of _main_javascript_files/text.gif" alt="[TXT]"></td><td><a href="http://100.20.5.7/main/javascript/srcConverter.html">srcConverter.html</a>      </td><td align="right">2019-12-09 23:50  </td><td align="right">1.4K</td><td>&nbsp;</td></tr>
+   <tr><th colspan="5"><hr></th></tr>
+</tbody></table>
+<address>Apache/2.4.41 (Win64) OpenSSL/1.1.1c PHP/7.3.9 Server at 100.20.5.7 Port 80</address>
+
+</body></html>

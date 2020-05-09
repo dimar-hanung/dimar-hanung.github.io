@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>src gen</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+
+
+
+<textarea id="srcValue" style="width: 800px;height: 200px" oninput="getvalue()">
+	https://code.jquery.com/jquery-2.2.4.min.js
+https://use.fontawesome.com/b2c0f76220.js
+https://raw.githubusercontent.com/emmetio/textarea/master/emmet.min.js
+https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.5.0/highlight.min.js
+</textarea>
+
+<div id="hasil" style="font-family: monospace;">a</div>
+
+<script type="text/javascript">
+	getvalue();
+function getvalue(x) {
+
+	
+	let srcValue	= document.getElementById('srcValue').value;
+		srcValue	= srcValue.replace(/https/g, ',,https');
+	let _output		= document.getElementById('hasil');
+	let arrayValue	= srcValue.split(',,');
+
+	_output.innerHTML = '';
+
+	//_output.innerHTML=arrayValue[2];
+	for (var i = 0; i < arrayValue.length; i++) {
+
+		if (i<arrayValue.length-1) {
+		arrayValue[i] = arrayValue[i].substring(0,arrayValue[i].length-1);
+		}
+		console.log(_output.innerHTML+='&lt;script src="'+arrayValue[i]+'"&gt;&lt;/script><br>');
+	}
+
+
+}
+
+
+
+// $(function(){
+//     var alphabet = "ABCDEFGHIJKLMNOPQRSTUVEXYZ";
+//     var srcValue=document.getElementById('srcValue').value;
+//     var replaced = srcValue.split(srcValue.substring(srcValue.indexOf(":") +1));
+//    // $('body').text(replaced[0]);
+// });
+
+</script>
+
+</body>
+</html>

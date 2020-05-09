@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>html</title>
+    <script src="../asset/jquery-3.4.1.min.js"></script>
+    <script src="../asset/bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../asset/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../asset/highlight/styles/monokai-sublime.css">
+    <script src="../asset/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style type="text/css">
+    @media print {
+        .card {
+            page-break-inside: avoid;
+        }
+    }
+    </style>
+</head>
+
+<body>
+    <div class="container mb-5 pb-5 border" style="width: 860px;">
+        <div class="text-black-50">v1.0 | 15 Maret 2020, 08:08AM | 3*</div>
+        <h2 class="text-left text-white p-2 mt-2 shadow rounded-lg bg-info flex-fill">BroadCast Whatspapp Message</h2>
+        <h6 class="text-left text-white p-2 mt-2 shadow rounded-lg bg-danger flex-fill">Dimar Hanung <span class="float-right">SMK TELKOM PURWOKERTO</span></h6>
+        <div class="text-danger mt-5">NB : BroadCast ini hanya berlaku untuk nomorHP , tidak bisa menggunakan nama kontak, nanti liat aja</div>
+        <div id="bahan">
+            <div class="p-2 bg-light mt-5 shadow border border text-center">
+                <h4>Bahan</h4>
+            </div>
+            <div class="card mt-5 shadow">
+                <div class="row subjudul m-0">
+                    <h6 class="col card-header m-0 bg-dark text-white p-2">Code</h6>
+                </div>
+                <div class="card-body">
+                    code ada di link dibawah ini: <br />
+                    <a href="https://raw.githubusercontent.com/mukulhase/WebWhatsapp-Wrapper/master/webwhatsapi/js/wapi.js">https://raw.githubusercontent.com/mukulhase/WebWhatsapp-Wrapper/master/webwhatsapi/js/wapi.js</a>
+                </div>
+            </div>
+            <!-- penutup soal -->
+        </div>
+        <div id="langkah">
+            <div class="p-2 bg-light mt-5 shadow border border text-center">
+                <h4>Langkah</h4>
+            </div>
+            <div class="card mt-5 shadow">
+                <div class="row subjudul m-0">
+                    <h6 class="col card-header m-0 bg-dark text-white p-2">Buka WhatsappWeb lalu buka Console</h6>
+                </div>
+                <div class="card-body">
+                    <img src="img/inspect.png" class="img-fluid" alt="inspect">
+                    <ol class="mt-5">
+                        <li>KLik kanan -> inspect element</li>
+                        <li>klik tab console</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="card mt-5 shadow">
+                <div class="row subjudul m-0">
+                    <h6 class="col card-header m-0 bg-dark text-white p-2">Masukkan Code diatas ke console lalu enter</h6>
+                </div>
+                <div class="card-body">
+                    <img src="img/codein.png" class="img-fluid" alt="codein">
+                    <ol class="mt-5">
+                    </ol>
+                </div>
+            </div>
+            <div class="card mt-5 shadow">
+                <div class="row subjudul m-0">
+                    <h6 class="col card-header m-0 bg-dark text-white p-2">Ambil List Nomor</h6>
+                </div>
+                <div class="card-body">
+                    Setelah masuk ke grup :
+                    <hr />
+                    <img src="img/nomor.png" class="img-fluid" alt="codein">
+                    <ol class="mt-5">
+                        <li>klik kanan disitu (di nomor)</li>
+                        <li>inspect element</li>
+                        <li>Masuk tab Element dan double klik teks yang berwarna putih</li>
+                        <hr />
+                        <span class="text-danger">Klik Panah nya dulu biar kebuka, kalo ga ada nomor nya</span>
+                    </ol>
+                </div>
+            </div>
+            <div class="card mt-5 shadow">
+                <div class="row subjudul m-0">
+                    <h6 class="col card-header m-0 bg-dark text-white p-2">tuliskan code dibawah ini lalu paste ke console</h6>
+                </div>
+                <div class="card-body">
+                    <pre class="flex-wrap"><code class="javascript text-wrap">var daftarKontak = "paste nomor kontak disini";
+</code></pre>
+                    <pre><code class="javascript">WAPI.sendMessageToID(daftarKontak[jumlahKontak].toString() + '@c.us', 'ganti isi pesan di sini')</code></pre>
+                    <hr />
+                    <hr />
+                    Sehingga Code menjadi dibawah ini, masukkan ke dalam console lalu enter:
+                    <hr />
+                    <pre><code class="javascript" style="white-space: pre-wrap;">var daftarKontak = "+233 57 527 6274, +234 706 066 5053, +234 814 901 3770, +254 732 542645, +62 821-7438-1112, +91 70363 23076, +91 82371 62896, +91 88380 64364, +91 96627 03149, +91 97057 02702, +92 300 7658545, You";
+
+    daftarKontak = daftarKontak.split(' ').join('').split('+').join('').split('-').join('');
+    daftarKontak = daftarKontak.split(',');
+    for (var jumlahKontak = 0; jumlahKontak < daftarKontak.length; jumlahKontak++) {
+        //ganti halo saya dimar, jadi sesuka kalian, @c.us abaikan saja itu bukan menandakan lokasi kontak
+        WAPI.sendMessageToID(daftarKontak[jumlahKontak].toString() + '@c.us', 'halo bro saya dimar dari Indonesia :D')
+
+    }</code></pre>
+                    <hr />
+                    <div class="alert alert-success shadow">SUKSES</div>
+                    <hr />
+                    <img src="img/done.png" class="img-fluid" alt="done">
+                </div>
+            </div>
+        </div>
+        <!-- penutup container -->
+    </div>
+    <script>
+    // var daftarKontak = "+233 57 527 6274, +234 706 066 5053, +234 814 901 3770, +254 732 542645, +62 821-7438-1112, +91 70363 23076, +91 82371 62896, +91 88380 64364, +91 96627 03149, +91 97057 02702, +92 300 7658545, You";
+
+
+    // daftarKontak = daftarKontak.split(' ').join('').split('+').join('').split('-').join('');
+    // daftarKontak = daftarKontak.split(',');
+    // console.log(daftarKontak);
+    // for (var jumlahKontak = 0; jumlahKontak < daftarKontak.length; jumlahKontak++) {
+    //     WAPI.sendMessageToID(daftarKontak[jumlahKontak].toString() + '@c.us', 'halo bro saya dimar dari Indonesia :D')
+
+    // }
+
+    let dataSubJudul = [
+
+        {
+            id: 'bahan',
+            color: 'bg-info',
+            text: 'bahan'
+        },
+        {
+            id: 'langkah',
+            color: 'bg-success',
+            text: 'langkah'
+        }
+
+
+    ]
+
+
+
+    for (var i = 0; i < dataSubJudul.length; i++) {
+        let dataSend = dataSubJudul[i]
+        tag(dataSend.id, dataSend.color, dataSend.text)
+
+    }
+
+
+    function tag(id, color, text) {
+
+        let rowJudul = document.getElementById(id).getElementsByClassName('subjudul');
+        // rowJudul.innerHTML += '' 
+
+        for (var x = 0; x < rowJudul.length; x++) {
+            rowJudul[x].innerHTML += '<h6 class="card-header ' + color + ' p-2 text-white text-center col-3">' + text + ' #' + parseInt(x + 1) + '</h6>'
+        }
+
+    }
+    </script>
+</body>
+
+</html>

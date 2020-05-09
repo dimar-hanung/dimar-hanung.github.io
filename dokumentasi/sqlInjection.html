@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>sql injection by dimar hanung</title>
+		<script src="asset/jquery.min.js"></script>
+	<script src="asset/bootstrap/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="asset/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="asset/highlight/styles/atom-one-light.css">
+<script src="asset/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style type="text/css">
+		
+		#container{
+			/*border 		: solid black 1px;*/
+			width 		: -webkit-fill-available;
+			max-width  	: 800px;
+			margin 		: 20px auto;
+		}
+
+		.border-l{
+			border: 1px solid rgba(0,0,0,.125);
+			border-radius: 0px 0px 2px 2px;
+			padding: 15px;
+
+		}
+		.errorCode{
+			font-family: monospace;
+		}pre,code{
+			overflow: hidden !important;
+			white-space: normal;
+
+		}
+
+	</style>
+
+</head>
+<body>
+
+
+<div id="container">
+	
+	<h2 align="center" class="mb-5">SQL Injection</h2>
+
+<div class="card border">
+	
+	<div class="card-header">#1 Pengertian SQL Injection <span class="float-right text-black-50">26/12/2019</span></div>	
+	<div class="card-body">
+
+	
+		<div style="text-indent: 50px;">
+				SQL Injection adalah sebuah teknik yang menyalahgunakan sebuah celah keamanan yang terjadi dalam lapisan basis data sebuah aplikasi. SQL injection merupakan jenis aksi hacking pada keamanan komputer di mana seorang penyerang bisa mendapatkan akses ke basis data di dalam sistem. <span class="text-danger font-weight-bold"> SQL injection yaitu serangan yang mirip dengan serangan XSS</span>  <span class="text-danger font-weight-bold">Mereka akan memasukkan perintah-perintah SQL ke dalam database mesin server sehingga mereka dapat masuk ke dalam sistem tanpa harus memiliki username dan password administrator.</span> 
+			</div>
+		
+
+	</div>
+
+</div>
+
+<h6 class="card-header bg-info text-light">list File Example</h6>
+		<div class="border-l">
+			<ol>
+			    <li class="text-break"><a href="https://drive.google.com/file/d/1YkL1CCsc9mjJbdHuXdmBZm8yUjW5uIrt/view">Union Example - https://drive.google.com/file/d/1YkL1CCsc9mjJbdHuXdmBZm8yUjW5uIrt/view</a> </li>
+			    
+			</ol>
+			
+
+
+		</div>
+
+
+<div class="card mt-5">
+	<div class="card-header">Dasar Mysql Inject - bypass Password Login</div>
+
+	<div class="card-body">
+		
+		Langsung saja praktik <br /> <br />
+
+	</div>
+
+	<h6 class="card-header bg-info text-light">1. Memahami dasar</h6>
+	<div class="card-body">
+		Perhatikan pada file index.php
+
+	<pre><code class="SQL">			
+$query 	= mysqli_query($con, <span class="text-danger">"SELECT * FROM users WHERE password='{$password}' and username='{$username}'"</span>);</code></pre>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+</body>
+</html>

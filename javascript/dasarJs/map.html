@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>map</title>
+</head>
+<body>
+
+	<div id="output"></div>
+
+<script type="text/javascript">
+	
+
+
+	let array = ['dimar','ajat','dewi','dwiyan','chin']
+	let int = [1,2,5,6,7,18]
+
+nama();
+
+	function nama (nama){
+
+
+	document.getElementById('output').innerHTML=array.map(print).join('terus')
+	}
+
+	function print(item){
+
+		return '<li>'+item+'</li>';
+
+	}
+
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>excel</title>
+
+	<style type="text/css">
+		
+		table{
+			border: solid black 1px;
+			border-collapse: collapse;
+		}
+		td,tr,th{
+			padding: 5px 15px;
+			border: solid black 1px;
+
+		}
+
+	</style>
+
+</head>
+<body>
+	
+	1 barang = Rp.3000
+
+	<table>
+		<thead>
+			<tr>
+				<th>Nama</th>
+				<th>Barang</th>
+				<th>Lahir</th>
+				<th>Jumlah harga</th>
+				<th>Umur Sekarang</th>
+			</tr>
+		</thead>
+		<tbody id="tampilData">
+			
+		</tbody>
+	</table>
+
+
+	
+	<script type="text/javascript">
+		
+
+
+
+		let data = 
+		[
+
+		{
+			nama:'Dimar',
+			barang:4,
+			lahir:2001
+		},
+		{
+			nama:'Hanung',
+			barang:3,
+			lahir:2009
+		},
+		{
+			nama:'prakoso',
+			barang:10,
+			lahir:2000
+		}
+
+
+
+		]
+
+
+		for (let i = 0; i < data.length; i++) {
+
+			let nama='<td style="background:yellow">'+data[i].nama+'</td>';
+
+			let fungsi = "hitung('idHitung"+i+"',this.value)"
+			let barang='<td style="background:yellow"><input oninput="'+fungsi+'" type="number" value="'+data[i].barang+'"></td>';
+			let lahir ='<td style="background:yellow">'+data[i].lahir+'</td>';
+			
+			let id = "idHitung"+i;
+			
+			let jumlah = '<td id="'+id+'">Rp. '+data[i].barang*3000+'</td>';
+			let tahun = '<td>'+(2020-data[i].lahir) +'</td>';
+
+			tampilData.innerHTML+='<tr>'+nama+barang+lahir+jumlah+tahun+'</tr>';
+		}
+
+
+
+
+
+		function hitung(id,value){
+			
+		
+			document.getElementById(id).innerHTML='Rp. '+ parseInt(value)*3000;
+
+		}
+
+
+
+
+
+	</script>
+	
+
+
+</body>
+</html>

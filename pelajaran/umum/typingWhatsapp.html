@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>html</title>
+    <script src="../asset/jquery-3.4.1.min.js"></script>
+    <script src="../asset/bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../asset/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../asset/highlight/styles/github.css">
+    <script src="../asset/highlight/highlight.pack.js"></script>
+    <script>
+    hljs.initHighlightingOnLoad();
+    </script>
+    <style type="text/css">
+        @media print  
+{
+   .card{
+       page-break-inside: avoid;
+    }
+}
+
+.subjudul{
+    position: sticky;
+    top: 0;
+}
+
+.min-width{
+    width: -webkit-fill-available;
+}
+
+@media only screen and (min-width: 1000px) {
+  .min-width {
+    width: 860px;
+  }
+}
+
+    </style>
+</head>
+
+<body>
+    <div class="container border" style="width: 860px;">
+        <div class="text-black-50">v1.1 | 13 april 2020, 17:50AM | 3*</div>
+        <h2 class="text-left text-white p-2 mt-2 shadow rounded-lg bg-info flex-fill">Selalu "is typing..." Whatsapp</h2>
+        <h6 class="text-left text-white p-2 mt-2 shadow rounded-lg bg-danger flex-fill">Web Programming Group<span class="float-right">Wapi Experiment #3</span></h6>
+        <h6 class="text-left text-white p-2 mt-2 shadow rounded-lg bg-danger flex-fill"><a href="https://chat.whatsapp.com/Dt4qozzJ3YIAFHLAiuAiGu" class="btn-sm btn-light">Join?</a></h6>
+        <div id="soal">
+            <div class="p-2 bg-light mt-5 shadow border border text-center">
+                <h4>Pendahuluan</h4>
+            </div>
+            <div class="card mt-5 shadow">
+                <div class="row subjudul m-0">
+                    <h6 class="col card-header m-0 bg-dark text-white p-2">WAPI.JS</h6>
+                </div>
+                <div class="card-body">
+                    Pertama code ini bukan buatan saya, saya hanya mengambil source dari github yang kemudian saya tambahkan sedikit. Lalu fitur sebenarnya tidak ini saja, ada banyak, ini salah satunya, silahkan bereksperiment dengan melihat dokumentasi nya
+                    
+
+                <table class="table table-sm table-bordered mt-2">
+                    <tr>
+                        <th>Judul</th>
+                        <th>Link</th>
+                    </tr>
+                    <tr>
+                        <td>Dokumentasi</td>
+                        <td><a href="https://webwhatsapi.readthedocs.io/en/latest/">buka aja lah :v</a></td>
+                    </tr>
+                    <tr>
+                        <td>Github original nya</td>
+                        <td><a href="https://github.com/mukulhase/">Github</a></td>
+                    </tr>
+                    <tr>
+                        <td>Fix code</td>
+                        <td><a href="https://raw.githubusercontent.com/Theblood/Wapi_NEW/master/wapi.js">raw github</a></td>
+                    </tr>
+                </table>
+
+                </div>
+            </div>
+            <!-- penutup soal -->
+        </div>
+        <div id="langkah">
+            <div class="p-2 bg-light mt-5 shadow border border text-center">
+                <h4>Langkah</h4>
+            </div>
+            <div class="alert alert-danger mt-4">Semua Code dijalankan pada console</div>
+            <div class="card mt-5 shadow">
+                <div class="row subjudul m-0">
+                    <h6 class="col card-header m-0 bg-dark text-white p-2">Masukkan Code ke console (chrome/firefox/etc)</h6>
+                </div>
+                <div class="card-body">
+                    yang ini:
+                    <br />
+                    Fix code : <a href="https://raw.githubusercontent.com/Theblood/Wapi_NEW/master/wapi.js">raw github</a>
+                </div>
+            </div>
+            <div class="card mt-5 shadow">
+                <div class="row subjudul m-0">
+                    <h6 class="col card-header m-0 bg-dark text-white p-2">Dapatkan Id Nomor/ Id Grup tujuan</h6>
+                </div>
+                <div class="card-body">
+                    untuk mendapatkan id grup ketikkan di console : <br />
+                    <pre><code class="javascript">WAPI.getAllGroups()</code></pre>
+                    output: <br/>
+                    <img src="img/opt-typing1.png" class="img-fluid" alt=""><br/>
+                    yang nomor sebelah kanan adalah id dari grup nya.
+                    <hr/>
+                    <div>Untuk Nomor Orang Id nya adalah</div>
+                    <pre><code class="js">nomorKontak@c.us</code></pre> 
+                    misal <br/>
+                    <pre><code class="js">6287793110422@c.us</code></pre>
+
+                </div>
+            </div>
+             <div class="card mt-5 shadow">
+                <div class="row subjudul m-0">
+                    <h6 class="col card-header m-0 bg-dark text-white p-2">Buat Logika nya</h6>
+                </div>
+                <div class="card-body">
+                    <div>Berdasar Dokumentasi Syntax send typing adalah: </div>
+                    <pre><code class="js">Store.WapQuery.sendChatstateComposing('ID');</code></pre>
+                    code hanya berjalan sekitar 1-2 detik saja, maka dari itu kita buat interval, jadi codenya
+
+                    <pre><code class="js">setInterval(function(){
+Store.WapQuery.sendChatstateComposing('6282299333506-1586491537@g.us');
+Store.WapQuery.sendChatstateComposing('6285648596081-1586437097@g.us');
+Store.WapQuery.sendChatstateComposing('6285743222196-1586412136@g.us');
+Store.WapQuery.sendChatstateComposing('6281226762060-1563970584@g.us');
+console.log('sukses');
+},500)</code></pre>
+dan berikut hasil dari experiment wa adik saya,<br/> dibawah ini adalah screenshot dari teman adik saya yang kesal :v
+<hr/>
+<img src="img/dewoanjing.jfif" class="img-fluid" alt="">
+                </div>
+            </div>
+            <!-- penutup soal -->
+        </div>
+        <!-- penutup container -->
+    </div>
+    <script>
+    let dataSubJudul = [
+
+        {
+            id: 'langkah',
+            color: 'bg-success',
+            text: 'langkah'
+        }
+
+
+    ]
+
+
+
+    for (var i = 0; i < dataSubJudul.length; i++) {
+        let dataSend = dataSubJudul[i]
+        tag(dataSend.id, dataSend.color, dataSend.text)
+
+    }
+
+
+    function tag(id, color, text) {
+
+        let rowJudul = document.getElementById(id).getElementsByClassName('subjudul');
+        // rowJudul.innerHTML += '' 
+
+        for (var x = 0; x < rowJudul.length; x++) {
+            rowJudul[x].innerHTML += '<h6 class="card-header ' + color + ' p-2 text-white text-center col-3">' + text + ' #' + parseInt(x + 1) + '</h6>'
+        }
+
+    }
+    </script>
+</body>
+
+</html>

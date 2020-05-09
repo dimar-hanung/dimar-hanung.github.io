@@ -1,0 +1,24 @@
+;
+; BIND reverse data file for local loopback interface
+;
+$TTL    604800
+@       IN      SOA     skincarekuu.local. root.skincarekuu.local. (
+                             20         ; Serial
+                         604800         ; Refresh
+                          86400         ; Retry
+                        2419200         ; Expire
+                         604800 )       ; Negative Cache TTL
+;
+;@      IN      NS      localhost.
+;1.0.0  IN      PTR     localhost.
+
+;Name Server Information
+       IN      NS     ns1.skincarekuu.local.
+       IN      NS     ns2.skincarekuu.local.
+;Reverse lookup for Name Server
+88      IN      PTR    ns1.skincarekuu.local.
+88      IN      PTR    ns2.skincarekuu.local.
+;PTR Record IP address to HostName
+88     IN      PTR    www.skincarekuu.local.
+88     IN      PTR    mail.skincarekuu.local.
+88     IN      PTR    skincarekuu.local.

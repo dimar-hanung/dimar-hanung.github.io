@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+
+
+
+
+<script type="text/javascript">
+	
+
+
+
+
+ sequence(5,3)
+
+ function sequence(x,y){
+
+
+ 	let a=0;
+ 	let mod=2;
+ 	let array =[];
+ 	array.push(x);
+ 	while(mod!=0 && mod!= 1){
+
+
+ 		mod = y+a * y+a;
+ 		mod = mod%x+a;
+
+ 		//array.push(mod)
+ 		a++;
+ 		console.log(mod);
+ 	}
+
+console.log(array);
+
+ }
+
+
+
+
+</script>
+
+
+</body>
+</html>

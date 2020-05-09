@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>faktorial</title>
+    <script src="../asset/jquery-3.4.1.min.js"></script>
+    <script src="../asset/bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../asset/bootstrap/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container mt-3">
+        <input type="number" oninput="loading()" placeholder="masukan angka" id="fktript" class="p-2">
+        <div class="card mt-5 shadow">
+            <div class="row subjudul m-0">
+                <h6 class="col card-header m-0 bg-dark text-white p-2">Penyelesaian</h6>
+            </div>
+            <div class="card-body">
+                <div class="org">Rumus yang dipakai:<div id="factorialopt">0</div>
+                </div>
+                <div id="fctx">jadi <span id="fctn" style="color: red;"></span><span style="color: red">!</span> adalah:</div>
+                <div id="loading">Loading</div>
+                <div id="hasilfct">0</div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+    var fctarray = [];
+
+    function loading() {
+        document.getElementById('loading').innerHTML = 'loading';
+        setTimeout(function() { factorial(); }, 100);
+    }
+
+
+
+
+
+
+    function factorial() {
+
+        fctarray = [];
+        var iptf = document.getElementById('fktript');
+        document.getElementById('fctn').innerHTML = fktript.value;
+        // console.log(iptf.value);
+        document.getElementById('factorialopt').innerHTML = '';
+        for (var i = iptf.value; i > 0; i--) {
+            console.log(i);
+            fctarray.push(i);
+
+        }
+        var itung = 1;
+        for (var i = fctarray.length; i > 0; i--) {
+            itung = itung * fctarray[i - 1]
+            console.log(itung);
+
+
+            // document.getElementById('fctx').innerHTML=JSON.stringify(fctarray);
+        }
+        var addfct = '';
+        for (var i = 0; i < fctarray.length; i++) {
+            addfct = addfct += fctarray[i] + '.';
+        }
+
+
+        var dltfct = addfct.substring(0, addfct.length - 1);
+        document.getElementById('factorialopt').innerHTML = dltfct;
+        document.getElementById('hasilfct').innerHTML = numberWithCommas(itung);
+        document.getElementById('loading').innerHTML = '';
+    }
+
+    function numberWithCommas(x) {
+        var parts = x.toString().split(".");
+        parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+        return parts.join(".");
+    }
+    </script>
+</body>
+
+</html>

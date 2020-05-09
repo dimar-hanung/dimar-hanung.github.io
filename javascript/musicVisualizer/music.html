@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<style type="text/css">
+	#thefile {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 100;
+}
+
+#canvas {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+audio {
+  position: fixed;
+  left: 10px;
+  bottom: 10px;
+  width: calc(100% - 20px);
+  opacity: 1;
+}
+#senin{
+	position: absolute;
+	top: 250px;
+	font-weight: bolder;
+	margin: auto;
+	width: 100%;
+	text-align: center;
+	color: black;
+	z-index: 999;
+}
+</style>
+<div id="senin"><del>BESOK</del> Hari ini senin :)</div>
+<div id="content">
+  <input type="file" id="thefile" accept="audio/*" />
+  <canvas id="canvas"></canvas>
+  <audio id="audio" controls></audio>
+</div>
+
+<script type="text/javascript">
+	window.onload = function() {
+  
+  var file = document.getElementById("thefile");
+  var audio = document.getElementById("audio");
+  
+  file.onchange = function() {
+    var files = this.files;
+    audio.src = URL.createObjectURL(files[0]);
+    audio.load();
+    audio.play();
+    var context = new AudioContext();
+    var src = context.createMediaElementSource(audio);
+    var analisis = context.createAnalyser();
+
+    var canvas = document.getElementById("canvas");
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    var ctx = canvas.getContext("2d");
+
+    src.connect(analisis);
+    analisis.connect(context.destination);
+
+    analisis.fftSize = 256;
+
+    var bufferLength = analisis.frequencyBinCount;
+    console.log(bufferLength);
+
+    var dataArray = new Uint8Array(bufferLength);
+
+    var WIDTH = canvas.width;
+    var HEIGHT = canvas.height;
+
+    var barWidth = (WIDTH / bufferLength) * 2.5;
+    var barHeight;
+    var x = 0;
+    let putar = 0;
+    let nputar=1;
+    let nputar2=1;
+    let snputar='-';
+    function renderFrame() {
+      requestAnimationFrame(renderFrame);
+
+      x = 0;
+
+      analisis.getByteFrequencyData(dataArray);
+      // console.log(dataArray)
+      document.getElementById('senin').style.fontSize=dataArray[4]/5+'px';
+      //putar++;
+     // console.log(dataArray[35])
+      if (dataArray[35]<=5 || dataArray[35]>=200) {
+
+      	if (nputar==nputar2) {
+      		nputar2=nputar+1;
+      	if (putar==0) {
+      		
+      		putar=1;
+      		//nputar=2;
+      		snputar='-';
+      	}else{
+      		snputar='';
+      		putar=0;
+      		//nputar++;
+      		// document.getElementById('senin').style.transform='rotate(-'+dataArray[4]/5+'deg)';
+      		}
+      	}else{
+      		nputar=nputar2;
+      	}
+      }
+      // console.log(dataArray[4])
+      document.getElementById('senin').style.transform='rotate('+snputar+dataArray[4]/5+'deg)';
+      ctx.fillStyle = "hsla("+200+",100%,"+dataArray[35]/2+"%,1)";
+      ctx.fillRect(0, 0, WIDTH, HEIGHT);
+
+      for (var i = 0; i < bufferLength; i++) {
+        barHeight = dataArray[i];
+        
+        var r = barHeight + (25 * (i/bufferLength));
+        var g = 250 * (i/bufferLength);
+        var b = 50;
+
+        ctx.fillStyle = "hsla("+barHeight+",100%,"+30+"%,1)";
+        ctx.fillRect(x, HEIGHT - barHeight, barWidth, barHeight);
+
+        x += barWidth + 1;
+      }
+    }
+
+    audio.play();
+    renderFrame();
+  };
+};
+</script>
+
+</body>
+</html>

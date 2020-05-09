@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> </title>
+    <style type="text/css">
+    	body{
+	margin-left: auto;
+	margin-right: auto;
+	/* background: red; */
+}
+
+/* .snow-container{
+	height: 600px;
+	background: white;
+}
+
+.snow-container, .controls{
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	width: 400px;	
+} */
+
+label, input, output{
+	display: inline-block;	
+}
+
+input{
+	width: 200px;	
+}
+
+output{
+	width: 30px;
+	text-align: right;	
+}
+
+select{
+	margin-bottom: 5px;	
+}canvas{
+	position: absolute;
+	top: 0px;
+	z-index: -1;
+}
+
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.21.1/babel.min.js"></script>
+    <script src="asset/jquery-3.4.1.min.js"></script>
+</head>
+
+<body>
+    <div class="controls">
+        <form id="snow-form">
+            <select id="spacing">
+                <option value="0" selected>Temporal spacing: random</option>
+                <option value="1">Temporal spacing: constant</option>
+            </select>
+            <br />
+            <label for="snow-slider">Target (average) rate</label>
+            <input id="snow-slider" type="range" min="1" max="250" value="5" />
+            <output for="snow-slider"><span></span>/s</output>
+        </form>
+        <p>Flakes on screen: <span id="counter"></span></p>
+    </div>
+    <div id="snow-container" class="snow-container">
+        <canvas width="1366" height="700" id="snow-canvas"></canvas>
+    </div>
+    <script type="text/javascript">
+
+          (function(){
+
+	"use strict";
+	
+	let snowScene = function($canvas, $counter){
+	
+		let rate = 1;
+		let width = $canvas.width();
+		let height = $canvas.height();
+		let flakeRadius = 2;
+		let transitDistance = width + 2*flakeRadius;
+		let transitTime = 7000; //time from top to bottom in milliseconds
+		let speed = transitDistance/transitTime;
+		let useConstant = 0;
+		let requestId;
+
+		
+		let getFlakes = (function(){
+			
+			let flakes = [];
+			
+			let removeFlakes = function(time){
+			
+				if(!flakes.length){return;} //if we don't have any flakes then there's nothing to update
+
+				if((time-flakes[flakes.length-1].startTime) > transitTime){
+					flakes.length = 0; //quickly clear array after long time away	
+				} else{
+					while((time-flakes[0].startTime) > transitTime){
+						flakes.shift(); //flake has completed transit, remove
+						if(!flakes.length){return;} //nothing left to update
+					}
+				}
+				
+			};		
+			
+			
+			let addFlakes = (function(){
+				
+				//Can swap for other PRNG
+				let nextRandom = Math.random;
+				
+				let getExponential = function(rate=1){
+					return -Math.log(1-nextRandom())/rate;	
+				};
+				
+				let nextFlakeTime = performance.now();
+				
+				let addFlake = function(time){
+					txt="ABCDEF1234567890".split('');
+				 txtx = txt[Math.floor(Math.random() * txt.length)]
+					//No point adding flake to array if it has already transited
+					//This might happen if you go to a different tab then come back later.
+					if(nextFlakeTime+transitTime<time){return;}
+					//Add flake to flakes
+
+					flakes.push(Object.freeze({
+						startTime: nextFlakeTime,
+						x: nextRandom()*width,
+					}));
+				};
+				
+				return function(time){
+					while(nextFlakeTime<=time){
+						addFlake(time);
+						nextFlakeTime += (useConstant ?  1/rate : getExponential(rate))*1000;
+					}
+				};
+				
+			})();	
+				
+			return function(time){
+				removeFlakes(time);
+				addFlakes(time);
+				return flakes.slice(0); //Return clone of flakes array
+			};	
+			
+		})();
+		let txt="ABCDEF1234567890".split('');
+				let txtx = txt[Math.floor(Math.random() * txt.length)]
+		let jm=0;
+		let draw = (function($canvas){
+			
+			let c = $canvas[0].getContext("2d");
+			c.strokeStyle = "black";
+			
+			
+			let fullCircle = 2*Math.PI;
+			let txtNow = '';
+			return function(flakes, time){
+				
+				c.clearRect(0, 0, width, height);		
+				
+				c.beginPath();
+				jm++;
+				
+				for(let i=0, n=flakes.length; i<n; i++){
+					let flake = flakes[i];
+					let dt = time - flake.startTime;
+					let x = flake.x;
+					let y = speed*dt;
+					c.moveTo(x, y);
+					
+					// console.log(jm)
+					if (jm<5) {
+						c.fillText(txtx,y,x);
+					}else{
+						jm=0;
+						
+					
+					c.fillText(txtx,y,x);
+					txtNow=txtx;
+					//console.log(txtNow)
+					}c.font="60px Arial black";
+					
+					// c.arc(x, y, flakeRadius, 0, fullCircle, false);
+				}
+				
+				c.stroke();
+				
+				c.fill();
+				
+			};
+			
+		})($canvas);
+		
+		
+		let updateCounter = (function($counter){
+			
+			let nOnScreen;
+			
+			return function(nFlakes){
+				if(nOnScreen !== nFlakes){
+					nOnScreen = nFlakes;
+					$counter.text(nOnScreen);
+				}	
+			};
+			
+		})($counter);
+		
+		
+		let animate = function(time){
+			
+			requestId = window.requestAnimationFrame(animate);
+			let flakes = getFlakes(time);
+			draw(flakes, time);
+			updateCounter(flakes.length);
+		};
+		
+		let startAnimation = function(){
+
+			requestId = window.requestAnimationFrame(animate);
+		};
+		
+		let stopAnimation = function(){
+			if(requestId){
+				window.cancelAnimationFrame(requestId);
+			}
+			requestId = undefined;
+		};
+		
+		
+		return Object.freeze({
+			startAnimation: function(){startAnimation(); return this;},
+			stopAnimation: function(){stopAnimation(); return this;},
+			setRate: function(val){rate=val; return this;},
+			setType: function(bool){useConstant=bool; return this;},
+		});
+	
+	
+	};
+	
+	
+	let scene = snowScene($("#snow-container canvas"), $("#counter"));
+		
+	$("#spacing").on("change", function(){
+		scene.setType(!!parseInt($(this).val(),10));
+	}).trigger("change");
+	
+	let $output = $("output span");
+	
+	$("#snow-slider").on("input", function(){
+		let rate = parseInt($(this).val(),10);
+		$output.text(rate);
+		scene.setRate(rate);
+	}).trigger("input");
+	
+	scene.startAnimation();
+	
+})();
+
+    </script>
+</body>
+
+</html>

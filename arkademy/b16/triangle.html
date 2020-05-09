@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+    function triangle(jumlah) {
+
+    	if (isNaN(jumlah)) {return 'harus berupa angka'}
+    	if (jumlah<=0) {return 'harus lebih dari 0'}
+
+        let pagar = "";
+        for (let row = 0; row < jumlah; row++) {
+
+            for (let col = -1; col < row; col++) {
+                pagar += "#";
+            }
+            pagar += "\n";
+        }
+
+        return pagar
+
+    }
+
+
+
+
+
+
+    function rTriangle(jumlah){
+
+    	let pagar =[];
+  
+
+    	for (let row = 0; row < jumlah; row++) {
+    		let cpagar = '';
+    		for (let col = 0; col < row+1; col++) {
+    			cpagar+='#';
+    		}
+    		pagar.push(cpagar);
+
+    	
+    	}
+
+    	let rpagar = pagar.reverse();
+    	let output = '';
+    	for (let i = 0; i < rpagar.length; i++) {
+    		
+    		output+=' '+pagar[i]+'\n';
+
+    	}
+
+
+    	return output
+
+
+    }
+
+
+
+console.log(rTriangle(5))
+
+    console.log(triangle(5));
+    </script>
+</body>
+
+</html>

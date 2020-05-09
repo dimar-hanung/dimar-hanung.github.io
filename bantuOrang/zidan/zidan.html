@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>email</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+    let email =
+        `dimarhanung@gmail.com
+zaidan@yahoo.com
+opik@gmail.com
+galih@hotmail.com
+menj@yahoo.com
+raid@hotmail.com
+rehan@yahoo.com
+masdklj@gmail.com
+`
+
+    //split by line break
+    let address = email.split(/\r?\n/);
+    console.log(address)
+
+    //sortEmail
+    let sEmail = [];
+
+    //push array address ke sEmail, displit @ juga
+    for (let i = 0; i < address.length; i++) sEmail.push(address[i].split('@'));
+
+    //sort array 2 dimensi berdasar colom 2
+    sEmail.sort(compareSecondColumn);
+    console.log(sEmail)
+
+    //menjadikan kelompok array
+    let finalOutput = [];
+    let pus = -1;
+    for (let x = 0; x < sEmail.length; x++) {
+
+    	// jika email == email - 1
+        if (x != 0 && sEmail[x][1] == sEmail[x - 1][1]) {
+            // console.log(pus);
+            // console.log('pus:'+pus+' x:'+x);
+
+            //push ke finaloutput[0];
+            finalOutput[pus].push(sEmail[x][0] + '@' + sEmail[x][1]);
+
+        } else {
+        	//jika tidak push dan buat array baru
+            pus = pus + 1;
+            finalOutput.push([sEmail[x][0] + '@' + sEmail[x][1]]);
+        }
+
+
+    }
+
+    console.log(finalOutput);
+
+
+
+    function compareSecondColumn(a, b) {
+        if (a[1] === b[1]) {
+            return 0;
+        } else {
+            return (a[1] < b[1]) ? -1 : 1;
+        }
+    }
+    </script>
+</body>
+
+</html>

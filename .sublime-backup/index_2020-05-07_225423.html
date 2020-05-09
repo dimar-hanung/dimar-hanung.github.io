@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dicoding Submission</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="assets/js/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/css/fontawesome.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/solid.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/brands.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+
+<body>
+
+	<!-- tugas submission dicoding Dimar Hanung ( 90% code dalam file index.html, style.css, script.js, peribahasa.js  adalah ketikkan sendiri ) -->
+
+    <header>
+        <nav class="navbar-wrap">
+            <ul class="nav-center">
+                <a href="#" class="nav-logo"><span>D</span><span class="nav-logo-span">imar Hanung</span></a>
+                <a id="homeSaya" href="#" onclick="smoothScroll('#homeAtas')">Home</a>
+                <a id="aboutSaya" href="#" onclick="smoothScroll('#aboutYear')">About</a>
+                <a id="periBahasa" href="#" onclick="smoothScroll('#periBahasaX')">Peribahasa</a>
+            </ul>
+        </nav>
+        <section id="homeAtas" class="header-content-wrap home-wrap">
+            <div class="header-bg"></div>
+            <div class="header-content-center">
+                <div class="main-title">Dimar Hanung Prakoso</div>
+                <div class="main-desc">( + ) Saya hebat, tapi</div>
+                <div class="main-desc">( - ) Saya bukan yang paling hebat</div>
+                <div class="main-desc">( ? ) Sebenarnya apa yang membuat sulit?</div>
+                <div class="flex-button">
+                    <input id="darkId" type="radio" name="theme">
+                    <label onclick="tema('dark')" for="darkId">Dark</label>
+                    <input id="lightId" type="radio" name="theme">
+                    <label onclick="tema('light')" for="lightId">Light</label>
+                </div>
+                <div class="main-down" onclick="smoothScroll('#aboutYear')">
+                    <div class="main-down-center">
+                        <i class="fas fa-angle-down"></i>
+                    </div>
+                </div>
+                <div class="main-down main-up" onclick="smoothScroll('#homeAtas')">
+                    <div class="main-down-center">
+                        <i class="fas fa-angle-up"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </header>
+    <main>
+        <div id="content">
+            <article>
+                <section id="aboutYear" class="time-wrap">
+                    <div class="timeline-wrap">
+                        <div class="timeline-desc-wrap">
+                            <div class="timeline-year">2001</div>
+                            <div class="timeline-desc">14 Desember 2001 untuk pertama kalinya saya melihat dunia yang kata sebagian orang itu indah dan sebagian lain nya berkata kejam</div>
+                        </div>
+                        <div class="timeline-desc-wrap">
+                            <div class="timeline-year">2006</div>
+                            <div class="timeline-desc">Masuk TK Pertiwi Baturraden, ga masuk PAUD tapi TK nya 2 kali, udah megang komputer jaman nya windows 2000 </div>
+                        </div>
+                        <div class="timeline-desc-wrap">
+                            <div class="timeline-year">2008 - 2014</div>
+                            <div class="timeline-desc">Lanjut SD Negeri 2 Purwokerto Lor, btw SD selalu naik kelas dengan nilai diatas rata rata dikit ya wkwk</div>
+                        </div>
+                        <div class="timeline-desc-wrap">
+                            <div class="timeline-year">2014 - 2017</div>
+                            <div class="timeline-desc">Masuk ke masa masa SMP, akhirnya di masa ini punya laptop untuk pertamakalinya, SMP Negeri 8 Purwokerto</div>
+                            <div class="timeline-desc">Masa dimana internet 300KBps udah kayak surga</div>
+                        </div>
+                        <div class="timeline-desc-wrap">
+                            <div class="timeline-year">2017 - 2020</div>
+                            <div class="timeline-desc">Masa SMK, walau agak salah jurusan tapi enjoy aja lah wkwk, jurusan yang saya ambil adalah TKJ, di SMK Telkom Purwokerto, lulusan jalur covid19 </div>
+                        </div>
+                    </div>
+                </section>
+            </article>
+            <div class="peribahasa-fix">
+                <section class="content2-wrap" id="periBahasaX">
+                    <article class="peribahasa-wrap">
+                        <h2>401 Peribahasa</h2>
+                        <input oninput="cariPeribahasa(this.value)" type="text" id="cariPeribahasa" class="peri-input" placeholder="cari">
+                        <input oninput="runPeribahasa()" value="10" type="number" id="jumlahPeribahasa" class="peri-input" min="1" max="400" placeholder="jumlah">
+                        <hr />
+                        <div class="peribahasa-text">
+                            <div class="peribahasa-box-row">
+                                <noscript>
+                                    <div class="peribahasa-box">
+                                        <span style="color:red">Konten ini membutuhkan Javascript Supaya berjalan</span>
+                                    </div>
+                                </noscript>
+                            </div>
+                        </div>
+                    </article>
+                    <aside>
+                        <div class="profile-wrap">
+                            <div class="profile-name">Dimar Hanung Prakoso</div>
+                            <div class="profile-image">
+                                <!-- <img src="assets/img/dimar.jpg" alt=""> -->
+                            </div>
+                            <i class="fas fa-map-marker-alt profile-logo"></i>
+                            <div class="profile-desc">Banyumas, Purwokerto</div>
+                            <hr />
+                            <i class="fas fa-birthday-cake profile-logo"></i>
+                            <div class="profile-desc">14 Desember 2001</div>
+                            <hr />
+                            <div class="profile-desc profile-quote"><i>"Proses Untuk Hasil"</i></div>
+                        </div>
+                    </aside>
+                </section>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="flex">
+            <div class="foot-sponsor-wrap">
+                <div>Sponsored by : </div>
+                <div class="foot-sponsor">
+                    <img src="assets/img/indosat.jpg" alt="IndosatOreedo">
+                    <img src="assets/img/dicoding-logo.png" alt="Dicoding">
+                    <img src="assets/img/jquery-icon.png" alt="Jquery">
+                </div>
+            </div>
+            <div class="foot-contact">
+                <div>Contact : </div>
+                <a href="https://www.instagram.com/dmr_hanung/" class="ft-instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/hanung.tikus" class="ft-facebook"><i class="fab fa-facebook"></i></a>
+                <a href="https://twitter.com/Dimar56295151" class="ft-twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://github.com/dimar-hanung/"><i class="fab fa-github"></i></a>
+                <a href="https://api.whatsapp.com/send?phone=6287793110422"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+        <div class="copyright">COPYRIGHT © 2020 DIMAR HANUNG. ALL RIGHT RESERVED.</div>
+    </footer>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/peribahasa.js"></script>
+</body>
+
+</html>

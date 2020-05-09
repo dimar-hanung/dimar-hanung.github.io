@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>randomColor By Dimar</title>
+	<style type="text/css">
+		
+		.demo{
+			background: steelblue;
+		}
+
+	</style>
+</head>
+<body>
+
+
+
+<div class="demo">demo 1</div>
+<div class="demo">demo 2</div>
+<div class="demo">demo 3</div>
+<div class="demo">demo 4</div>
+<div class="demo">demo 5</div>
+<div class="demo">demo 6</div>
+<div class="demo">demo 7</div>
+
+<script type="text/javascript">
+	
+randomColor({
+	className:'demo',
+	colorList:'red,blue,green'
+})
+
+function randomColor({className,colorList,spesific='1,2'}){
+
+
+
+	className 		= document.getElementsByClassName(className);
+	colorList 		= colorList.split(',');
+	let trackerA 	= Math.floor(Math.random() * colorList.length);
+	let trackerB 	= trackerA;
+	spesific		= spesific.split(',');
+
+
+	for (var i = 0; i < className.length; i++) {
+
+		console.log(i.toString());
+		let stringI = i.toString();
+		//console.log(spesific[i]);
+
+		trackerB = trackerA;
+		trackerA = Math.floor(Math.random() * colorList.length);
+
+		if (spesific[i].length>=1 && spesific[i]!=undefined) {
+
+			
+		if (trackerB!=trackerA) {
+		className[spesific[i]].style.background = colorList[trackerA];
+		}else{
+			i=i-1;
+		}
+
+	}else{
+			if (trackerB!=trackerA) {
+		className[i].style.background = colorList[trackerA];
+		}else{
+			i=i-1;
+		}
+
+	}
+
+		
+
+  }
+
+
+
+}
+
+
+
+
+</script>
+
+
+</body>
+</html>

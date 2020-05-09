@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dicoding Submission</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="assets/js/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/css/fontawesome.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/solid.min.css">
+    <style type="text/css">
+    * {
+        margin: 0px;
+        padding: 0px;
+        /*box-sizing: border-box;*/
+    }
+
+    body {
+        overflow-y: overlay;
+    }
+
+    hr {
+        margin: 100px 50px;
+        border-top: solid #dfe2e5 0.5px;
+    }
+
+    @font-face {
+        font-family: comic;
+        src: url(assets/webfonts/comic.ttf) format("truetype");
+
+    }
+
+    @font-face {
+        font-family: oretans;
+        src: url(assets/webfonts/oretans.ttf) format("truetype");
+
+    }
+
+    /*================================ >>>>>>>>>>>> navbar <<<<<<<<<<<< ================================*/
+    .navbar-wrap {
+        background: #0f1113;
+        height: max-content;
+        box-sizing: border-box;
+        width: 100vw;
+        position: fixed;
+        top: 0px;
+        z-index: 99;
+        display: flex;
+        color: white;
+        padding: 0px 10px;
+        transition: all ease 0.3s;
+        transform-origin: top
+    }
+
+    .nav-center {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        display: block;
+        position: relative;
+        padding: 10px 0px;
+    }
+
+    .navbar-wrap a {
+
+        user-select: none;
+        color: inherit;
+        width: max-content;
+        text-decoration: none;
+        padding: 0px 10px;
+        font-family: sans-serif;
+    }
+
+    .navbar-wrap a:hover {
+        color: yellow;
+    }
+
+    .nav-logo {
+        font-size: 1.25rem;
+        font-family: comic !important;
+
+    }
+
+    .nav-logo-span {
+        transition: all ease 0.4s;
+        width: auto;
+        display: inline-flex;
+        white-space: nowrap;
+    }
+
+    /*================================ xxxxxxxxxxxxx navbar xxxxxxxxxxxxx ================================*/
+
+    /*================================ >>>>>>>>>>>> header content <<<<<<<<<<<< ================================*/
+
+    .header-content-wrap {
+        height: 100vh;
+        width: 100vw;
+        display: table;
+        text-align: center;
+    }
+
+    .header-bg {
+        height: 100vh;
+        width: 100vw;
+        background: url(assets/img/1.jpg);
+        background-size: cover;
+        background-position: center;
+        filter: brightness(0.2);
+        z-index: -1;
+        position: absolute;
+    }
+
+    .header-content-center {
+        display: table-cell;
+        vertical-align: middle;
+        margin: auto;
+        color: white;
+    }
+
+    .main-title {
+        font-family: oretans;
+        font-size: 60px;
+    }
+
+    .main-down {
+        display: table;
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        font-size: 20px;
+        margin: 50px auto;
+        background: #0000006b;
+        animation: main-down 1s infinite alternate ease-in-out;
+    }
+
+    @keyframes main-down {
+        100% {
+            transform: translateY(20px)
+        }
+    }
+
+    .main-down i {
+        font-style: normal;
+    }
+
+    .main-down-center {
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+    /*================================ xxxxxxxxxxxxx header content xxxxxxxxxxxxx ================================*/
+    /*================================ >>>>>>>>>>>> timeline <<<<<<<<<<<< ================================*/
+
+    /*style ini murni buatan saya (dimar hanung) dengan melihat beberapa referensi di internet*/
+
+    .time-wrap {
+        z-index: 3;
+    }
+
+    .timeline-wrap {
+        /*margin: 80px;*/
+        background: white;
+        margin: 20px auto;
+        max-width: 800px;
+        padding: 50px;
+        box-shadow: 0px 0px 15px -5px black;
+        border-radius: 20px;
+        z-index: 3;
+
+    }
+
+    .timeline-desc-wrap {
+        margin: auto;
+        max-width: 800px;
+        position: relative;
+        padding: 20px 0px 20px 10px;
+        border-left: solid #17a2b8 2px;
+    }
+
+    /*.timeline-desc-wrap:before{
+		content: '';
+		width: 3px;
+		height: max-content;
+		position: relative;
+		left: -10px;
+		background: black;
+
+	}*/
+
+    .timeline-year {
+        padding: 5px 15px;
+        background: #17a2b8;
+        color: white;
+        width: max-content;
+        text-align: center;
+        border-radius: 0px 3px 3px 0px;
+        margin-left: calc(-10px);
+    }
+
+    .timeline-desc {
+        padding: 20px;
+        background: #ccc3;
+        border-left: solid #17a2b8 2px;
+        margin-top: 10px;
+        font-family: cursive;
+        position: relative;
+    }
+
+    .timeline-desc:before {
+        content: '';
+        position: absolute;
+        width: 13px;
+        top: 50%;
+        left: -14px;
+        height: 2px;
+        background: #17a2b8;
+    }
+
+    /*================================ xxxxxxxxxxxxx timeline xxxxxxxxxxxxx ================================*/
+
+    /*================================ >>>>>>>>>>>>> covid-content <<<<<<<<<<<<< ================================*/
+
+
+    .content2-wrap {
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 30px;
+        /*margin-top: 50px;*/
+    }
+
+    .covid-wrap h2 {
+        font-family: comic;
+        font-weight: normal;
+        text-align: center;
+
+
+        /*color: #2b87;*/
+    }
+
+    .covid-wrap {
+        width: 75%;
+        min-width: 300px;
+        margin: auto;
+    }
+
+    .covid-text{
+    	/*border:solid #ccc 0.5px;*/
+    	max-width: 800px;
+    	padding: 20px;
+    	margin: 20px auto;
+    	/*display: flex;*/
+    }
+	
+	.covid-box-row{
+		display: flex;
+		flex-wrap: wrap;
+		margin-top: 15px;
+	}
+
+    .covid-box{
+    	/*text-align: center; */
+		width: 25%;
+		min-width: 200px;
+		height: 200px;
+		border:solid #ccc 0.5px;
+		border-radius: 5px;
+		padding: 25px;
+		margin: 10px auto;	
+		transition: all ease 0.5s;
+    }
+
+    .covid-box:hover{
+		transform: translateY(-10px);
+		box-shadow: 0px 10px 15px -5px black;
+    }
+
+    /*================================ xxxxxxxxxxxxx covid-content xxxxxxxxxxxxx ================================*/
+
+    /*================================ >>>>>>>>>>>>> aside <<<<<<<<<<<<< ================================*/
+
+    aside {
+        float: right;
+        width: 25%;
+        min-width: 300px;
+        margin: 0px auto;
+        display: table;
+        position: sticky;
+        top: 50px;
+
+    }
+
+    .profile-wrap {
+        
+        height: max-content;
+        /*padding-bottom: 20px;*/
+        /*padding-top: 50px;*/
+        margin: 10px;
+        background: white;
+        border: solid #dfe2e5 0.5px;
+        border-radius: 15px;
+
+    }
+
+    .profile-wrap hr {
+        margin: 10px;
+    }
+
+    .profile-image {
+        width: 150px;
+        height: 150px;
+        margin: auto;
+        /*padding-top: 20px;*/
+        border-radius: 100%;
+        background: url(assets/img/dimar.jpg);
+        background-size: cover;
+    }
+
+    .profile-name {
+        background: #343a40;
+        font-size: 18px;
+        font-weight: bold;
+        color: white;
+        text-align: center;
+        padding: 10px;
+        border-radius: 15px 15px 0px 0px;
+        margin-bottom: 20px;
+    }
+
+    .profile-desc {
+        font-size: 18px;
+        text-align: center;
+        margin: 10px;
+    }
+
+    .profile-logo {
+        position: relative;
+        margin-top: 20px;
+        font-size: 30px;
+        display: block;
+        text-align: center;
+    }
+
+    .profile-quote {
+        margin: 50px 0px;
+    }
+
+    /*================================ xxxxxxxxxxxxx aside xxxxxxxxxxxxx ================================*/
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar-wrap">
+            <ul class="nav-center">
+                <a href="#" class="nav-logo"><span>D</span><span class="nav-logo-span">imar Hanung</span></a>
+                <a href="#">Home</a>
+                <a href="#" onclick="smoothScroll('#aboutYear')">About</a>
+            </ul>
+        </nav>
+        <section class="header-content-wrap">
+            <div class="header-bg"></div>
+            <div class="header-content-center">
+                <div class="main-title">Dimar Hanung Prakoso</div>
+                <div class="main-desc">( + ) Saya hebat, tapi</div>
+                <div class="main-desc">( - ) Tidak lebih hebat dari orang lain</div>
+                <div class="main-desc">( ? ) Sebenarnya apa yang membuat sulit?</div>
+                <div class="main-down" onclick="smoothScroll('#dataPekerjaan')">
+                    <div class="main-down-center">
+                        <i class="fas fa-angle-down"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </header>
+    <main>
+        <div id="content">
+            <article>
+                <section id="aboutYear" class="time-wrap">
+                    <div class="timeline-wrap">
+                        <div class="timeline-desc-wrap">
+                            <div class="timeline-year">2001</div>
+                            <div class="timeline-desc">14 Desember 2001 untuk pertama kalinya saya melihat indahnya dunia yang penuh dengan bullshit dan kebohongan</div>
+                        </div>
+                        <div class="timeline-desc-wrap">
+                            <div class="timeline-year">2006</div>
+                            <div class="timeline-desc">Masuk TK Pertiwi Baturraden, ga masuk PAUD tapi TK nya 2 kali </div>
+                        </div>
+                        <div class="timeline-desc-wrap">
+                            <div class="timeline-year">2008 - 2014</div>
+                            <div class="timeline-desc">Lanjut SD Negeri 2 Purwokerto Lor, btw SD selalu naik kelas dengan nilai rata rata ya wkwk</div>
+                        </div>
+                        <div class="timeline-desc-wrap">
+                            <div class="timeline-year">2014 - 2017</div>
+                            <div class="timeline-desc">Masuk ke masa masa SMP, akhirnya di masa ini punya laptop untuk pertamakalinya, SMP Negeri 8 Purwokerto</div>
+                            <div class="timeline-desc">Masa dimana internet 300KBps udah kayak surga</div>
+                        </div>
+                        <div class="timeline-desc-wrap">
+                            <div class="timeline-year">2017 - 2020</div>
+                            <div class="timeline-desc">Masa SMK, walau agak salah jurusan tapi enjoy aja lah wkwk, jurusan yang saya ambil adalah TKJ, di SMK Telkom Purwokerto, lulusan jalur covid19 </div>
+                        </div>
+                    </div>
+                </section>
+            </article>
+            <hr />
+            <section class="content2-wrap">
+                <article class="covid-wrap">
+                    <h2>Fakta Covid 19</h2>
+                    <div class="covid-text">
+                    	<div class="covid-box-row">
+                    		<div class="covid-box">
+                    		Hingga saat ini 30 April belum ada vaksin untuk covid19
+                    	</div>
+                    	<div class="covid-box">
+                    		covid19 tingkat kematian rendah,  namun penyebaran sangat cepat, sehingga wajib diwaspadai
+                    	</div>
+                    	<div class="covid-box">
+                    		covid19 adalah virus, dan benar adanya (bukan konspirasi)
+                    	</div>
+                    	<div class="covid-box">
+                    		covid19 melumpuhkan ekonomi hampir diseluruh negara di dunia
+                    	</div>
+                    	</div>
+                    	
+                    </div>
+                </article>
+                <aside>
+                    <div class="profile-wrap">
+                        <div class="profile-name">Dimar Hanung Prakoso</div>
+                        <div class="profile-image">
+                            <!-- <img src="assets/img/dimar.jpg" alt=""> -->
+                        </div>
+                        <i class="fas fa-map-marker-alt profile-logo"></i>
+                        <div class="profile-desc">Banyumas, Purwokerto</div>
+                        <hr />
+                        <i class="fas fa-birthday-cake profile-logo"></i>
+                        <div class="profile-desc">14 Desember 2001</div>
+                        <hr />
+                        <div class="profile-desc profile-quote">Proses Untuk Hasil</div>
+                    </div>
+                </aside>
+            </section>
+            x
+        </div>
+    </main>
+    <footer></footer>
+    <script type="text/javascript">
+	
+
+	// let rgba = "rgba(204,204,204,1)";
+	// rgba = rgba.replace("rgba(","").replace(")","").split(",");
+	
+	// let rgbx = [];
+	// for (let rgb = 0; rgb < rgba.length; rgb++) {
+		
+	// 	rgbx.push(rgba[rgb]/10)
+	// }
+	// console.log(rgbx);
+	// $('body,div,span,section').css({
+	// 	backgroundColor: "rgba("+rgbx[0]+","+rgbx[1]+","+rgbx[2]+","+rgba[3]+")",
+	// 	color: 'white'
+	// });;
+
+	let tag = "body,div,section,span";
+		tag = tag.split(',');
+	let el = [];
+
+	for (let psh = 0; psh < tag.length; psh++) {
+		
+		let tag_sp = document.getElementsByTagName(tag[psh]);
+		for (let i = 0; i < tag_sp.length; i++) {
+			
+			let backgroundVal = $(tag_sp).eq(i).css("background-color");
+			if (backgroundVal=="rgba(0, 0, 0, 0)") {backgroundVal="rgba(255,255,255,1)"}
+				
+			backgroundVal = backgroundVal.replace("rgb","").replace(")","").replace("a","").replace("(","").split(",");
+		console.log(backgroundVal)
+			let rgbx = [];
+			for (let rgb = 0; rgb < backgroundVal.length; rgb++) {
+				
+				rgbx.push(backgroundVal[rgb]/5)
+			}
+
+			$(tag_sp).eq(i).css("background-color","rgba("+rgbx[0]+","+rgbx[1]+","+rgbx[2]+","+1+")");
+
+		}
+
+	}
+
+
+    function smoothScroll(ID) {
+        /*
+	fungsi : smoothScroll()
+	sumber : stackoverflow
+	jquery : true
+	paham  : 100%
+	*/
+        $('body,html').animate({
+            scrollTop: $(ID).offset().top
+        }, 1000);
+        return false;
+    }
+
+    $(window).scroll(function(event) {
+
+        /*
+	fungsi : onscroll
+	sumber : diri sendiri
+	jquery : true
+	paham  : 100%
+	*/
+
+        let scroll = $(window).scrollTop();
+
+        $('.header-bg').css('transform', 'translateY(' + (scroll / 5) + 'px)');
+
+        if (scroll > 5) {
+            $('.navbar-wrap').css({
+                transform: 'scale(0.9)',
+                backgroundColor: '#232b33de',
+                padding: '0rem 1rem',
+                borderRadius: '0px 0px 10px 10px'
+            });
+            $('.nav-logo-span').css({
+                width: '0px',
+                transform: 'scale(0)'
+            });
+        } else {
+            $('.navbar-wrap').css({
+                transform: 'scale(1)',
+                background: 'rgb(15, 17, 19)',
+                padding: '.5rem 1rem',
+                borderRadius: '0px'
+            });
+            $('.nav-logo-span').show('medium');
+            $('.nav-logo-span').css({
+                width: '150px',
+                transform: 'scale(1)'
+            });
+        }
+
+    });
+    </script>
+</body>
+
+</html>

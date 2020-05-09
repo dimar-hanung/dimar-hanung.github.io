@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Resevation</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <style type="text/css">
+    #container {
+        /*border: solid black 1px;*/
+        width: 400px;
+        margin: 0px auto;
+    }
+    body{
+    	overflow: hidden;
+    	background: url(img/sunset.jpg);
+    }
+
+    select {
+        color: #999;
+    }
+
+    option {
+        color: black;
+    }
+
+    input {
+        border: solid #a9a9a9 1px;
+        border-radius: 5px;
+    }
+
+	@font-face {
+  font-family: "comebro";
+  src: url("font/Great Wishes.otf") format("opentype");
+  text-shadow: 0px 0px 5px;
+      
+}
+.judul{
+	font-family: comebro;
+	font-size: 40px;
+	text-align: center;
+	color:#ffb77e;
+}
+.filter{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	z-index:-1;
+	background: #030408e3;
+}
+.submit{
+	background: #ffb77e;
+	color: white;
+	font-family: comebro;
+	text-shadow: 0px 0px 25px black;
+}
+
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+	<div class="filter"></div>
+    <div id="container" class="container p-5">
+        <div class="judul mb-5">Reservation</div>
+        <form action="#">
+            <div class="row">
+                <input type="text" class="container-fluid mt-2 py-2 rounded-lg" placeholder="input your name">
+                <input type="text" class="container-fluid mt-2 py-2" placeholder="input your email">
+                <input type="number" class="col mr-2 mt-2 py-2" placeholder="phone Number">
+                <select name="" id="" class="col mt-2 py-2 rounded-lg">
+                    <option value="" disabled selected hidden>Negara</option>
+                    <option value="Indonesia">Indonesia</option>
+                    <option value="English">English</option>
+                </select>
+                <textarea placeholder="description" name="" id="" class="container-fluid mt-2 rounded-lg" cols="30" rows="10"></textarea>
+                <input type="submit" value="Submit" class="col mt-2 p-3 submit">
+            </div>
+
+        </form>
+    </div>
+</body>
+
+</html>

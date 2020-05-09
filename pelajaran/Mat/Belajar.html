@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>html</title>
+    <script src="../asset/jquery-3.4.1.min.js"></script>
+    <script src="../asset/bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../asset/bootstrap/css/bootstrap.min.css">
+    <style type="text/css">
+    .rumus {
+        font-weight: bold;
+        font-size: 20px;
+        transition: all ease 0.5s;
+        color: steelblue;
+
+    }
+
+    .rumus sup {
+        color: red;
+    }
+
+    .rumus:hover {
+
+        text-shadow: 0px 0px 15px black;
+        box-shadow: 0px 0px 1px black;
+        transform: scale(1.3)
+    }
+
+    .rumus:hover sup {}
+
+    .b-bt {
+        border-bottom: solid 2px black;
+    }
+
+    .per {
+        width: max-content;
+    }
+
+    .per:before {
+        content: '=';
+        position: relative;
+        float: left;
+        margin-left: -10px;
+    }
+
+    .akar:before {
+        content: "\221A";
+        color: green;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="container border border-dark" style="width: 860px;">
+        <div id="restServer">
+            <div class="p-2 bg-light mt-5 shadow border border text-center">
+                <h4>bilangan berpangkat</h4>
+            </div>
+            <div class="card mt-5 shadow">
+                <div class="row subjudul m-0">
+                    <h6 class="card-header bg-dark p-2 text-white col">Rumus Dasar</h6>
+                </div>
+                <div class="card-body">
+                    <table class="table table-hover table-bordered">
+                        <tr>
+                            <th>Kondisi</th>
+                            <th>Penyelesaian</th>
+                            <th>Penjelasan</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="rumus">(a<sup>m</sup>)<sup>n</sup></div>
+                            </td>
+                            <td>
+                                <div class="rumus">a<sup>m x n</sup></div>
+                            </td>
+                            <td>bilangan berpangkat dipangkatkan maka dikali</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="rumus">a<sup>m</sup> . a<sup>n</sup></div>
+                            </td>
+                            <td>
+                                <div class="rumus">a<sup>m + n</sup></div>
+                            </td>
+                            <td>bilangan berpangkat dikali maka pangkat ditambah</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="per">
+                                    <div class="rumus b-bt">a<sup>m</sup></div>
+                                    <div class="rumus">a<sup>n</sup></div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="rumus">a<sup>m - n</sup></div>
+                            </td>
+                            <td>Pembagian berpangkat maka pangkat dikurang</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="rumus">a<sup>-n</sup></div>
+                            </td>
+                            <td>
+                                <div class="per">
+                                    <div class="rumus b-bt">1</div>
+                                    <div class="rumus">a<sup>n</sup></div>
+                                </div>
+                            </td>
+                            <td>bilangan berpangkat negativ maka jadi 1 per pangkat n</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="rumus">a<sup>
+                                        a/n
+                                    </sup></div>
+                            </td>
+                            <td>
+                                <div class="rumus"><span class="akar">a<sup>n</sup></span></div>
+                            </td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="card mt-5 shadow">
+                <div class="row subjudul m-0">
+                    <h6 class="card-header bg-dark p-2 text-white col">Contoh Soal</h6>
+                </div>
+                <div class="card-body">
+                    <div>Bentuk Sederhana Dari</div>
+                    <div class="per">
+                        <div class="rumus b-bt">(a<sup>2</sup>.b.c<sup>-1</sup>)<sup>2</sup></div>
+                        <div class="rumus">(a.b<sup>-3</sup>.c<sup>4</sup>)<sup>-1</sup></div>
+                    </div>
+                    <b>jawab: </b>
+                    <table class="table table-bordered">
+                        <tr>
+                            <td>
+                                <div class="per">
+                                    <div class="rumus b-bt">(a<sup>2</sup>.b.c<sup>-1</sup>)<sup>2</sup></div>
+                                    <div class="rumus">(a.b<sup>-3</sup>.c<sup>4</sup>)<sup>-1</sup></div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="per">
+                                    <div class="rumus b-bt">a<sup>2 x 2</sup>.b<sup>1 x 2</sup>.c<sup>-1 x 2</sup></div>
+                                    <div class="rumus">a<sup>1 x -1</sup>.b<sup>-3 x -1</sup>.c<sup>4 x -1</sup></div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="per">
+                                    <div class="rumus b-bt">a<sup>4</sup>b<sup>2</sup>c<sup>-2</sup></div>
+                                    <div class="rumus">a<sup>-1</sup>b<sup>3</sup>c<sup>-4</sup></div>
+                                </div>
+                            </td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <!-- penutup pangkat -->
+        </div>
+        <!-- penututp container -->
+    </div>
+    <script>
+    </script>
+</body>
+
+</html>

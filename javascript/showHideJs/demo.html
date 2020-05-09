@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Example</title>
+    <link rel="stylesheet" type="text/css" href="showhide.css">
+    <script src="jquery.min.js"></script>
+    <script src="showhide.js"></script>
+</head>
+
+<body>
+    <div class="ctnBox">
+        <label>judul</label>
+        <div>ini isi</div>
+    </div>
+    <div class="ctnBox">
+        <label>judul</label>
+        <div>ini isi</div>
+    </div>
+    <div class="ctnBox">
+        <label>judul</label>
+        <div>ini isi</div>
+    </div>
+    <div class="toggle">
+        <label>oke</label>
+        <div>berhasil</div>
+    </div>
+    <div class="toggle">
+        <label>oke</label>
+        <div>berhasil</div>
+    </div>
+    <script type="text/javascript">
+    randid({
+        className: 'toggle',
+        randomColor: true,
+        numbering: true
+
+    });
+
+    randid({
+        className: 'ctnBox',
+        randomColor: false,
+        numbering: true
+
+    });
+    </script>
+</body>
+
+</html>

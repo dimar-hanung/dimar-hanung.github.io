@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		* { box-sizing: border-box; }
+body { 
+  background: #111; 
+  font-family: Avenir, Arial, sans-serif; 
+}
+#selectionbar { 
+  max-width: 1000px;
+  margin: 0 auto;
+  background: rgba(255,255,255,0.3);
+  text-align: center;
+  padding: .5rem;
+  color: #fff;
+}
+#dynaflex { 
+  display: flex;
+  font-size: 0;
+  flex-flow: row wrap;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+#dynaflex figure { 
+  margin: 0; min-width: 201px;
+  flex: 0.67; transition: .5s;
+}
+#dynaflex figure.cub { 
+  flex: 0.568;
+  /*min-width: 170.49px;*/
+}
+#dynaflex figure.on-grass {
+  flex: 1;
+  /*min-width: 300px;*/
+}
+#dynaflex figure.diminish { 
+  /*min-width: 0; flex: 0; */
+}
+#dynaflex figure img { 
+  width: 100%; height: auto; 
+}figure{
+	/*margin:2px !important;*/
+}
+
+	</style>
+</head>
+<body>
+
+<div id="selectionbar"></div>
+<div id="dynaflex">
+  <figure data-group="bears">
+    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/polar-bear-closeup.jpg" alt>
+  </figure>
+  <figure data-group="bears">
+    <img src="https://gamepciso.com/wp-content/uploads/2015/06/media-87884.jpg" alt>
+  </figure>
+
+  <figure data-group="tigers" class="cub">
+    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/tiger-cub.jpg" alt>
+  </figure>
+  <figure data-group="lions" class="on-grass">
+    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/lion-on-grass.jpg" alt>
+  </figure>
+  <figure data-group="tigers">
+    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/tiger.jpg" alt>
+  </figure>
+  <figure data-group="bears">
+    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/polar-bear-swimming.jpg" alt>
+  </figure>
+  <figure data-group="lions">
+    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/lion-and-lioness.jpg" alt>
+  </figure>
+  <figure data-group="lions">
+    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/lion-and-lioness.jpg" alt>
+  </figure>
+  <figure data-group="lions">
+    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/lion-and-lioness.jpg" alt>
+  </figure>
+  <figure data-group="lions">
+    <img src="https://gamepciso.com/wp-content/uploads/2015/06/media-87884.jpg" alt>
+  </figure> <figure data-group="tigers">
+    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/tiger.jpg" alt>
+  </figure>
+  <figure data-group="bears">
+    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/polar-bear-swimming.jpg" alt>
+  </figure>
+
+<script type="text/javascript">
+	function buildDropDown(name,index,array) {
+	var opt = document.createElement("option");
+	opt.value = name;
+	opt.innerHTML = name;
+	dropdown.appendChild(opt);
+}
+
+var container = document.getElementById("dynaflex"),
+array = container.getElementsByTagName("figure"),
+selectionBar = document.getElementById("selectionbar"),
+categories = [];
+for (var i = 0; i < array.length ;i++) {
+	categories[i] = array[i].dataset.group;	
+}
+var unique = categories.filter(function(item, i, ar){ return ar.indexOf(item) === i; });
+unique.reverse();
+unique.unshift("all");
+
+var dropdown = document.createElement("select");
+dropdown.id = "categories";
+var dropdownLabel = document.createElement("label");
+dropdownLabel.for = dropdown.id;
+dropdownLabel.innerHTML = "Show : ";
+unique.forEach(buildDropDown);
+selectionBar.appendChild(dropdownLabel);
+selectionBar.appendChild(dropdown);
+
+dropdown.addEventListener("change", function() {
+  console.log("Change");
+if (this.value == "all") { 
+	for (var i = 0; i < array.length; ++i) {	array[i].classList.remove("diminish");
+		}
+} else {
+	var hide = document.querySelectorAll('#dynaflex figure:not([data-group="'+this.value+'"])');
+	for (var j = 0; j < hide.length; ++j) {
+ 	hide[j].classList.add("diminish");
+		}
+		var show = document.querySelectorAll('#dynaflex figure[data-group="'+this.value+'"]');
+	for (var k = 0; k < show.length; ++k) {	show[k].classList.remove("diminish");
+		}
+	}
+}
+)
+
+</script>
+</body>
+</html>

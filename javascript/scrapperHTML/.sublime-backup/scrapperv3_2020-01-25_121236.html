@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>scrapperv3</title>
+    <link rel="stylesheet" type="text/css" href="../asset/bootstrap/css/bootstrap.min.css">
+    <script src="../asset/jquery-3.4.1.min.js"></script>
+    <script src="../asset/bootstrap/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+	<img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" alt="">
+    <table class="table">
+        <tr>
+            <th>Company</th>
+            <th>Contact</th>
+            <th>Country</th>
+        </tr>
+        <tr>
+            <td>Alfreds Futterkiste</td>
+            <td>Alfreds Futterkiste</td>
+            <td>Alfreds Futterkiste</td>
+        </tr>
+    </table>
+    <input type="number" value="2" name="">
+    <button class="btn btn-primary">contoh</button>
+    <button class="btn btn-primary">contoh2</button>
+   
+    <div id="containerScrap">
+    	<div id="dragButton" class="bg-success pl-5 shadow" style="width: max-content;z-index: 99999"><button id="bukatutup">klik</button></div>
+    	<div id="toggleScrap"  style="position: fixed;width: 100%;height: 100%;z-index: 9999;top: 0px;background: white">
+        <div class="form-group">
+            <input type="text" name="" id="tagInput">
+        </div> 
+        <div id="outputScrap">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>outer</th>
+                        <th>code</th>
+                        <th>text</th>
+                    </tr>
+                </thead>
+                <tbody id="outputScrapTable">
+                    <tr>
+                        <td id="outerScrap">a</td>
+                        <td id="codeScrap">b</td>
+                        <td id="textScrap">c</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <style type="text/css">
+    .mouseOver:hover {
+        color: red;
+    }
+    </style>
+    <script type="text/javascript">
+
+    	$( function() {
+    $( "#dragButton" ).draggable();
+  } );
+
+    	$('#bukatutup').click(function(event) {
+    		/* Act on the event */
+    		$('#toggleScrap').toggle();
+    	});;
+
+    let tagList = {
+
+        tagr: {
+
+            tag: 'random',
+            outer: (outerValue) => {
+                let el = tagList.tl(outerValue);
+                let code = [];
+                for (var i = 0; i < el.length; i++) {
+                    code.push(el[i].outerHTML);
+                }
+                return code;
+            },
+            code: (value) => {
+                let el = tagList.tl(value);
+                let code = [];
+                for (var i = 0; i < el.length; i++) {
+                    code.push('<div class="mouseOver"><xmp>' + el[i].outerHTML + '</xmp></div>');
+                }
+                return code;
+            },
+            text: (txt) => {
+                let el = tagList.tl(txt);
+                let code = [];
+                for (var i = 0; i < el.length; i++) {
+                    code.push(el[i].innerText);
+                }
+                return code;
+            }
+
+        },
+
+        script: {
+            tag: 'script',
+            outer: (value) => {
+            	let el = tagList.tl('script');
+            	let code = [];
+            	for (var i = 0; i < el.length; i++) {
+            		code.push('-')
+            	}
+            	return code
+        	},
+            code: () => {
+                let el = tagList.tl('script');
+                let code = [];
+                for (var i = 0; i < el.length; i++) {
+                    code.push('<div class="mouseOver">&lt;script src="' + el[i].src + '"&gt;&lt;/script&gt;</div>');
+                }
+
+                return code;
+            },
+            text: () => { 
+
+            	let el = tagList.tl('script');
+            	let code=[];
+            	for (var i = 0; i < el.length; i++) {
+            		code.push('<xmp>'+el[i].innerHTML.toString()+'</xmp>');
+            	}
+
+             return code }
+        },
+
+        tl: (tag) => {
+
+
+            let el = document.getElementsByTagName(tag);
+            let output = [];
+            for (var i = 0; i < el.length; i++) {
+                let thisTag = el[i];
+                // console.log(thisTag.getAttribute("id"))
+                if (thisTag.getAttribute("id") != "outputScrapTable" && thisTag.getAttribute("id") != 'outputScrap' && thisTag.getAttribute("continerScrap") || thisTag.getAttribute("id") == null) {
+                    output.push(thisTag);
+                    // console.log('masuk: '+output)
+                }
+
+
+
+            }
+            return output;
+
+        },
+
+        print: (outer, code, text) => {
+            $('#outputScrapTable').html('');
+            let taginputValue = document.getElementById('tagInput').value;
+            
+            let codeScrap = ''
+            let textScrap = ''
+            let outerScrap = ''
+
+            if (taginputValue=='script') {
+            	
+             // textScrap = tagList.script.text();
+            codeScrap = tagList.script.code();
+           
+            outerScrap = tagList.script.outer();
+            }else{
+            codeScrap = tagList.tagr.code(taginputValue);
+            textScrap = tagList.tagr.text(taginputValue);
+            outerScrap = tagList.tagr.outer(taginputValue);
+            }
+
+            for (var i = 0; i < outerScrap.length; i++) {
+
+                $('#outputScrapTable').append('<tr><td>' + outerScrap[i] + '</td><td>' + codeScrap[i] + '</td><td>' + textScrap[i] + '</td></tr>');
+
+            }
+
+
+        }
+
+    }
+
+
+
+    $("#tagInput").on("input", function(event) {
+        /* Act on the event */
+
+        // console.log(this.value)
+
+
+
+        tagList.print();
+
+
+
+
+        if (tagInput.value == tagList.script.tag) {
+            
+            // $('#codeScrap').append(tagList.script.code());
+        }
+
+
+
+
+    });;
+    </script>
+</body>
+
+</html>

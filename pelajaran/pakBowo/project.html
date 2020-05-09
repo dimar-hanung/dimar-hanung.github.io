@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>html</title>
+    <script src="../asset/jquery-3.4.1.min.js"></script>
+    <script src="../asset/bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../asset/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../asset/highlight/styles/arduino-light.css">
+    <script src="../asset/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type="text/css">
+    .fill-h {
+        height: -webkit-fill-available;
+    }
+
+    ol.none-a>li {
+        counter-increment: step-counter;
+        margin-top: 25px;
+    }
+
+    ol.none-a>li:before {
+
+        content: "Alat "counter(step-counter)" - ";
+        font-weight: bolder
+    }
+
+    ol.none-a,
+    ol.none-p,
+    ol.none-c {
+        list-style-type: none;
+    }
+
+    .pagebreak {
+        page-break-before: always !important;
+    }
+
+    .subjudul {
+        position: sticky;
+        top: 0px;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="container" style="width: 860px;">
+        <h2 class="pl-4 mt-2 bg-info text-white p-2 rounded shadow">Project Smart Garden</h2>
+        <h5 class="p-2 bg-danger pl-4 text-white rounded shadow">XII TKJ 1 No.35 - SMK Telkom PWT</h5>
+        <div id="persiapanSM">
+            <div class="p-2 bg-light mt-5 shadow border border text-center">
+                <h4>Persiapan</h4>
+            </div>
+            <div class="card mt-5 shadow">
+                <div class="row subjudul m-0">
+                    <h6 class="col card-header m-0 bg-dark text-white p-2">Peralatan</h6>
+                </div>
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
+                            <th>Alat</th>
+                            <th>deskripsi</th>
+                            <th>harga</th>
+                        </thead>
+                        <tr>
+                            <td>NodeMCU v3 Lolin ESP8266</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>BreadBoard</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>LCD 16 pin</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>i2c lcd</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Ultrasonik</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Soil Moisture</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Jumper</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="card mt-5 shadow">
+                <div class="row subjudul m-0">
+                    <h6 class="card-header bg-dark p-2 text-white col">Skema</h6>
+                </div>
+                <div class="card-body">
+                    <img src="img/skema.png" class="img-fluid" alt="">
+                </div>
+            </div>
+            <div class="card mt-5 shadow pagebreak">
+                <div class="row subjudul m-0">
+                    <h6 class="card-header bg-dark p-2 text-white col">Full Code</h6>
+                </div>
+                <div class="card-body">
+                    <div>File Lengkap : <a href="https://github.com/dimar-hanung/rest_server_esp8266/tree/master">https://github.com/dimar-hanung/rest_server_esp8266/tree/master</a></div>
+                </div>
+            </div>
+        </div>
+        <div id="restServer">
+            <div class="p-2 bg-light mt-5 shadow border border text-center">
+                <h4>Membuat Rest Server</h4>
+            </div>
+            <div class="card mt-5 shadow">
+                <div class="row subjudul m-0">
+                    <h6 class="card-header bg-dark p-2 text-white col">Membuat Rest Server pada localhost</h6>
+                </div>
+            </div>
+        </div>
+        <!-- penutup container -->
+    </div>
+    <script type="text/javascript">
+    let dataSubJudul = [
+
+        {
+            id: 'restServer',
+            color: 'bg-info',
+            text: 'Rest Server'
+        },
+        {
+            id: 'persiapanSM',
+            color: 'bg-success',
+            text: 'persiapan'
+        }
+
+
+    ]
+
+
+
+    for (var i = 0; i < dataSubJudul.length; i++) {
+        let dataSend = dataSubJudul[i]
+        tag(dataSend.id, dataSend.color, dataSend.text)
+
+    }
+
+
+    function tag(id, color, text) {
+
+        let rowJudul = document.getElementById(id).getElementsByClassName('subjudul');
+        // rowJudul.innerHTML += '' 
+
+        for (var x = 0; x < rowJudul.length; x++) {
+            rowJudul[x].innerHTML += '<h6 class="card-header ' + color + ' p-2 text-white text-center col-3">' + text + ' #' + parseInt(x + 1) + '</h6>'
+        }
+
+    }
+    </script>
+</body>
+
+</html>

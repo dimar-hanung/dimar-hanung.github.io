@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>html</title>
+	 <script src="../asset/jquery-3.4.1.min.js"></script>
+    <script src="../asset/bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../asset/bootstrap/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style type="text/css">
+    	@media print  
+{
+   .card{
+       page-break-inside: avoid;
+    }
+}
+
+.subjudul{
+	position: sticky;
+	top: 0;
+}
+
+.min-width{
+	width: -webkit-fill-available;
+}
+
+@media only screen and (min-width: 1000px) {
+  .min-width {
+    width: 860px;
+  }
+}
+
+    </style>
+</head>
+<body>
+
+	
+	<div class="container min-width">
+		<div class="text-black-50">v1.1 | 19 februari 2020, 11:50AM | 3*</div> 
+		<h2 class="text-left text-white p-2 mt-2 shadow rounded-lg bg-info flex-fill">Pembahasan Soal</h2>
+		<h6 class="text-left text-white p-2 mt-2 shadow rounded-lg bg-danger flex-fill">Dimar Hanung Prakoso | XII TKJ 1 | 35 <span class="float-right">SMK TELKOM PURWOKERTO</span></h6>
+		<div id="soal">
+			
+				 <div class="p-2 bg-light mt-5 shadow border border text-center">
+                <h4>Soal Latihan apa ya?</h4>
+            </div>
+			<input type="text" placeholder="Pencarian" class="mt-5 shadow border border-info" oninput="cari(this.value)">
+			<div class="card mt-5 shadow">
+				<div class="row subjudul m-0">
+					<h6 class="col card-header m-0 bg-dark text-white p-2">1.	Operator yang sering digunakan di dunia algoritma yang digunakan untuk mendapatkan sisa hasil bagi adalah ....</h6>
+				</div>
+				<div class="card-body">
+					<div class="border card-header upshadow p-2 mt-2"><b>a. +</b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>b. –</b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>c. /</b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>d. *</b></div>
+					<div class="border card-header upshadow p-2 mt-2 text-danger"><b>e. mod</b></div>
+					<div class="border p-2">Biasanya Dilambangkan dengan <span class="text-danger">%</span></div>
+				</div>
+			</div>
+			<div class="card mt-5 shadow">
+				<div class="row subjudul m-0">
+					<h6 class="col card-header m-0 bg-dark text-white p-2">2.	Operator logika yang menghasilkan nilai True jika salah satu operasi bernilai True adalah ....</h6>
+				</div>
+				<div class="card-body">
+					<div class="border card-header upshadow p-2 mt-2"><b>a. and</b></div>
+					<div class="border p-2">bernilai benar apabila keduanya bernilai benar</div>
+					<div class="border card-header upshadow p-2 mt-2 text-danger"><b>b. or</b></div>
+					<div class="border p-2">bernilai benar apabila salahsatunya benar</div>
+					<div class="border card-header upshadow p-2 mt-2"><b>c. xor</b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>d. nor</b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>e. nand</b></div>
+				</div>
+			</div>
+			<div class="card mt-5 shadow">
+				<div class="row subjudul m-0">
+					<h6 class="col card-header m-0 bg-dark text-white p-2">3.	Konversi bilangan 111011001(2) ke Hexadesimal adalah .... </h6>
+				</div>
+				<div class="card-body">
+					<div class="border card-header upshadow p-2 mt-2 text-danger"><b>a. 1D9</b></div>
+					<div class="border p-2">
+						<div>Pertama dibagi 4 dari belakang: </div>
+						<div class="text-success">1 1101 1001 = <span class="text-danger">000</span>1 1101 1001</div>
+						dan sesuaikan dengan tabel
+						<table class="table table-sm table-bordered">
+							<tr>
+								<td>0001</td>
+								<td>1101</td>
+								<td>1001</td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>D</td>
+								<td>9</td>
+							</tr>
+						</table>
+						<table class="table table-sm table-bordered table-responsive">
+							<tr>
+								<td>0000</td>
+								<td>0001</td>
+								<td>0010</td>
+								<td>0011</td>
+								<td>0100</td>
+								<td>0101</td>
+								<td>0110</td>
+								<td>0111</td>
+								<td>1000</td>
+								<td>1001</td>
+								<td>1010</td>
+								<td>1011</td>
+								<td>1100</td>
+								<td>1101</td>
+								<td>1110</td>
+								<td>1111</td>
+							</tr>
+							<tr>
+								<td>0</td>
+								<td>1</td>
+								<td>2</td>
+								<td>3</td>
+								<td>4</td>
+								<td>5</td>
+								<td>6</td>
+								<td>7</td>
+								<td>8</td>
+								<td>9</td>
+								<td>A</td>
+								<td>B</td>
+								<td>C</td>
+								<td>D</td>
+								<td>E</td>
+								<td>F</td>
+							</tr>
+						</table>
+					</div>
+					<div class="border card-header upshadow p-2 mt-2"><b>b. 1139</b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>c. 1138</b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>d. 1E9</b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>e. 1C9</b></div>
+				</div>
+			</div>
+			<div class="card mt-5 shadow">
+				<div class="row subjudul m-0">
+					<h6 class="col card-header m-0 bg-dark text-white p-2">4.	Konversi bilangan Hexadesimal 2B5(16) ke Biner adalah ....</h6>
+				</div>
+				<div class="card-body">
+					<div class="border card-header upshadow p-2 mt-2"><b>a. 001000110101</b></div>
+					<div class="border card-header upshadow p-2 mt-2 text-danger"><b>b. 0010 1011 0101</b></div>
+					<div class="border p-2">Gunakan Tabel pada pembahasan Nomor 3</div>
+					<div class="border card-header upshadow p-2 mt-2"><b>c. 001010110001</b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>d. 001001110101</b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>e. 001010010101</b></div>
+				</div>
+			</div>
+			<div class="card mt-5 shadow">
+				<div class="row subjudul m-0">
+					<h6 class="col card-header m-0 bg-dark text-white p-2">5.	Tag untuk berpindah baris pada sebuah paragraf di html adalah ….</h6>
+				</div>
+				<div class="card-body">
+					<div class="border card-header upshadow p-2 mt-2"><b>a. &lt;b&gt;  </b></div>
+					<div class="border p-2">untuk mempertebal / <b>bold</b> huruf</div>
+					<div class="border card-header upshadow p-2 mt-2"><b>b. &lt;h1&gt;</b></div>
+					<div class="border p-2">untuk judul level 1</div>
+					<div class="border card-header upshadow p-2 mt-2 text-danger"><b>c. &lt;br&gt;</b></div>
+					<div class="border p-2">untuk berganti baris</div>
+					<div class="border card-header upshadow p-2 mt-2"><b>d. &lt;i&gt;</b></div>
+					<div class="border p-2">untuk tulisan italic ( <i>miring</i>)</div>
+					<div class="border card-header upshadow p-2 mt-2"><b>e. &lt;h2&gt;</b></div>
+					<div class="border p-2">untuk judul level 2</div>
+					<div class="border p-2 mt-3">
+						<h1>ini tag h1</h1>
+						<h2>ini tag h2</h2>
+						<h3>ini tag h3</h3>
+						<h4>ini tag h4</h4>
+						<h5>ini tag h5</h5>
+						<h6>ini tag h6</h6>
+						hanya tersedia h1 sampai h6
+					</div>
+				</div>
+			</div>
+			<!-- <div class="card mt-5 shadow">
+				<div class="row subjudul m-0">
+					<h6 class="col card-header m-0 bg-dark text-white p-2"></h6>
+				</div>
+				<div class="card-body">
+					<div class="border card-header upshadow p-2 mt-2"><b></b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b></b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b></b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b></b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b></b></div>
+				</div>
+			</div> -->
+			<div class="card mt-5 shadow">
+				<div class="row subjudul m-0">
+					<h6 class="col card-header m-0 bg-dark text-white p-2">6.	Tag html untuk menyisipkan gambar pada sebuah halaman html adalah ....</h6>
+				</div>
+				<div class="card-body">
+					<div class="border card-header upshadow p-2 mt-2"><b>a. &lt;video&gt;</b></div>
+					<div class="border p-2">Tag ini untuk video</div>
+					<div class="border card-header upshadow p-2 mt-2"><b>b. &lt;photo&gt;</b></div>
+					<div class="border card-header upshadow p-2 mt-2 text-danger"><b>c. &lt;img&gt;</b></div>
+					<div class="border p-2">cara menulis : <code>&lt;img src="../direktori/gambar.png" /&gt;</code></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>d. &lt;image&gt;</b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>e. &lt;pict&gt;</b></div>
+				</div>
+			</div>
+			<div class="card mt-5 shadow">
+				<div class="row subjudul m-0">
+					<h6 class="col card-header m-0 bg-dark text-white p-2">7.	Sebuah laptop tidak memperoleh ip dari sebuah access point. Satu di antara penyebabnya adalah ....</h6>
+				</div>
+				<div class="card-body">
+					<div class="border card-header upshadow p-2 mt-2 text-danger"><b>a. Driver Wireless belum diinstal </b></div>
+					<div class="border p-2">jadi gini kamu punya laptop tapi ga ada os nya sama aja boong kan?, sama kalo kamu punya adapter wireless nya tapi ga ada drivernya ya ga bisa dipake
+*driver itu perangkat lunak yang biasanya digunakan untuk menjalankan perangkat keras
+</div>
+					<div class="border card-header upshadow p-2 mt-2"><b>b. Terinveksi virus </b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>c. OS belum diupdate </b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>d. Kabel utp yang digunakan jenis cat 6 </b></div>
+					<div class="border p-2">mau cat 5, apa cat 6 ya ga ngaruh, kalo kabelnya bener ya dapet ip, jenis kabel cuma ngaruh ke perfoma</div>
+					<div class="border card-header upshadow p-2 mt-2"><b>e. Kartu jaringan beda merek dengan access point </b></div>
+					<div class="border p-2">masih bisa, masa harus 1 merek serakah banget brand nya kalo kaya gitu</div>
+				</div>
+			</div>
+			<div class="card mt-5 shadow">
+				<div class="row subjudul m-0">
+					<h6 class="col card-header m-0 bg-dark text-white p-2">8.	Layer OSI yang bertugas menerima data dari session layer, memecah data menjadi bagian-bagian yang lebih kecil bila perlu, meneruskan data ke network layer, dan menjamin bahwa semua potongan data tersebut bisa tiba di sisi lainnya dengan benar, merupakan tugas dari layer ....</h6>
+				</div>
+				<div class="card-body">
+					<div class="alert alert-danger">Pembahasan Osi bisa dilihat di : <a href="https://drive.google.com/open?id=196vez-XVGona-BjcOXc5Q6q3_N4Z3qD5">https://drive.google.com/open?id=196vez-XVGona-BjcOXc5Q6q3_N4Z3qD5</a></div>
+					<div class="border card-header upshadow p-2 mt-2 text-danger"><b>a. Transport </b></div>
+					<div class="border p-2">karena di sini terjadi proses segmentasi</div>
+					<div class="border card-header upshadow p-2 mt-2"><b>b. Session </b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>c. Network </b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>d. Presentasi </b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>e. Psychal </b></div>
+				</div>
+			</div>
+			<div class="card mt-5 shadow">
+				<div class="row subjudul m-0">
+					<h6 class="col card-header m-0 bg-dark text-white p-2">9.	Program utility yang sudah ada pada Sistem Operasi, secara default sudah terinstall pada saat kita selesai menginstall Windows disebut dengan ....</h6>
+				</div>
+				<div class="card-body">
+					<div class="border card-header upshadow p-2 mt-2"><b>a. Notepad</b></div>
+					<div class="border card-header upshadow p-2 mt-2 text-danger"><b>b. Utility Internal</b></div>
+					<div class="border p-2">Utility internal adalah utility yang sudah ada pada Windows kita, secara default sudah terinstall pada saat kita selesai menginstall Windows.
+Contoh : Notepad (untuk menulis), Wordpad (untuk menulis), Windows Media Player (multimedia), Calculator, Paint (menggambar) dan lain-lain )
+</div>
+					<div class="border card-header upshadow p-2 mt-2"><b>c. Utility External</b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>d. Utility Wordpad</b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>e. Utility Windows Media Player</b></div>
+				</div>
+			</div>
+			<div class="card mt-5 shadow">
+				<div class="row subjudul m-0">
+					<h6 class="col card-header m-0 bg-dark text-white p-2">10.	IP address Kelas B memiliki rentang alamat ....</h6>
+				</div>
+				<div class="card-body">
+					<div class="border card-header upshadow p-2 mt-2"><b>a. 127.0.0.0 – 191.255.255.255</b></div>
+					<div class="border card-header upshadow p-2 mt-2 text-danger"><b>b. 128.0.0.0 – 191.255.255.255</b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>c. 129.0.0.0 – 191.255.255.255</b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>d. 130.0.0.0 – 191.255.255.255</b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>e. 131.0.0.0 – 191.255.255.255</b></div>
+				</div>
+			</div>
+			<div class="card mt-5 shadow">
+				<div class="row subjudul m-0">
+					<h6 class="col card-header m-0 bg-dark text-white p-2">11. Perhatikan urutan dibawah ini<br>	1. Pilih port, dan next <br>
+2. Printer siap digunakan <br>
+3. Klik manual selection <br>
+4. Masukkan cd driver <br>
+5  Tekan next, lalu pilih option printer driver <br>
+Manakah urutan yang sesuai untuk melakukan installasi perangkat printer ...
+</h6>
+				</div>
+				<div class="card-body">
+					<div class="border card-header upshadow p-2 mt-2"><b>a. 4 – 5 – 3 – 1 – 2</b></div>
+					<div class="border card-header upshadow p-2 mt-2 text-danger"><b>b. 4 – 3 - 5 – 1 – 2</b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>c. 4 – 1 – 5 – 3 – 2</b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>d. 4 – 5 – 1 – 3 – 2 </b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>e. 4 – 1 – 5 - 3 – 2</b></div>
+				</div>
+			</div>
+			<div class="card mt-5 shadow">
+				<div class="row subjudul m-0">
+					<h6 class="col card-header m-0 bg-dark text-white p-2">12.	Topologi komputer dimana bentuk koneksi antar perangkat komputer saling terhubung secara langsung satu dengan yang lainnya dalam satu jaringan atau juga sering disebut dengan topologi jala merupakan pengertian dari topologi ....</h6>
+				</div>
+				<div class="card-body">
+					<div class="border card-header upshadow p-2 mt-2 text-danger"><b>a. Mesh</b></div>
+					<div class="border p-2">kata google yang sering disebut topologi jala itu topologi mesh</div>
+					<div class="border card-header upshadow p-2 mt-2"><b>b. Bus</b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>c. Star</b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>d. Ring</b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>e. Tree</b></div>
+				</div>
+			</div>
+			<div class="card mt-5 shadow">
+				<div class="row subjudul m-0">
+					<h6 class="col card-header m-0 bg-dark text-white p-2">13.	Protokol standar yang digunakan untuk mengakses atau mengambil e-mail dari server adalah </h6>
+				</div>
+				<div class="card-body">
+					<div class="border card-header upshadow p-2 mt-2"><b>a. ICMP</b></div>
+					<div class="border p-2">Internet Control Message Protocol</div>
+					<div class="border card-header upshadow p-2 mt-2"><b>b. TCP / IP</b></div>
+					<div class="border p-2">Transmission Control Protocol</div>
+					<div class="border card-header upshadow p-2 mt-2"><b>c. UDP</b></div>
+					<div class="border p-2">User Datagram Protocol</div>
+					<div class="border card-header upshadow p-2 mt-2 text-danger"><b>d. IMAP</b></div>
+					<div class="border p-2">Internet Message Access Protocol <br />IMAP adalah protokol standar untuk mengakses/mengambil e-mail dari server. IMAP memungkinkan pengguna memilih pesan e-mail yang akan ia ambil, membuat folder di server, mencari pesan e-mail tertentu, bahkan menghapus pesan e-mail yang ada.</div>
+					<div class="border card-header upshadow p-2 mt-2"><b>e. PTP</b></div>
+					<div class="border p-2">Point to Point</div>
+				</div>
+			</div>
+			<div class="card mt-5 shadow">
+				<div class="row subjudul m-0">
+					<h6 class="col card-header m-0 bg-dark text-white p-2">14.	Port yang digunakan untuk menghubungkan flashdisk ke dalam komputer adalah port....</h6>
+				</div>
+				<div class="card-body">
+					<div class="border card-header upshadow p-2 mt-2 text-danger"><b>a. USB</b></div>
+					<div class="border p-2">Kebangetan kalo ga tau</div>
+					<div class="border card-header upshadow p-2 mt-2"><b>b. Ethernet</b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>c. Audio</b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>d. VGA</b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>e. HDMI</b></div>
+				</div>
+			</div>
+			<div class="card mt-5 shadow">
+				<div class="row subjudul m-0">
+					<h6 class="col card-header m-0 bg-dark text-white p-2">15.	Yang tidak termasuk sistem operasi jaringan adalah ....</h6>
+				</div>
+				<div class="card-body">
+					<div class="border card-header upshadow p-2 mt-2"><b>a. Debian</b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>b. Ubuntu</b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>c. Windows 2003 Server</b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>d. Windows 2016 Server</b></div>
+					<div class="border card-header upshadow p-2 mt-2 text-danger"><b>e. Windows XP</b></div>
+				</div>
+			</div>
+			<div class="card mt-5 shadow">
+				<div class="row subjudul m-0">
+					<h6 class="col card-header m-0 bg-dark text-white p-2">16.	Kecepatan transfer maximal perangkat wireless IEEE 802.11n dengan frekuensi 2,4 Ghz adalah ....</h6>
+				</div>
+				<div class="card-body">
+					<div class="border card-header upshadow p-2 mt-2"><b>a. 11 Mbps</b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>b. 54 Mbps</b></div>
+					<div class="border card-header upshadow p-2 mt-2 text-danger"><b>c. 300 Mbps</b></div>
+					<div class="border p-2">
+						<table width="100%" cellspacing="0" cellpadding="1" class="table table-sm table-responsive">
+						    <tbody>
+						        <tr>
+						            <th>Standard</th>
+						            <th scope="row">Frequency</th>
+						            <th>Theoretical Speed</th>
+						            <th>Real-World Speed</th>
+						        </tr>
+						        <tr>
+						            <td>802.11a</td>
+						            <td>5Ghz</td>
+						            <td>6-54 Mbps</td>
+						            <td>3 - 32 Mbps</td>
+						        </tr>
+						        <tr>
+						            <td>802.11b</td>
+						            <td>2.4Ghz</td>
+						            <td>11 Mbps</td>
+						            <td>2-3 Mbps</td>
+						        </tr>
+						        <tr>
+						            <td>802.11g</td>
+						            <td>2.4Ghz</td>
+						            <td>54 Mbps</td>
+						            <td>10 -29 Mbps</td>
+						        </tr>
+						        <tr>
+						            <td>802.11n</td>
+						            <td>2.4Ghz</td>
+						            <td>300 Mpbs</td>
+						            <td>150 Mbps</td>
+						        </tr>
+						        <tr>
+						            <td>802.11n</td>
+						            <td>5Ghz</td>
+						            <td>900 Mbps</td>
+						            <td>450Mbps</td>
+						        </tr>
+						        <tr>
+						            <td>802.11ac</td>
+						            <td>5Ghz</td>
+						            <td>433 Mbps - 1.7 Gbps</td>
+						            <td>210 Mbps - 1 G</td>
+						        </tr>
+						    </tbody>
+						</table>
+					</div>	
+					<div class="border card-header upshadow p-2 mt-2"><b>d. 500 Mbps</b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>e. 200 Mbps </b></div>
+				</div>
+			</div>
+			<div class="card mt-5 shadow">
+				<div class="row subjudul m-0">
+					<h6 class="col card-header m-0 bg-dark text-white p-2">17.	Berapakah Swap memori yang dianjurkan terpasang pada server jika kapasitas RAM Sebesar 1 GB ....</h6>
+				</div>
+				<div class="card-body">
+					<div class="border card-header upshadow p-2 mt-2"><b>a. 1 GB</b></div>
+					<div class="border card-header upshadow p-2 mt-2 text-danger"><b>b. 2 GB</b></div>
+					<div class="border p-2">Biasanya 2 kali dari ram, tapi kalo ram udah diatas 4 gb ngga usah pake swap gpp, soalnya swap tujuan nya sebagai ram cadangan, apa bila ram asli yang digunakan penuh atau melewati batas</div>
+					<div class="border card-header upshadow p-2 mt-2"><b>c. 3 GB</b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>d. 4 GB</b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>e. 5 GB</b></div>
+				</div>
+			</div>
+			<div class="card mt-5 shadow">
+				<div class="row subjudul m-0">
+					<h6 class="col card-header m-0 bg-dark text-white p-2">18.	Perintah untuk mengubah atribut sebuah direktori menjadi d rwx rw- -w- pada debian adalah dengan mengetikan perintah ....</h6>
+				</div>
+				<div class="card-body">
+					<div class="border card-header upshadow p-2 mt-2"><b>a. chmod 752</b></div>
+					<div class="border card-header upshadow p-2 mt-2 text-danger"><b>b. chmod 762</b></div>
+					<div class="border p-2">karena r=4, w=2 x=1</div>
+					<div class="border card-header upshadow p-2 mt-2"><b>c. chmod 777</b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>d. chmod 770</b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>e. chmod 742</b></div>
+				</div>
+			</div>
+			<div class="card mt-5 shadow">
+				<div class="row subjudul m-0">
+					<h6 class="col card-header m-0 bg-dark text-white p-2">19.	Paket yang Berfungsi memudahkan alokasi IP address untuk klien adalah ....	 </h6>
+				</div>
+				<div class="card-body">
+					<div class="border card-header upshadow p-2 mt-2"><b>a. DNS	 </b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>b. WEB Server	</b></div>
+					<div class="border card-header upshadow p-2 mt-2 text-danger"><b>c. DHCP </b></div>
+					<div class="border p-2">dhcp berfungsi untuk menyewakan ip kepada client</div>
+					<div class="border card-header upshadow p-2 mt-2"><b>d. FTP	</b></div>
+					<div class="border p-2">File Transfer Protocol, untuk transfer file server dan client</div>
+					<div class="border card-header upshadow p-2 mt-2"><b>e. Samba</b></div>
+					<div class="border p-2">Samba Server berfungsi sebagai penghubung antara sistem operasi keluarga UNIX dengan sistem operasi microsoft windows dalam menjembatani sharing file atau berbagi dokumen, sharing printer serta device lainnya yang mendukung.</div>
+				</div>
+			</div>
+			<div class="card mt-5 shadow">
+				<div class="row subjudul m-0">
+					<h6 class="col card-header m-0 bg-dark text-white p-2">20.	Paket aplikasi DHCP Server pada sistem operasi linux adalah ....	</h6>
+				</div>
+				<div class="card-body">
+					<div class="border card-header upshadow p-2 mt-2"><b>a. Bind9 </b></div>
+					<div class="border p-2">untuk DNS</div>
+					<div class="border card-header upshadow p-2 mt-2"><b>b. Apache</b></div>
+					<div class="border p-2">untuk Web Server</div>
+					<div class="border card-header upshadow p-2 mt-2"><b>c. XAMPP</b></div>
+					<div class="border p-2">untuk membangun sebuah website
+					<br>X :  Program ini dapat dijalankan dibanyak sistem operasi, seperti Windows, Linux, Mac OS, dan Solaris.
+					<br>A : APACHE
+					<br>M : MYSQL
+					<br>P : PHP
+					<br>P : Perl
+					</div>
+					<div class="border card-header upshadow p-2 mt-2 text-danger"><b>d. dhcp3-server</b></div>
+					<div class="border p-2">Memberi Sewa IP kepada Client</div>
+					<div class="border card-header upshadow p-2 mt-2"><b>e. Ntp</b></div>
+					<div class="border p-2">untuk sinkorinisasi waktu</div>
+				</div>
+			</div>
+			<div class="card mt-5 shadow">
+				<div class="row subjudul m-0">
+					<h6 class="col card-header m-0 bg-dark text-white p-2">21.	File konfigurasi DHCP server adalah ....	</h6>
+				</div>
+				<div class="card-body">
+					<div class="border card-header upshadow p-2 mt-2"><b>a. db.forward</b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>b. db.reverse </b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b> c. aphace.conf	</b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>d. dhcp3.conf	 </b></div>
+					<div class="border card-header upshadow p-2 mt-2 text-danger"><b>e. dhcpd.conf</b></div>
+				</div>
+			</div>
+			<div class="card mt-5 shadow">
+				<div class="row subjudul m-0">
+					<h6 class="col card-header m-0 bg-dark text-white p-2">22.	Paket aplikasi Domain Name System Server  adalah ....	</h6>
+				</div>
+				<div class="card-body">
+					<div class="border card-header upshadow p-2 mt-2 text-danger"><b>a.  Bind9</b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>b. Apache</b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b> c. XAMPP</b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b> d. dhcp3-server</b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b> e. Ntp</b></div>
+
+				</div>
+			</div>
+			<div class="card mt-5 shadow">
+				<div class="row subjudul m-0">
+					<h6 class="col card-header m-0 bg-dark text-white p-2">23.	Berikut ini adalah contoh Top Level Domain dalam hirearki DNS, Kecuali ....</h6>
+				</div>
+				<div class="card-body">
+					<div class="border card-header upshadow p-2 mt-2"><b>a. .com	</b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>b. .gov</b></div>
+					<div class="border card-header upshadow p-2 mt-2 text-danger"><b>c. .ind</b></div>
+					<div class="border p-2">ini termasuk low level domain, karena ga terkenal?:v</div>
+					<div class="border card-header upshadow p-2 mt-2"><b>d. .org</b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>e. .mil</b></div>
+				</div>
+			</div>
+			<div class="card mt-5 shadow">
+				<div class="row subjudul m-0">
+					<h6 class="col card-header m-0 bg-dark text-white p-2">24.	Berikut adalah file-file konfigurasi DNS Server bind9, kecuali ....	 </h6>
+				</div>
+				<div class="card-body">
+					<div class="border card-header upshadow p-2 mt-2 text-danger"><b>a. #apt-get install bind9</b></div>
+					<div class="border p-2">karena ini adalah perntah untuk install bind 9, bukan termasuk file konfigurasi</div>
+					<div class="border card-header upshadow p-2 mt-2"><b>b. #nano named.conf.local</b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>c. named.conf.options</b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>d. #nano /etc/network/interfaces</b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>e. #nano /etc/resolv.conf</b></div>
+				</div>
+			</div>
+			<div class="card mt-5 shadow">
+				<div class="row subjudul m-0">
+					<h6 class="col card-header m-0 bg-dark text-white p-2">25.	Cara installasi paket aplikasi DNS server adalah ....</h6>
+				</div>
+				<div class="card-body">
+					<div class="border card-header upshadow p-2 mt-2"><b>a. apt-get install apache2</b></div>
+					<div class="border p-2">ini untuk install webserver</div>
+					<div class="border card-header upshadow p-2 mt-2"><b>b. apt-get update</b></div>
+					<div class="border p-2">ini untuk update repository</div>
+					<div class="border card-header upshadow p-2 mt-2"><b>c. apt-cdrom add</b></div>
+					<div class="border p-2">ini untuk menambahkan cd apabila tidak terbaca kayaknyya</div>
+					<div class="border card-header upshadow p-2 mt-2"><b>d. apt-get install php5</b></div>
+					<div class="border p-2">ini untuk install php 5</div>
+					<div class="border card-header upshadow p-2 mt-2 text-danger"><b>e. apt-get install bind9</b></div>
+					<div class="border p-2">jadi ini jawabanya :)</div>
+				</div>
+			</div>
+			<div class="card mt-5 shadow">
+				<div class="row subjudul m-0">
+					<h6 class="col card-header m-0 bg-dark text-white p-2">26.	Paket aplikasi web server untuk sistem operasi linux adalah ....</h6>
+				</div>
+				<div class="card-body">
+					<div class="border card-header upshadow p-2 mt-2"><b>a. Bind9</b></div>
+					<div class="border card-header upshadow p-2 mt-2 text-danger"><b>b.  Apache</b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>c.  XAMPP</b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>d. dhcp3-server</b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>e. PHP</b></div>
+				</div>
+			</div>
+			<div class="card mt-5 shadow">
+				<div class="row subjudul m-0">
+					<h6 class="col card-header m-0 bg-dark text-white p-2">27.	Yang bukan termasuk jenis keamanan untuk jaringan nirkabel adalah ....</h6>
+				</div>
+				<div class="card-body">
+					<div class="border card-header upshadow p-2 mt-2"><b>a. WEP</b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>b. WPA</b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>c. WPA-2</b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>d. WPA-PSK</b></div>
+					<div class="border card-header upshadow p-2 mt-2 text-danger"><b>e. WPE</b></div>
+				</div>
+			</div>
+			<div class="card mt-5 shadow">
+				<div class="row subjudul m-0">
+					<h6 class="col card-header m-0 bg-dark text-white p-2">28.	Subnet mask 11111111.11111111.11111111.11111000 sama dengan ....</h6>
+				</div>
+				<div class="card-body">
+					<div class="border card-header upshadow p-2 mt-2"><b>a. 255.255.255.128</b></div>
+					<div class="border card-header upshadow p-2 mt-2 text-danger"><b>b. 255.255.255.248</b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>c. 255.255.0.0</b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>d. 255.255.255.192</b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>e. 255.255.255.0</b></div>
+				</div>
+			</div>
+			<div class="card mt-5 shadow">
+				<div class="row subjudul m-0">
+					<h6 class="col card-header m-0 bg-dark text-white p-2">29.	Simbol yang mnunjukan shell prompt masuk sebagai root adalah....</h6>
+				</div>
+				<div class="card-body">
+					<div class="border card-header upshadow p-2 mt-2 text-danger"><b>a. #</b></div>
+					<div class="border p-2"><span class="text-danger">$</span> melambangkan kita sedang berada dalam user</div>
+					<div class="border card-header upshadow p-2 mt-2"><b>b. *</b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>c. &</b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>d. root</b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>e. simbol</b></div>
+				</div>
+			</div>
+			<div class="card mt-5 shadow">
+				<div class="row subjudul m-0">
+					<h6 class="col card-header m-0 bg-dark text-white p-2">30.	Untuk memberikan masking pada IP local yang akan terhubung ke jaringan Public pada OS Mikrotik maka digunakan fungsi ....</h6>
+				</div>
+				<div class="card-body">
+					<div class="border card-header upshadow p-2 mt-2 text-danger"><b>a. masquerade</b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>b. chain</b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>c. srcnat</b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>d. firewall</b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>e. DNS </b></div>
+				</div>
+			</div>
+			<div class="card mt-5 shadow">
+				<div class="row subjudul m-0">
+					<h6 class="col card-header m-0 bg-dark text-white p-2">31.	Ada dua jenis routing yaitu.....</h6>
+				</div>
+				<div class="card-body">
+					<div class="border card-header upshadow p-2 mt-2 text-danger"><b>a. Routing langsung dan tidak langsung</b></div>
+					<div class="border p-2">datagram dapat dikirim secara langsung ke host tujuan atau harus melalui host lain terlebih dahulu tergantung jenis routing yang digunakan</div>
+					<div class="border card-header upshadow p-2 mt-2"><b>b. Routing cepat dan lambat</b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>c. Routing searah dan multi arah</b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>d. Routing sekelas dan tidak sekelas</b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>e. Routing naik dan turun</b></div>
+				</div>
+			</div>
+			<div class="card mt-5 shadow">
+				<div class="row subjudul m-0">
+					<h6 class="col card-header m-0 bg-dark text-white p-2">32.	IP address terdiri atas dua bagian yaitu.....</h6>
+				</div>
+				<div class="card-body">
+					<div class="border card-header upshadow p-2 mt-2"><b>a. bit dan nyble</b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>b. network ID dan broadcast ID</b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>c. kelas A dan kelas D</b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>d. internet dan local</b></div>
+					<div class="border card-header upshadow p-2 mt-2 text-danger"><b>e. network ID dan host ID</b></div>
+					<div class="border p-2">network ID menunjukkan segmen jaringan kita, dan host ID menunjukkan alamat PC kita</div>
+				</div>
+			</div>
+			<div class="card mt-5 shadow">
+				<div class="row subjudul m-0">
+					<h6 class="col card-header m-0 bg-dark text-white p-2">33.	Port default pada HTTP Server adalah ....</h6>
+				</div>
+				<div class="card-body">
+					<div class="border card-header upshadow p-2 mt-2"><b>a. 21</b></div>
+					<div class="border p-2">port default ftp</div>
+					<div class="border card-header upshadow p-2 mt-2"><b>b. 22</b></div>
+					<div class="border p-2">port default ssh</div>
+					<div class="border card-header upshadow p-2 mt-2"><b>c. 23</b></div>
+					<div class="border card-header upshadow p-2 mt-2 text-danger"><b>d. 80</b></div>
+					<div class="border p-2">apabila yang ditanya https adalah port 443</div>
+					<div class="border card-header upshadow p-2 mt-2"><b>e. 8080</b></div>
+					<div class="border p-2">sering digunakan sebagai alternatif port 80</div>
+				</div>
+			</div>
+			<div class="card mt-5 shadow">
+				<div class="row subjudul m-0">
+					<h6 class="col card-header m-0 bg-dark text-white p-2">34.	Agar dapat meremote server kita harus menginstal paket aplikasi remote server, caranya dengan menggunakan perintah perintah ....</h6>
+				</div>
+				<div class="card-body">
+					<div class="border card-header upshadow p-2 mt-2 text-danger"><b>a. # apt-get install ssh-server </b></div>
+					<div class="border p-2">di instal pada server yang akan di remote</div>
+					<div class="border card-header upshadow p-2 mt-2"><b>b. # apt-get install ssh</b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>c. # apt-get install remote-server </b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>d. # apt-get install ftp-server </b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>e. # apt-get install remote</b></div>
+				</div>
+			</div>
+			<div class="card mt-5 shadow">
+				<div class="row subjudul m-0">
+					<h6 class="col card-header m-0 bg-dark text-white p-2">35.	Network address dari 10.10.10.128/25 adalah ....</h6>
+				</div>
+				<div class="card-body">
+					<div class="border card-header upshadow p-2 mt-2"><b>a. 10.10.10.0</b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>b. 10.10.10.255</b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>c. 10.10.10.129 </b></div>
+					<div class="border card-header upshadow p-2 mt-2 text-danger"><b>d. 10.10.10.128 </b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>e. 10.10.10.254</b></div>
+				</div>
+			</div>
+			<div class="card mt-5 shadow">
+				<div class="row subjudul m-0">
+					<h6 class="col card-header m-0 bg-dark text-white p-2">36.	Broadcast address dari 100.121.10.34/27 adalah ....</h6>
+				</div>
+				<div class="card-body">
+					<div class="border card-header upshadow p-2 mt-2"><b>a. 100.121.10.255</b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>b. 100.121.10.34</b></div>
+					<div class="border card-header upshadow p-2 mt-2 text-danger"><b>c. 100.121.10.63</b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>d. 100.121.10.65</b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>e. 100.121.10.254</b></div>
+				</div>
+			</div>
+			<div class="card mt-5 shadow">
+				<div class="row subjudul m-0">
+					<h6 class="col card-header m-0 bg-dark text-white p-2">37.	Aplikasi yang digunakan untuk melakukan remote server dari windows yaitu ....</h6>
+				</div>
+				<div class="card-body">
+					<div class="border card-header upshadow p-2 mt-2"><b>a. Filezilla</b></div>
+					<div class="border card-header upshadow p-2 mt-2 text-danger"><b>b. Putty</b></div>
+					<div class="border p-2">Karena yang ditanyakan adalah aplikasi maka jawabanya adalah putty</div>
+					<div class="border card-header upshadow p-2 mt-2"><b>c. SSH	</b></div>
+					<div class="border p-2">ssh digunakan untuk meremote server tapi ini adalah istilah service, bukan aplikasi, dalam putty kita menggunakan service ssh untuk meremote server</div>
+					<div class="border card-header upshadow p-2 mt-2"><b>d. Proftpd</b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>e. bind9</b></div>
+				</div>
+			</div>
+			<div class="card mt-5 shadow">
+				<div class="row subjudul m-0">
+					<h6 class="col card-header m-0 bg-dark text-white p-2">38.	Untuk mengganti port default pada FTP, dapat dilakukan dengan mengubahnya pada ...	 </h6>
+				</div>
+				<div class="card-body">
+					<div class="border card-header upshadow p-2 mt-2"><b>a. #nano/etc/network/proftpd.conf</b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>b. #nano/etc/proftpd.conf/sys.ctl	 </b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>c. #nano/etc/proftpd.conf</b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>d. #nano/etc/interfaces/proftpd.conf</b></div>
+					<div class="border card-header upshadow p-2 mt-2 text-danger"><b>e. #nano/etc/proftpd/proftpd.conf</b></div>
+					<div class="border p-2">
+						<img src="pembahasan/Screenpresso/38.png" class="img-fluid" alt="">
+					</div>
+				</div>
+			</div>
+			<div class="card mt-5 shadow">
+				<div class="row subjudul m-0">
+					<h6 class="col card-header m-0 bg-dark text-white p-2">39.	Perintah untuk membuat user tanpa membuat direktori di /home yaitu dengan menggunakan perintah ....	</h6>
+				</div>
+				<div class="card-body">
+					<div class="border card-header upshadow p-2 mt-2 text-danger"><b>a. #adduser namauser</b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>b. #useradd namauser</b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>c. #adduser /home</b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>d. #mkdir namauser</b></div>
+					<div class="border p-2">ngarang <code>mkdir</code> itu buat bikin folder</div>
+					<div class="border card-header upshadow p-2 mt-2"><b>e. #rmdir namauser</b></div>
+					<div class="border p-2"><code>rmdir</code> untuk hapus folder</div>
+				</div>
+			</div>
+			<div class="card mt-5 shadow">
+				<div class="row subjudul m-0">
+					<h6 class="col card-header m-0 bg-dark text-white p-2">40.	Pada proftpd.conf bagian "PathDenyFilter" Digunakan untuk ....</h6>
+				</div>
+				<div class="card-body">
+					<div class="border card-header upshadow p-2 mt-2 text-danger"><b>a. Menolak ekstensi tertentu</b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>b. Menolak file .mp4</b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>c. Menolak file .exe</b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>d. Menolak file .jpg</b></div>
+					<div class="border card-header upshadow p-2 mt-2"><b>e. Melakukan filter data</b></div>
+				</div>
+			</div>
+			
+
+
+		</div>
+
+	</div>
+
+
+<script>
+	
+	
+
+	let dataSubJudul = [
+
+	{
+		id 		: 'soal',
+		color 	: ['bg-success','bg-danger','bg-info','bg-warning'],
+		text 	: ''
+	}
+
+
+	]
+
+
+
+	for (var i = 0; i < dataSubJudul.length; i++) {
+		let dataSend = dataSubJudul[i]
+		tag(dataSend.id,dataSend.color[Math.floor(Math.random() * 3)],dataSend.text)
+
+	}
+
+
+	function tag (id,color,text) {
+
+		 let rowJudul = document.getElementById(id).getElementsByClassName('subjudul');
+		// rowJudul.innerHTML += '' 
+		let u=-1;
+		for (var x = 0; x < rowJudul.length; x++) {
+			u++;
+			if (u>3) {u=0}
+			rowJudul[x].innerHTML += '<h6 class="card-header '+dataSubJudul[0].color[u]+' p-2 text-white text-center col-1">'+text+' #'+parseInt(x+1)+'</h6>' ;
+		}
+
+	}
+
+	
+function cari(value){
+
+
+	let card = document.getElementsByClassName('card');
+
+	for (var i = 0; i < card.length; i++) {
+		
+		if (card[i].innerHTML.toLowerCase().indexOf(value.toLowerCase()) == -1) {
+			card[i].style.display = 'none';
+		}else{
+			card[i].style.display = 'block';
+		}
+
+
+	}
+
+
+}
+
+
+</script>
+
+
+</body>
+</html>

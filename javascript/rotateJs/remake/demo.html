@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>example for rotateJs</title>
+	<script src="rotateSimple.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style type="text/css">
+		
+		.demo{
+			background: steelblue;
+			width: 200px;
+			margin:10px;
+			text-align: center;
+		}
+
+	</style>
+</head>
+<body>
+
+<center>
+<div class="demo">lorem ipsum</div>
+<div class="demo">lorem ipsum</div>
+<div class="demo">lorem ipsum</div>
+<div class="demo">lorem ipsum</div>
+<div class="demo">lorem ipsum</div>
+<div class="demo">lorem ipsum</div>
+<div class="demo">lorem ipsum</div>
+<div class="demo">lorem ipsum</div>
+<div class="demo">lorem ipsum</div>
+<div class="demo">lorem ipsum</div>
+<div class="demo">lorem ipsum</div>
+<div class="demo">lorem ipsum</div>
+
+</center>
+
+
+<script type="text/javascript">
+	
+
+runAnim({
+
+	className 		:'demo',
+	transitionTime 	:'all ease 0.3s',
+	rotateRadius 	: 5,
+	oneDirection	:false,
+	delayTime		: 100,
+	onlyAnimRotate	:false,
+	showTransition	:true
+
+});
+
+runAnim({
+
+	className 		:'demox',
+	transitionTime 	:'all ease 10s',
+	rotateRadius 	: 15,
+	oneDirection	:'right',
+	delayTime		: 100,
+	onlyAnimRotate	: true
+
+});
+
+
+</script>
+
+</body>
+</html>

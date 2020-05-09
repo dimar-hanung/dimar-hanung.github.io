@@ -1,0 +1,1 @@
+console.log("ini script dari luar html nya");

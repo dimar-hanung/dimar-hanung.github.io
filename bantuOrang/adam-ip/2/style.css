@@ -1,0 +1,64 @@
+body {
+     font-family: uppercase;
+     font-size: 20px;
+     margin: 0;
+     padding: 0;
+}
+  
+.logo h3 {
+   margin: auto;
+   color: white;
+   text-align: center;
+   background: black;
+ }
+ 
+ .container ul {
+    float: right;
+    padding-top: 5px;
+}
+
+.container ul li a {
+   margin: 2px 5px;
+   color: white;
+   background: green;
+   border: 2px solid green;
+}
+
+.container ul li a:hover {
+    background-color: white;
+}
+
+.container ul li {
+    display: inline;
+    margin: 30px;
+    padding: 5px;   
+    positon: relative;
+    top: 100;
+}
+
+.gambar {
+  width: 90%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: auto;
+}
+
+.gambar .foto img {
+  width: 250px;
+  margin: 40px;
+}
+
+.foto a {
+   /*position: absolute;*/
+   color: white;
+   border: 5px solid green;
+   /*padding: 10px;*/
+   background: green;
+   cursor: pointer;
+ }
+ .t-flex{
+  display: flex;
+ }
+ h2{
+  margin:0px;
+ }

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>sidebar</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    body {
+        background-color: #eaeaea;
+        padding: 0;
+        margin: 0;
+        overflow-y: hidden;
+    }
+
+    ul {
+        list-style-type: none;
+        background-color: #17a2b8;
+        color: white;
+		
+        width: 100vw;
+        max-width: 300px;
+        min-width: max-content;
+        height: 1430px;
+        padding: 0;
+        margin: 0;
+        position: relative;
+        overflow: auto;
+    }
+	li{
+		transition: all ease 0.5s;
+	}
+    li a {
+        display: block;
+        text-decoration: none;
+        color: #000;
+        padding: 10px 20px;
+        font-weight: bold;
+        font-size: 29px;
+    }
+
+    li a.active {
+        background-color: mediumturquoise;
+        color: #fff;
+    }
+	.sidebar{
+		position: sticky;
+        top: 0px;
+	}
+ 
+    .sidebar>li:hover{
+    	padding: 5px 10px 10px 10px;
+    	
+		background: steelblue !important;
+		border-bottom: solid black 1px;
+    }
+
+	.container{
+		display: flex;
+
+	}
+	.konten{
+		/*height:1080px;*/
+		margin: 0px 25px;
+		margin-right: 0px;
+		font-size:30px;
+		max-height: 100vh;
+		overflow-y: overlay;
+	}
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+	
+	<ul class="sidebar">
+        <li> <a class="active" href="#home">Home</a> </li>
+        <li> <a href="#about">About</a> </li>
+        <li> <a href="#content">Content</a> </li>
+        <li> <a href="https://api.whatsapp.com/send?phone=6285336146337&text=Assalamualaikum+wr.wb+++++++++++++++++++++++++++++++Bang">Contact</a> </li>
+    </ul>
+    <div class="konten">
+        <h2>Fixed Side Nav Bar</h2>
+        <h3>Try to scroll this area, and
+            see how the sidenav sticks
+            to the page</h3>
+        <p>Notice that this div element
+            has a left margin of 26%. This
+            is because the side navigation
+            is set to 26% width. If you
+            remove the margin, the sidenav
+            will overlay/sit on top of
+            this div.</p>
+        <p>Also notice that we have set
+            overflow:auto to sidenav. This
+            will add a scrollbar when the
+            sidenav is too long (for
+            example if it has over 50 links
+            inside of it).</p>
+        <p>Text 1</p>
+        <p>Text 2</p>
+        <p>Text 3</p>
+        <p>Text 4</p>
+        <p>Text 5</p>
+        <p>Text 6</p>
+        <p>Text 7</p>
+        <p>Text 8</p>
+        <p>Text 9</p>
+    </div>
+   </div>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Kalulator permutasi (menyusun)</title>
+    <script src="../asset/jquery-3.4.1.min.js"></script>
+    <script src="../asset/bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../asset/bootstrap/css/bootstrap.min.css">
+    <style type="text/css">
+    </style>
+</head>
+
+<body>
+    <div class="container mt-3">
+        <h6>Kalkulator Susunan Huruf ( Peluang )</h6>
+        <input oninput="push()" class="p-2" id="susunan" type="text" placeholder="Masukkan Kata disini">
+        <div class="card mt-5 shadow" style="max-width: 500px;">
+            <div class="row subjudul m-0">
+                <h6 class="col card-header m-0 bg-dark text-white p-2">Diketahui</h6>
+            </div>
+            <div class="card-body">
+                <div id="susunanopt" style="display: inline-flex;"></div>
+            </div>
+        </div>
+        <div class="card mt-5 shadow" style="max-width: 500px;">
+            <div class="row subjudul m-0">
+                <h6 class="col card-header m-0 bg-dark text-white p-2">Penyelesaian:</h6>
+            </div>
+            <div class="card-body">
+                <div id="snscropt">Penyelesaian</div>
+                <div class="p-2 border mt-2 mx">Pertama:
+                    <div id="snscropt2" style="width: max-content">
+                        <div id="snscrats" style="text-align: center;">jumlah huruf</div>
+                        <div id="snscrbwh" style="text-decoration: overline;">huruf yang berjumlah > 1</div>
+                    </div><br>
+                    jadi:
+                    <div id="snscropt3" style="width: max-content">
+                        <div id="snscrats2" style="text-align: center;text-decoration: underline;">n!</div>
+                        <div id="snscrbwh2" style="text-align: center;">bawah</div>
+                    </div>
+                    <br>
+                    <div id="snshasil">Kemungkinan nya adalah: </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+    var fctats = 0;
+
+    function push() {
+
+        var snarray = '';
+        snarray = susunan.value;
+        var hsnarray = snarray.split('');
+
+        var arr = hsnarray;
+        var map = arr.reduce(function(prev, cur) {
+            prev[cur] = (prev[cur] || 0) + 1;
+            return prev;
+        }, {});
+
+
+        // document.getElementById('snsnsopt').innerHTML=JSON.stringify(map);
+        console.log(JSON.stringify(map));
+
+
+
+        var replace_r = JSON.stringify(map).replace('}', '');
+        var replace_l = replace_r.replace('{', '');
+        var replace_quote = replace_l.replace(/\"/g, '');
+        var split_comma = replace_quote.split(',');
+        var getvl = susunan.value;
+        var getvlx = getvl.length;
+        var arrbwh = [];
+        document.getElementById('snscrbwh2').innerHTML = '1';
+        document.getElementById('susunanopt').innerHTML = '';
+        snscropt.innerHTML = '';
+        for (var i = 0; i <= split_comma.length - 1; i++) {
+
+            var pwrn = split_comma[i].split(':');
+
+            snscropt.innerHTML += '<span style="margin:10px;" class="text-white bg-success p-2 m-2 shadow-sm">C(' + getvlx + ',' + pwrn[1] + ') </span>';
+            getvlx = getvlx - pwrn[1];
+
+            if (pwrn[1] > 1) {
+                document.getElementById('susunanopt').innerHTML += '<div class="text-white bg-success p-2 m-2" style="width:40px;" >' + split_comma[i] + '</div>';
+                arrbwh.push(pwrn[1]);
+
+            } else {
+                document.getElementById('susunanopt').innerHTML += '<div class="text-white bg-danger p-2 m-2" style="width:40px;" >' + split_comma[i] + '</div>';
+            }
+
+
+
+        }
+
+        document.getElementById('snscrbwh').innerHTML = '';
+        var kali = 1;
+        for (var i = 0; i < arrbwh.length; i++) {
+            factorialx(arrbwh[i]);
+            var fctwbh = 0;
+            kali = kali * fctats;
+            fctwbh += fctats;
+            document.getElementById('snscrbwh').innerHTML += arrbwh[i] + '! ';
+            document.getElementById('snscrbwh2').innerHTML = kali;
+        }
+
+        factorialx(getvl.length);
+        document.getElementById('snscrats2').innerHTML = fctats;
+        var snsats = document.getElementById('snscrats2').innerHTML;
+        var snsbwh = document.getElementById('snscrbwh2').innerHTML;
+        document.getElementById('snscrats').innerHTML = getvl.length + '!';
+
+        var snshsl = fctats / snsbwh;
+        document.getElementById('snshasil').innerHTML = 'kemungkinanya adalah: <span style="color:red">' + snshsl + '</span> :v';
+
+        // var jadi=document.getElementById('susunanopt');
+        // jadi.replace('{', "");
+        // jadi.replace("}", "");
+
+
+    }
+
+
+
+    function factorialx(hitung) {
+        fctarray = [];
+        // var iptf =document.getElementById('fktript');
+        // document.getElementById('fctn').innerHTML=fktript.value;
+        // console.log(iptf.value);
+        // document.getElementById('factorialopt').innerHTML='';
+        for (var i = hitung; i > 0; i--) {
+            console.log(i);
+            fctarray.push(i);
+
+        }
+        var itung = 1;
+        for (var i = fctarray.length; i > 0; i--) {
+            itung = itung * fctarray[i - 1]
+            console.log(itung);
+            fctats = itung;
+
+            // document.getElementById('fctx').innerHTML=JSON.stringify(fctarray);
+        }
+        var addfct = '';
+        for (var i = 0; i < fctarray.length; i++) {
+            addfct = addfct += fctarray[i] + '.';
+        }
+
+
+        var dltfct = addfct.substring(0, addfct.length - 1);
+        // document.getElementById('factorialopt').innerHTML=dltfct;
+        // document.getElementById('hasilfct').innerHTML=numberWithCommas(itung);
+
+
+    }
+    </script>
+</body>
+
+</html>

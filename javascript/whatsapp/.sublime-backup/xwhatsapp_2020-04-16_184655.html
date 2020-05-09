@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>wa template</title>
+</head>
+
+<body>
+    <style type="text/css">
+    .ctn-over::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        background-color: #F5F5F5;
+    }
+
+    .ctn-over::-webkit-scrollbar {
+        width: 6px;
+        background-color: #F5F5F5;
+    }
+
+    .ctn-over::-webkit-scrollbar-thumb {
+        background-color: #dc3545;
+    }
+
+    .w-side {
+        position: fixed;
+        background: #343a40;
+        height: 100vh;
+        width: 290px;
+        /*padding:20px;*/
+        top: 0px;
+        right: 0px;
+        font-family: monospace;
+        transition: all ease 0.5s;
+        box-shadow: inset 1px 0px 5px black;
+        z-index: 999999;
+
+    }
+
+    .ctn-over {
+        overflow-y: overlay;
+        padding: 20px;
+        height: 100vh;
+    }
+
+    .w-atas {
+        text-align: center;
+        font-size: 20px;
+        background: #28a745;
+        color: white;
+        border-radius: 5px;
+        padding: 5px 0px;
+        margin-top: 30px;
+    }
+
+    .w-btn {
+        margin: 10px auto;
+        /*margin-right: 10px;*/
+        padding: 0px;
+        /*margin-top: 10px;*/
+        font-weight: bold;
+        background: white;
+        color: black;
+        outline: none;
+        border: none;
+        width: 100%;
+        padding: 5px 0px;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 13px;
+        font-family: monospace;
+        display: block;
+
+    }
+
+    .w-btn::selection {
+        background: red !important;
+        color: black;
+    }
+
+    .w-btn-s {
+        width: 80px;
+
+    }
+
+    .w-kat {
+        margin-top: 10px;
+        padding: 10px 10px;
+        background: white;
+        border-radius: 5px;
+        font-weight: bolder;
+        text-align: center;
+    }
+
+    hr {
+        margin: 10px 0px;
+        border: 0;
+        border-top: 1px solid #eee;
+
+    }
+
+    .w-toggle {
+        position: absolute;
+        background: white;
+        outline: none;
+        border: none;
+        width: 100px;
+        transform: rotate(-90deg);
+        padding: 5px;
+        font-weight: bold;
+        border-radius: 5px;
+        /*border:solid black 1px;*/
+        box-shadow: inset 0px -5px 10px -5px;
+        left: -65px;
+
+
+    }
+
+    .versi {
+        color: white;
+        margin-bottom: -20px;
+        float: right;
+    }
+
+    .info {
+        color: white;
+        margin-top: 10px;
+    }
+
+    .w-sj {
+        background: #17a2b8;
+        color: white;
+    }
+
+    .w-tl {
+        text-align: left;
+        /*text-indent: 10px;*/
+    }
+
+    .w-flex {
+        display: flex;
+    }
+
+    label {
+        cursor: pointer;
+    }
+
+    input[type=radio] {
+        display: none;
+    }
+
+    input[type=radio]:checked+label {
+        background: #28a745;
+        color: white;
+    }
+
+    summary {
+
+        -webkit-touch-callout: none;
+        /* iOS Safari */
+        -webkit-user-select: none;
+        /* Safari */
+        -khtml-user-select: none;
+        /* Konqueror HTML */
+        -moz-user-select: none;
+        /* Old versions of Firefox */
+        -ms-user-select: none;
+        /* Internet Explorer/Edge */
+        user-select: none;
+        /* Non-prefixed version, currently
+                                  supported by Chrome, Opera and Firefox */
+
+    }
+
+
+    details[open]>summary~* {
+        animation: open 0.5s ease;
+        transform-origin: top;
+
+    }
+
+    @keyframes open {
+        0% {
+            /*opacity: 0;*/
+            font-size: 0px;
+            transform: scaleY(0);
+        }
+
+        100% {
+            /*opacity: 1;*/
+            font-size: auto;
+            transform: scaleY(1);
+        }
+    }
+
+
+    details>summary::-webkit-details-marker {
+        /*display: none;*/
+        color: white;
+    }
+
+    details summary {
+        transition: all ease 0.5s;
+        outline: none;
+        cursor: pointer;
+
+    }
+
+    /*details summary:before{
+        content: ">";
+    }
+*/
+    </style>
+    <div class="w-side">
+        <div class="ctn-over">
+            <div class="versi">v2.2</div>
+            <div class="w-atas">Whatsapp++</div>
+            <div class="w-kat">by. Dimar Hanung</div>
+            <button class="w-toggle" onclick="wp.klik()">Buka Tutup</button>
+            <hr />
+            <div class="w-atas">Scrapper</div>
+            <button class="w-btn" onclick="console.log(wp.listGrup())">list Grup</button>
+            <button class="w-btn" onclick="console.log(wp.listKontak())">list Kontak</button>
+            <details>
+                <summary class="w-btn w-sj">Kontak dalam Grup</summary>
+                <div class="info">Gunakan Grup Id lalu tekan enter</div>
+                <input class="w-btn" placeholder="Masukkan Group Id" onchange="wp.kontakGrup(this.value)" type="text">
+            </details>
+            <hr/>
+            <div class="w-atas">Tampilan</div>
+           
+            	<button class="w-btn">buka setting</button>
+           
+            	
+            </details>
+            <hr />
+            <div class="w-atas">Potensi Ban</div>
+            <details>
+                <summary class="w-btn w-sj">Spammer</summary>
+                <div>
+                    <input type="text" class="w-btn" id="idTarget" placeholder="target id">
+                    <textarea id="pesanSpam" class="w-btn w-tl" placeholder="masukan list spam disini, pisahkan dengan tanda coma"></textarea>
+                    <input type="number" placeholder="jumlah" id="jumlahLaknat" class="w-btn">
+                    <div class="w-flex">
+                        <input id="randomSpam" type="radio" name="urutga" checked="">
+                        <label for="randomSpam" class="w-btn w-btn-s">Random</label>
+                        <input id="urutSpam" type="radio" name="urutga">
+                        <label for="urutSpam" class="w-btn w-btn-s">Urut</label>
+                        <button onclick="wp.kirimLaknat(idTarget.value,pesanSpam.value,randomSpam.checked,jumlahLaknat.value)" class="w-btn w-btn-s">Gas :v</button>
+                    </div>
+                </div>
+            </details>
+
+
+            <div style="margin-bottom: 300px;"></div>
+        </div>
+    </div>
+
+	<script type="text/javascript">
+		
+		
+		class wassap{
+			constructor(){
+
+			}
+			bukaView(){
+
+
+
+
+			}
+		}
+
+	let wp = new wassap();
+
+	</script>
+
+</body>
+
+</html>

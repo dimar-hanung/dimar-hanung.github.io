@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>docker</title>
+	
+	<script src="../asset/jquery-3.4.1.min.js"></script>
+	<script src="../asset/bootstrap/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="../asset/bootstrap/css/bootstrap.min.css">
+	<style type="text/css">
+		.disabled{
+			pointer-events: none !important;
+			cursor: not-allowed !important;
+		}
+		.pre-dark{
+			background: #212529;
+			padding: 10px;
+			margin: 5px 0px;
+			color: white;
+			border:none;
+			border-radius: 3px;
+			box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+		}
+		.pre-light{
+			    display: block;
+    padding: 9.5px;
+    margin: 0 0 10px;
+    font-size: 13px;
+    line-height: 1.42857143;
+    color: #333;
+    word-break: break-all;
+    word-wrap: break-word;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+		}
+		ol.none-l li,ol.none-p li,ol.none-c li{
+			counter-increment: step-counter;
+			margin-top: 25px;
+		}
+		ol.none-l li:before{
+
+			content:"Step "counter(step-counter)" "; 
+			font-weight: bolder
+		}
+		ol.none-l,ol.none-p,ol.none-c{
+			list-style-type: none;
+		}
+		ol.none-p li:before{
+
+			content:"Proses "counter(step-counter)" "; 
+			font-weight: bolder
+		}
+		ol.none-c li:before{
+
+			content:"contoh "counter(step-counter)" "; 
+			font-weight: bolder
+		}
+
+	</style>
+</head>
+<body>
+
+<div class="text-center text-white p-2 m-2 shadow rounded-lg bg-info">
+	<h1 class="text-left">Dokumentasi Docker</h1>
+
+</div>
+<div class="bg-danger text-white p-2 m-2 rounded-lg shadow"><h6 class="text-left">by. Dimar Hanung P. | XII TKJ 1 | 35</h6></div>
+
+
+
+
+<div class="container" style="width:860px;">
+	<div class="alert alert-info mt-5">apabila menemui kata asing bisa scroll ke paling bawah sebelum daftar pustaka, ada glosarium</div>
+	<div class="alert alert-info">kotak berwarna hitam berisi perintah yang bisa dijalankan, kotak putih berisi output maupun syntax</div>
+	<div class="p-2 bg-light mt-3 shadow border border text-center" ><h4>Pengenalan</h4></div>
+
+	<div class="card mt-5">
+		<h6 class="card-header bg-dark text-white">illustrasi 1 perbedaan vm dan container (docker)</h6>
+		<img src="img/docker/docker-vs-vm.png" class="img-fluid" alt="">
+	</div>
+	<div class="card mt-5">
+		<h6 class="card-header bg-dark text-white">illustrasi 2 perbedaan vm dan container (docker)</h6>
+		<img src="img/docker/container-vs-vms.png" class="img-fluid" alt="">
+	</div>
+	<div class="card mt-5">
+		<h6 class="card-header bg-dark text-white">bedanya vm dan container</h6>
+		<div class="card-body">
+			<p>Supaya mudah kita bandingkan saja dengan vm software seperti virtual box, </p>
+			<table class="table table-hover">
+			  <tr>
+			    <th>virtual machine</th>s
+			    <th>docker</th>
+			  </tr>
+			  <tr>
+			    <td>Berat</td>
+			    <td>Ringan</td>
+			  </tr>
+			  <tr>
+			    <td>Performa terbatas karena sudah menjalankan host os</td>
+			    <td>performa sesuai atau murni hardware karena menjalankan dari host os</td>
+			  </tr>
+			   <tr>
+			    <td><span class="text-danger">tidak bisa</span> menjalankan 2 aplikasi sama atau lebih sperti ftp dan webserver</td>
+			    <td>bisa menjalankan 2 aplikasi sama atau lebih sperti ftp dan webserver</td>
+			  </tr>
+			  <tr>
+			    <td>Memiliki Os nya sendiri</td>
+			    <td>Semua container berbagi dengan host os</td>
+			  </tr>
+			  <tr>
+			    <td>hardware-level virtualization</td>
+			    <td>OS vitualization</td>
+			  </tr>
+			  <tr>
+			    <td>Startup dalam hitungan menit</td>
+			    <td>Startup dalam hitungan detik</td>
+			  </tr>
+			  <tr>
+			    <td>membutuhkan alokasi memory</td>
+			    <td>membutuhkan memory yang lebih kecil</td>
+			  </tr>
+			  <tr>
+			    <td>lebih aman karena terisolasi penuh </td>
+			    <td>bisa jadi kurang aman karena isolasi hanya batas proses</td>
+			  </tr>
+
+			</table>
+		</div>
+	</div>
+	<div class="card mt-5">
+		<h6 class="card-header bg-dark text-white">Docker dapat di Os apa saja?</h6>
+		<div class="card-body">
+			<p>Docker tersedia di linux, windows, mac os </p>
+			<ol>
+			    <li>linux</li>
+			    <p>paling disarankan untuk diinstall di linux karena docker mengambil os linux sebagai host nya</p>
+			    <li>windows</li>
+			    <p>untuk menggunakan docker yang host linux di windows harus <b>memiliki ram setidak nya melebihi 4 gb</b>, karena secara tidak langsung sebenarnya saat di windows docker menjalankan linux virtual untuk digunakan sebagai host os <br /><br />docker juga memiliki windows container (windows sebagai host os), namun masih belum versi stabil jadi tidak disarankan</p>
+			    
+			    <li>mac os</li>
+			    ga punya mac dong
+			</ol>
+		</div>
+	</div>
+
+
+
+
+	<div class="p-2 bg-light mt-5 shadow border border text-center" ><h4>Installasi</h4></div>
+	<div class="card mt-5">
+		<h6 class="card-header bg-dark text-white">Installasi Docker pada windows</h6>
+		<div class="card-body">
+			untuk cara install nya mudah, bisa lihat di dokumentasinya langsung di :<br />
+			<a href="https://docs.docker.com/docker-for-windows/install/">https://docs.docker.com/docker-for-windows/install/</a><br />
+			buat akun docker nya dulu ya :D <br /><br />
+			<div class="alert alert-danger font-weight-bold">Penting</div>
+			Saat Install Docker Desktop, maka virtual box yang di desktop akan mengalami crash, dikarenakan hyper-v menyala, tapi jangan panik bisa diatasi dengan melihat link berikut:
+			<a href="https://fredrikaverpil.github.io/2018/03/15/switching-between-docker-and-virtualbox-on-windows-10/">https://fredrikaverpil.github.io/2018/03/15/switching-between-docker-and-virtualbox-on-windows-10/</a>
+			<br /> jadi kesimpulanya docker desktop dan virtual box tidak dapat jalan bersamaan
+		</div>
+	</div>
+
+	<div class="card mt-5">
+		<h6 class="card-header bg-dark text-white">Installasi Docker pada ubuntu 18</h6>
+		<div class="card-body">
+			A. Menggunakan Apt <br>
+			<ol class="none-l">
+
+				    <li>Melakukan update paket</li>
+				    <pre class="pre-dark">sudo apt-get update</pre>
+		
+				    <li>hapus versi seblemunya dari paket, ( untuk memastikan juga apa bila docker benar benar tidak ada di ubuntu kamu)</li>
+				    <pre class="pre-dark">sudo apt-get remove docker docker-engine docker.io</pre>
+				    <li>Install docker <span class="badge badge-info">inti</span></li>
+				    <pre class="pre-dark">sudo apt install docker.io</pre>
+				    <li>jalankan docker</li>
+				    <pre class="pre-dark">sudo systemctl start docker</pre>
+				    <li>gunakan perintah enable supaya saat boot pertama kali service docker langsung berjalan</li>
+				    <pre class="pre-dark">sudo systemctl enable docker</pre>
+				    <pre class="pre-light">Synchronizing state of docker.service with SysV service script with /lib/systemd/systemd-sysv-install.
+Executing: /lib/systemd/systemd-sysv-install enable docker</pre>
+					<li>cek docker version</li>
+					<pre class="pre-dark">sudo docker --version</pre>
+					<li>mencoba hello world</li>
+					<pre class="pre-dark">docker run hello-world</pre>
+					untuk pertama kali mencoba membutuhkan internet, karena mendownload images nya dulu
+					<img src="img/docker/run-hello-world.png" class="img-fluid" alt="">
+				</ol>	
+			
+		</div>
+	</div>
+<br/><br/><br />
+	<div class="card mt-5">
+		<h6 class="card-header bg-dark text-white">Docker pada Aws (ubuntu - ec2)</h6>
+		<div class="card-body">
+			<p>untuk apa docker di aws? ya biar bisa public dong</p>
+			A. Tahap - Tahap Installasi (persiapan)
+			<ol>
+			    <li>Sambungkan terlebih dahulu aws ec2 dengan ssh</li>
+			    <li>atur security group pada aws untuk membuka port 80</li>
+			</ol>
+			B. Tahap Tahap Installasi (install docker)
+			<ol>
+			    <li><kbd class="disabled not-allowed">sudo su</kbd></li>
+			    <pre class="pre-dark shadow">tes tes</pre>
+			    <li></li>
+			    <li></li>
+			    <li></li>
+			</ol>
+		</div>
+	</div>
+
+
+<div class="p-2 bg-light mt-5 shadow border border text-center" ><h4>Praktik Dasar</h4></div>
+<div class="card mt-5">
+	<h6 class="card-header bg-dark text-white">Membuat Container / docker run | praktik #1</h6>
+	<div class="card-body">
+
+		<div><span class="badge badge-danger">Penting</span>
+			Sebelumnya pahami dulu sifat perintah docker run ini
+			<ol>
+			    <li>otomatis pull image</li>
+			    apabila images tidak tersedia, maka akan mendownload image nya terlebih dahulu
+			    <li>docker run bukan untuk menjalankan</li>
+			    docker run bukan untuk menjalankan container, melainkan membuat container
+			    <li>docker apa bila tidak disertai argumen <kbd>--name</kbd> maka akan membuat nama container otomatis</li>
+			    <li>akan terjadi error apabila nama container sudah dibuat sebelumnya</li>
+			</ol>
+		</div>
+
+
+		<div><b>Syntax:</b></div><br /><pre class="pre-light">docker container run --name [nama container yg akan dibuat] [nama image/paket aplikasi]</pre><br />
+		<h5>A. Menjalankan Hello World</h5>
+		
+
+		   Jalankan Perintah dibawah ini
+		    <pre class="pre-dark shadow">docker container run --name halo1 hello-world</pre>
+		    atau bisa disingkat menjadi:
+		    <pre class="pre-dark shadow">docker run --name halo1 hello-world</pre>
+		 
+		   <pre class="pre-light">Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+    (amd64)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+Share images, automate workflows, and more with a free Docker ID:
+ https://hub.docker.com/
+
+For more examples and ideas, visit:
+ https://docs.docker.com/get-started/
+</pre>
+		<br />	
+	<ol class="none-p">
+		Dalam 1 perintah diatas sebenarnya ada proses yang terjadi
+	    <li>ketka enter maka docker mengecek apakah container sudah ada apa belum</li>
+	    <li>kalo ada, muncul pesan error sudah ada container dengan nama yang sama</li>
+	    kalo tidak ada , maka docker akan pull image dari docker store / docker hub
+	    <li>setelah image ter download, docker langsung menjalankan container</li>
+	    <li>ada container yang setelah dijalankan langsung berhenti, ada yang setelah dijalankan tetap berjalan tergantung dari container nya</li>
+	</ol>
+	<br />
+	<h5>B. Menjalankan nginx (testing port 80)</h5><br />
+	<div><b>Syntax: </b></div><br />
+	<pre class="pre-light">docker run -d -p [port forward ke]:80 --name [nama container] [nama paket images]:[versi spesifik]</pre>
+	jalankan perintah berikut : 
+	<pre class="pre-dark">docker run -d -p 35:80 --name webserver1 nginx</pre>
+	diatas tidak menggunakan tag / versi spesifik, maka otomatis mendownload versi latest <br />
+	cek di web apakah sudah bisa di panggil, contoh dibawah ini
+	<img src="img/docker/tes-nginx.png" class="img-fluid" alt="">
+
+
+	<h5 class="my-4">C. Menjalankan Alpine OS</h5>
+	<span class="badge badge-danger p-2">penting</span> ingat kembali sifat docker run bagian argumen <kbd>--name</kbd>
+	<ol class="none-c">
+
+	    <li>melihat isi direktori os alpine</li>
+	    	<pre class="pre-dark">docker container run alpine ls -l</pre>
+	<pre class="pre-light">
+total 56
+drwxr-xr-x    2 root     root          4096 Jan 16 21:52 bin
+drwxr-xr-x    5 root     root           340 Jan 30 13:27 dev
+drwxr-xr-x    1 root     root          4096 Jan 30 13:27 etc
+drwxr-xr-x    2 root     root          4096 Jan 16 21:52 home
+drwxr-xr-x    5 root     root          4096 Jan 16 21:52 lib
+drwxr-xr-x    5 root     root          4096 Jan 16 21:52 media
+drwxr-xr-x    2 root     root          4096 Jan 16 21:52 mnt
+drwxr-xr-x    2 root     root          4096 Jan 16 21:52 opt
+dr-xr-xr-x   96 root     root             0 Jan 30 13:27 proc
+drwx------    2 root     root          4096 Jan 16 21:52 root
+drwxr-xr-x    2 root     root          4096 Jan 16 21:52 run
+drwxr-xr-x    2 root     root          4096 Jan 16 21:52 sbin
+drwxr-xr-x    2 root     root          4096 Jan 16 21:52 srv
+dr-xr-xr-x   13 root     root             0 Jan 30 13:27 sys
+drwxrwxrwt    2 root     root          4096 Jan 16 21:52 tmp
+drwxr-xr-x    7 root     root          4096 Jan 16 21:52 usr
+drwxr-xr-x   12 root     root          4096 Jan 16 21:52 var
+</pre>
+	    <li>menjalankan perintah echo</li>
+	    <pre class="pre-dark">docker container run alpine echo "halo saya hanung"</pre>
+	    <pre class="pre-light">halo saya hanung</pre>
+	    <li>masuk direktori</li>
+	    <pre class="pre-dark">docker container run -it --name latihan-os alpine /bin/sh</pre>
+	    kamu sekarang berada dalam linux shell alpine, kamu bisa menjalankan perintah dari os alpine sekarang, kamu bisa mencoba <kbd>ls -l</kbd>, <kbd>uname -a</kbd>, dan perintah linux alpine lainya, untuk masuk shell harus menggunakan argunmen <kbd>-it</kbd>, apabila tidak maka akan exit otomatis, gunakan perintah <kbd>exit</kbd> untuk keluar dari shell
+	   
+	</ol>
+	
+
+
+	</div>
+</div>
+
+<!-- docker container ls  -->
+
+<div class="card mt-5">
+	<h6 class="card-header bg-dark text-white">melihat list container / docker container ls | praktik #2</h6>
+	<div class="card-body">
+		<ol class="none-c">
+		    <li>melihat container yang berjalan</li>
+		    <pre class="pre-dark">docker container ls</pre>
+		    <pre class="pre-light">CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                  NAMES
+db351ab12d47        nginx               "nginx -g 'daemon of…"   About an hour ago   Up About an hour    0.0.0.0:35->80/tcp     webserver2
+9ae179958589        nginx               "nginx -g 'daemon of…"   About an hour ago   Up About an hour    0.0.0.0:8080->80/tcp   webserver1
+</pre>
+		    <li>Meihat semua list container yang ada</li>
+		    <pre class="pre-dark">docker container ls --all</pre>
+		    <li>menjalankan container yang berhenti</li>
+		    Syntax: 
+		    <pre class="pre-light">docker container start [nama / id container]</pre>
+		    contoh:
+		    <pre class="pre-dark">docker container start halo1</pre>
+		   
+		</ol>
+	</div>
+</div>
+
+
+<div class="card mt-5">
+	<h6 class="card-header bg-dark text-white">menjalankan perintah container / docker container exec | praktik #3</h6>
+	<div class="card-body">
+		<b>Syntax: </b>
+		<pre class="pre-light">docker container exec [id/nama container] [perintah]</pre>
+		untuk menjalankan perintah exec, container harus berjalan dulu menggunakan <br /><kbd>docker container start [id/nama container]</kbd>
+		<ol class="none-c">
+		    <li>echo alpine os</li>
+		    <pre class="pre-dark">docker container exec latihan-os echo "halo saya hanung"</pre>
+		    <li>Melihat list folder alpine os</li>
+		    <pre class="pre-dark">docker container exec latihan-os ls</pre>
+		    <li>Masuk bash</li>
+		    <pre class="pre-dark">docker container exec -it latihan-os bin/sh</pre>
+		   
+		</ol>
+	</div>
+</div>
+
+<div class="p-2 bg-light mt-5 shadow border border text-center" ><h4>Penutup</h4></div>
+	<div class="card mt-5">
+		<h6 class="card-header bg-dark text-white">Glosarium</h6>
+		<div class="card-body">
+			<div class="border p-2 shadow my-3"><b>Hypervisor - </b> platfrom / aplikasi untuk menjalankan sebuah virtualisasi , contoh: 
+				<div>
+					<ol>
+					    <li>Microsoft Hyper-V</li>
+					    <li>Oracle VirtualBox</li>
+					    <li>VMware Workstation Player</li>
+		
+					</ol>
+				</div>
+			 </div>
+			<div class="border p-2 shadow my-3"><b>apt - </b> Advanced Package Tool, untuk install install paket linux yang base nya debian </div>
+			<div class="border p-2 shadow my-3"><b>alpine OS - </b> adalah os linux yang berdiri sendiri , bukan dari debian , arch, redhat atau yang lain </div>
+			<div class="border p-2 shadow my-3"><b>nginx - </b> adalah webserver seperti apache </div>
+		</div>
+	</div>
+	<div class="card mt-5">
+		<h6 class="card-header bg-dark text-white">Daftar Pustaka</h6>
+		<div class="card-body">
+			<pre class="pre-dark bg-info">https://www.backblaze.com/blog/vm-vs-containers/</pre>
+			<pre class="pre-dark bg-info">https://readwindow.blogspot.com/2015/03/pengertian-hypervisor.html</pre>
+			<pre class="pre-dark bg-info">https://phoenixnap.com/kb/how-to-install-docker-on-ubuntu-18-04</pre>
+			<pre class="pre-dark bg-info">https://opensourceforu.com/2019/04/the-top-open-source-hypervisor-technologies/</pre>
+			<pre class="pre-dark bg-info">https://mjaglan.github.io/docs/why-containerize-apps.html</pre>
+			<pre class="pre-dark bg-info">https://www.backblaze.com/blog/vm-vs-containers/</pre>
+			<pre class="pre-dark bg-info">https://www.adminschoice.com/containers-vs-vms-top-5-differences-you-must-know/</pre>
+			<pre class="pre-dark bg-info">https://upload.wikimedia.org/wikipedia/commons/1/1b/Linux_Distribution_Timeline.svg</pre>
+			<pre class="pre-dark bg-info">https://www.backblaze.com/blog/vm-vs-containers/</pre>
+		</div>
+	</div>
+
+
+</div>
+
+
+
+
+</body>
+</html>

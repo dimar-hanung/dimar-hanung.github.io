@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>aws</title>
+	
+	<script src="../asset/jquery-3.4.1.min.js"></script>
+	<script src="../asset/bootstrap/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="../asset/bootstrap/css/bootstrap.min.css">
+	<style type="text/css">
+		.disabled{
+			pointer-events: none !important;
+			cursor: not-allowed !important;
+		}
+		li{
+			margin-top: 20px;
+			margin-bottom: 10px;
+		}
+		 ol.none-l li,
+    ol.none-p li,
+    ol.none-c li {
+        counter-increment: step-counter;
+        margin-top: 25px;
+    }
+
+    ol.none-l li:before {
+
+        content: "Step "counter(step-counter)" ";
+        font-weight: bolder
+    }
+
+    ol.none-l,
+    ol.none-p,
+    ol.none-c {
+        list-style-type: none;
+    }
+
+    ol.none-p li:before {
+
+        content: "Proses "counter(step-counter)" ";
+        font-weight: bolder
+    }
+
+    ol.none-c li:before {
+
+        content: "contoh "counter(step-counter)" ";
+        font-weight: bolder
+    }
+	</style>
+</head>
+<body>
+
+<div class="text-center text-white p-2 m-2 shadow rounded-lg bg-info">
+	<h1 class="text-left">Dokumentasi AWS EC2</h1>
+
+</div>
+<div class="bg-danger text-white p-2 m-2 rounded-lg shadow"><h6 class="text-left">by. Dimar Hanung P. | Smk Telkom Pwt</h6></div>
+
+
+<div class="container" style="width:860px;">
+	<div class="p-2 bg-light mt-5 shadow border border text-center" ><h4>Installasi</h4></div>
+
+
+	<div class="card mt-5">
+		<h6 class="card-header bg-dark text-white">Launch Instance</h6>
+		<div class="card-body">
+			<p>langkah langkah: </p>
+			<ol class="none-l">
+			    <li>masuk ke aws console, lalu pilih ec2</li>
+			    <img class="img-fluid" src="img/aws/1.png" alt="">
+			    <li>pilih tab instance, lalu klik launch instance</li>
+			    <img class="img-fluid" src="img/aws/2.png" alt="">
+			   
+			    <li>pilih os yang akan di buat, lalu klik select</li>
+			    <li>pilih spesifikasi sesuai kebutuhan, untuk custom bisa klik next configure instance, dan untuk configurasi yang rekomendasi langsung saja klik reveiw and lunch</li>
+			    <img src="img/aws/4.png" class="img-fluid" alt="">
+			    <li>pastikan lagi, lalu klik launch</li>
+			    <li>buat ssh key, lalu download (jangan sampai hilang karena tidak bisa di download lagi)</li>
+			    <img src="img/aws/6.png" class="img-fluid" alt="">
+			    <li>tunggu sampai status running dan vps siap digunakan</li>
+			    <img src="img/aws/7.png" class="img-fluid">
+			</ol>
+		</div>
+	</div>
+
+
+	<div class="card mt-5">
+		<h6 class="card-header bg-dark text-white">connect AWS EC2 menggunakan ssh | Menggunakan aplikasi <a href="#">MobaXterm</a></h6>
+		<div class="card-body">
+		
+	
+		
+			<ol>
+			    <li>klik connect</li>
+			    <img src="img/aws/8.png" class="img-fluid">
+			    <li>perhatikan bagian example</li>
+			    <img src="img/aws/9.png" class="img-fluid">
+			    <li>buka mobaXterm, klik session</li>
+
+			    <img src="img/aws/10.png" class="img-fluid"><br /><br /><br />
+			    <ol>
+			        <li>klik ssh</li>
+			        <li>paste yang tadi dicopy</li>
+			        <li>centang use private key</li>
+			        <li>cari nama ssh key yang tadi didownload</li>
+			        <li>klik ok</li>
+			    </ol>
+			    <li>sudah connect</li>
+			    <img src="img/aws/11.png" class="img-fluid">
+			</ol>
+		</div>
+	</div>
+
+z
+
+</div>
+
+
+
+
+</body>
+</html>

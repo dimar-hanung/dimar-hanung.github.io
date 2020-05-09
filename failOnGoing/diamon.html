@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>html</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<style media="screen">
+		table{
+			border: solid black 1px;
+		}
+	</style>
+
+</head>
+<body>
+
+<div id="diamond"></div>
+
+<script type="text/javascript">
+
+let output	= document.getElementById('diamond');
+
+let diamond = (jumlah) => {
+
+	
+	for (var i = 0; i < jumlah; i++) {
+		output.innerHTML+='.';
+
+	}
+
+
+}
+
+diamond(10);
+</script>
+</body>
+</html>

@@ -1,0 +1,366 @@
+  html,
+    body {
+        /*max-width: 100%;*/
+        margin: 0px;
+        overflow-y: overlay;
+        overflow-x: hidden;
+    }
+   
+    
+
+    ::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        background-color: #F5F5F5;
+    }
+
+    ::-webkit-scrollbar {
+        width: 6px;
+        background-color: #F5F5F5;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: #000000;
+    }
+
+
+    /*foto-glitch*/
+
+
+  
+
+    .dimar {
+        width: 300px;
+        display: block;
+        margin: auto;
+        border-radius: 100%;
+        background: lightblue;
+    }
+
+    .dimar:hover {
+        /*animation: xcolor ease infinite alternate 1.5s;*/
+        cursor: pointer;
+        /*transform: rotate(360deg);*/
+    }
+
+
+
+    .svg-shadow:hover {
+        transition: all ease 0.5s;
+        filter: drop-shadow(10px 10px 10px black);
+    }
+
+
+    @keyframes anim {
+
+        100% {
+            transform: rotate(-360deg);
+        }
+
+    }
+
+
+    /*header biodata*/
+
+    .bio-singkat {
+        font-family: sans-serif;
+        font-size: 22px;
+        text-align: justify;
+
+    }
+
+    .bio-singkat>u {
+        cursor: help;
+    }
+
+
+    /*end-header-biodata*/
+
+
+    /*back-dimar*/
+
+    .header-page {
+        min-height: 100vh;
+    }
+
+    .header-page .col .card {
+        background: transparent;
+        color: white;
+    }
+
+    .back-dimar {
+        min-height: 100vh;
+        width: 100vw;
+        position: absolute;
+        /*top: 0px;*/
+        left: 0px;
+        z-index: -2;
+
+        font-size: 28px;
+        overflow: hidden;
+        background: black;
+        /*filter: brightness(0.3);*/
+    }
+
+ 
+    #newCanvas {
+        filter: blur(2px) brightness(0.3);
+        transform: rotate(20deg) scale(3) translateY(50px);
+    }
+
+
+    .scroll-bawah {}
+
+
+    /*end-back-dimar*/
+
+
+
+    #myCanvas {
+         filter: blur(2px) brightness(0.3);
+        transform: rotate(20deg) scale(3) translateY(50px);
+    }
+
+    a {
+        color: inherit;
+    }
+
+
+
+
+
+    /*tombol-bawah*/
+
+    .down-button {
+        position: relative;
+        display: block;
+        margin: auto;
+        line-height: 100px;
+        /*cursor: pointer;*/
+
+
+    }
+
+    .down-button>.down-button-icon {
+        color: white;
+        text-align: center;
+        margin: auto;
+        display: block;
+        position: relative;
+        width: min-content;
+        font-size: 24px;
+        z-index: 3;
+        transform: translateY(0px);
+        width: 55px;
+        height: 55px;
+        line-height: 55px;
+        border-radius: 100%;
+        animation: bawah 0.8s ease-in-out alternate infinite;
+
+    }
+
+    .down-button>.down-button-icon:hover {
+        background: #ffffff30;
+    }
+
+
+    @keyframes bawah {
+
+        from {
+            transform: translateY(0px);
+        }
+
+        to {
+            transform: translateY(20px);
+        }
+
+    }
+
+
+
+    /*=============================================== bintang =========================================================*/
+
+
+    .batas1 {
+        pointer-events: none;
+        position: absolute;
+        width: 100vw;
+        display: block;
+        height: 100%;
+        background-image: linear-gradient(0.2deg, rgba(255, 253, 20, 0) 4.5%, rgb(0, 0, 0) 36.6%, rgb(0, 0, 0) 59.7%, rgba(49, 86, 214, 0) 87.3%);
+        z-index: 2;
+        /*filter: blur(20px);*/
+        transform: translateY(-300px)
+    }
+
+    .bintang {
+        min-height: calc(200vh);
+    }
+
+    .bintang-ctn{
+        position: absolute;
+        background: black;
+    }
+
+    .stars,
+    .twinkling {
+        position: absolute;
+        /*top: 0;*/
+        left: 0;
+        right: 0;
+        /*bottom: 0;*/
+        width: 100vw;
+        height: calc(200vh);
+        display: block
+    }
+
+    .stars {
+        background: #000 url(assets/img/stars.png) repeat top center;
+        z-index: 0
+    }
+
+    .twinkling {
+        background: transparent url(assets/img/twinkling.png) repeat top center;
+        z-index: 1;
+        -moz-animation: move-twink-back 200s linear infinite;
+        -ms-animation: move-twink-back 200s linear infinite;
+        -o-animation: move-twink-back 200s linear infinite;
+        -webkit-animation: move-twink-back 200s linear infinite;
+        animation: move-twink-back 200s linear infinite
+    }
+
+    @keyframes move-twink-back {
+        from {
+            background-position: 0 0
+        }
+
+        to {
+            background-position: -10000px 5000px
+        }
+    }
+
+
+    .main-commitmen {
+        position: relative;
+        text-align: center;
+        top: 80px;
+        z-index: 99;
+    }
+
+    /*bintang-end*/
+
+
+
+
+    /*komitmen*/
+    
+    .my-comitmen{
+        position: relative;
+        margin-bottom: 120px;
+        opacity:0;
+        /*animation: astro 2s alternate infinite ease-in-out;*/
+        /*animation-delay: 3s;*/
+    }
+
+    .astro{
+        position: absolute;
+        top: 0px;
+        left: 30px;
+        width: 300px;
+        animation: astro 1s alternate infinite ease-in-out;
+        animation-delay: 0.3s;
+    }
+@media only screen and (max-width: 1024px){
+    .astro{
+        z-index: -1;
+        filter: blur(2px) brightness(0.5);
+    }
+}
+
+
+    @keyframes astro{
+
+    100%{transform: translateY(20px);}
+
+    }
+
+
+
+
+    /*end-komitmen*/
+
+
+
+
+    /*======================================summary-detail===============================*/
+
+     summary{
+
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Opera and Firefox */
+
+    }
+
+
+     details[open]>summary~* {
+        animation: open 0.5s ease;
+        transform-origin: top;
+
+    }
+
+    @keyframes open {
+        0% {
+            /*opacity: 0;*/
+            font-size: 0px;
+            transform: scaleY(0);
+        }
+
+        100% {
+            /*opacity: 1;*/
+            font-size: auto;
+            transform: scaleY(1);
+        }
+    }
+
+
+    details>summary::-webkit-details-marker {
+        /*display: none;*/
+        color: #17a2b8;
+    }
+
+    details summary {
+        transition: all ease 0.5s;
+        outline: none;
+        
+    }
+
+    /*details summary:before{
+        content: ">";
+    }
+*/
+
+    .deskripsi{
+        
+        border: solid black 1px;
+    }
+
+    details[open]>.deskripsi {
+
+        border: solid 0.1px #17a2b8 !important;
+        border-top: none !important;
+    }
+
+    details[open]>summary {
+        border: solid 0.1px #17a2b8 !important;
+        border-bottom: none !important;
+    }
+
+   
+
+
+    /*======================================!!summary-detail===============================*/
+

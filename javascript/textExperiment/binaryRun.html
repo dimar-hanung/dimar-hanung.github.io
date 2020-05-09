@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+    #text {
+        font-size: 22px;
+        text-align: center;
+    }
+
+    body {
+        margin: 0px;
+        background: black;
+        color: white;
+        font-family: monospace;
+    }
+
+    .container{
+        display: table;
+        width: 100vw;
+        height: 100vh;
+        position: relative;
+    }
+
+    .center{
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+    .bin-glitch {
+        font-size: 18px;
+        text-align: center;
+    }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="center">
+            <div id="text">Perkenalkan</div>
+    <div class="bin-glitch">Nama: Dimar Hanung Prakoso</div>
+    <div class="bin-glitch">Hoby: Main Laptop</div>
+    <div class="bin-glitch">sekian</div>
+    <div class="bin-glitch">kwkwkwk :v</div>
+        </div>
+    </div>
+
+    
+    <script type="text/javascript">
+    class Text {
+        constructor(clas) {
+            this.clas = clas;
+            this.pure = [];
+
+            this.chr = '10'.split('');
+            this.cn = true;
+
+        }
+
+        mulai() {
+            this.simpanText();
+            this.ulang(0)
+
+        }
+        simpanText() {
+            this.pure[0] = this.clas.innerHTML;
+            this.textSplitx = this.clas.innerHTML.split('');
+
+        }
+
+        gantiText(n, cn) {
+            if (n < this.clas.innerText.length) {
+                //n++;
+                let clas = this.clas;
+                let run = (n, cn) => this.gantiText(n, cn);
+                let chr = this.chr;
+                let pure = this.pure[0];
+                let textSplit = this.textSplitx;
+                setTimeout(function() {
+                    //console.log(pure)
+
+
+
+                    // console.log('cn:'+cn);
+                    // console.log('n:'+n);  
+                    if (cn == true) {
+                        textSplit[n] = "<span style='color:green'>" + chr[Math.floor(Math.random() * chr.length)] + "</span>";
+                    } else {
+                        let xpure = pure.split('')
+                        //console.log(n);
+                        textSplit[n] = xpure[n];
+                    }
+                    // console.log(textSplit)
+                    clas.innerHTML = textSplit.join('');
+                    n++;
+                    run(n, cn);
+
+                }, 50);
+            }
+        }
+
+        ulang(x) {
+            if (true) {
+                let run = (cn) => this.gantiText(0, cn);
+                let runR = () => this.ulang(x);
+                setTimeout(function() {
+                    //console.log(x);
+                    x++;
+                    let cnx = true;
+                    if (x % 2 == 0) {
+                        cnx = true;
+                    } else {
+                        cnx = false;
+
+                    }
+                    //console.log(cn)
+                    run(cnx);
+                    runR(x);
+
+                }, Math.floor(Math.random() * 1000));
+            }
+        }
+
+    
+    }
+
+    let dataMulai = [];
+
+    binaryRun('bin-glitch');
+
+    function binaryRun(className){
+
+        className = document.getElementsByClassName(className);
+
+    for (var i = 0; i < className.length; i++) {
+        let clas = className[i];
+        dataMulai[i] = new Text(clas, 17);
+
+        dataMulai[i].mulai();
+    }
+
+    }
+
+    </script>
+</body>
+
+</html>

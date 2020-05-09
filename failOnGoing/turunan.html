@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<title>Reference Designer Title </title>
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+</head>
+<body>
+My first html Page.<i>This text is italics</i>
+
+$$x^2 = \frac{n^2+n}{2}$$
+$$f'(x)=\frac{a}{b}$$
+
+$$f'(\color{red}x)=\frac{u'(x)v(x)-u(x)v'(x)}{(v(x))^\color{red}2}$$
+​	
+<div id="total"></div>
+<button class="save">save</button>
+​<script type="text/javascript">
+
+
+setTimeout(function() {getone()}, 1000);
+	
+	function getone(){
+var n=2;
+var total="<math><mi>x</mi><mo>=</mo><mrow><mfrac><mrow><mo>&#x2212;</mo><mi>b</mi><mo>&#x00B1;</mo><msqrt><msup><mi>b</mi><mn>2</mn></msup><mo>&#x2212;</mo><mn>4</mn><mi></mi><mi></mi></msqrt></mrow><mrow> <mn>2</mn><mi>a</mi> </mrow></mfrac></mrow><mtext>.</mtext></math>";
+document.getElementById('total').innerHTML=total;
+MathJax.Hub.Queue(["Typeset",MathJax.Hub,element]);
+}
+//MathJax.Hub.Queue(["Typeset",MathJax.Hub,element]);
+//MathJax.Hub.Queue(getone)
+</script>
+
+</body>
+</html>

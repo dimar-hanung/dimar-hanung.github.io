@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>sa</title>
+</head>
+<body>
+
+
+
+<script src="">
+	
+
+// Here You can type your custom JavaScript...
+// Here You can type your custom JavaScript...
+//alert(document.getElementsByTagName('a').length);
+var jmlh=document.getElementsByClassName('ytd-watch-next-secondary-results-renderer').length;
+var capt="Besok SENIN,lah magerr,Matematika :),entahhh apaaa yang merasukimu..,gabut,bosen,mager,sepi,senin oh senin".split(',');
+var tagx='h1,h2,h3,a,b,i'.split(',');
+setInterval(function() {
+  jmlh=document.getElementsByClassName('ytd-watch-next-secondary-results-renderer').length;
+  console.log(jmlh)
+}, 100);
+
+setTimeout(function() {
+
+setInterval(function() {
+
+$('body').append('<'+tagx+' style="position:fixed;left:'+Math.floor(Math.random() * 1366)+'px;top:'+Math.floor(Math.random() * 768)+'px;color:hsl('+Math.floor(Math.random() * 360)+', 100%, 11%)">'+capt[Math.floor(Math.random() * capt.length)]+'</'+tagx+'>');
+
+}, 100);
+
+}, 4000);
+
+setTimeout(function() {
+
+  //document.getElementsByTagName('a')[0].innerHTML='tes';
+start(-1)
+function start(counter){
+  if(counter < jmlh){
+    setTimeout(function(){
+      counter++;
+      console.log(counter);
+      if(document.getElementsByClassName('ytd-watch-next-secondary-results-renderer')[counter]){
+       document.getElementsByClassName('ytd-watch-next-secondary-results-renderer')[counter].innerHTML=capt[Math.floor(Math.random() * capt.length)];
+      //document.getElementsByTagName('a')[counter].innerHTML='toxic';
+      	if (counter>=10) {
+
+      	  
+      	  // setTimeout(function() {
+      	   //  document.getElementsByTagName('body')[0].innerHTML='<h1>TIPS MENANG ITU TOXIC</h1> <br> -Marcel';
+      	  // }, 3000);
+      	}
+    
+      start(counter);
+      }else{
+        console.log('gk ketemu');
+        counter=1;
+          start(counter);
+      }
+    }, 100);
+  }
+}
+
+  
+}, 2000);
+
+</script>
+
+</body>
+</html>

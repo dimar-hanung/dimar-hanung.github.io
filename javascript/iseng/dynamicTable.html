@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>tabel</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<style type="text/css">
+		
+		td{
+			border: solid black 1px;
+		}
+		table.class_tblx{
+			border-spacing: 20px;
+			border:solid red 1px;
+		}
+	</style>
+</head>
+<body>
+<input type="number" value="1" min="1" id="kolomipt" oninput="tblxdnms(barisipt.value, this.value)">
+<input type="number" value="1" min="1" id="barisipt" oninput="tblxdnms(this.value, kolomipt.value)">
+<input type="number" value="1" min="1" id="lantaiipt" oninput="lantai(this.value);" name="">
+<table>
+  <tr>
+    <th>Company</th>
+    <th>Contact</th>
+    <th>Country</th>
+  </tr>
+  <tr>
+    <td>Alfreds Futterkiste</td>
+    <td>Alfreds Futterkiste</td>
+    <td>Alfreds Futterkiste</td>
+  </tr>
+</table>
+
+<div class="kontener-flex">
+<label>lantai 1</label>
+<table id="tblx" class="class_tblx"></table>
+<span id="lante"></span>
+</div>
+<script type="text/javascript">
+	
+tblxdnms(2, 4)
+let a=0;
+console.log(a);
+function tblxdnms(baris, kolom){
+
+	tblx.innerHTML='Loading';
+	setTimeout(function() {
+		tblx.innerHTML='';
+		var s_baris='';
+	var s_kolom='';
+	for (var i = 0; i < baris; i++) {
+		s_baris+='<td>Meja</td>';
+	}
+
+	s_kolom='<tr>'+s_baris+'</tr>';
+
+	for (var i = 0; i < kolom; i++) {
+		$('#tblx').append(s_kolom);
+	}
+	var lnt=document.getElementById('lantaiipt').value;
+	console.log(lnt);
+	lantai(lnt);
+	}, 10);
+
+	
+}
+function lantai(lantaix){
+lante.innerHTML='';
+	for (var i = 0; i < lantaix-1; i++) {
+		var lantai='lantai '+ parseInt(i+2);
+		var outer='<label>'+lantai+'</label><table class="class_tblx">'+ document.getElementById('tblx').innerHTML+'</table>';
+		lante.innerHTML+=outer;
+
+			}
+
+}
+
+</script>
+
+</body>
+</html>

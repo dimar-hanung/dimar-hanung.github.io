@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>contoh</title>
+</head>
+<body>
+
+
+
+
+<div class="justExample" id="idkuy">
+
+ <!--  ul satu	 -->
+	<ul class="satu">
+	    <li>
+	    	<ul>
+	    	    <li>contoh sub ul</li>
+	    	    <li>contoh sub ul</li>
+	    	</ul>
+	    </li>
+	    <li>contoh ul 1</li>
+	</ul>
+
+
+<!-- ul dua  -->
+
+	<ul class="dua">
+	    <li>contoh ul 2</li>
+	    <li><ul>2</ul></li>
+	</ul>
+
+
+</div>
+
+<script type="text/javascript">
+	
+let ulSelect 	= document.getElementsByClassName('justExample')[0].getElementsByTagName('ul');
+let ulSelectChild= ulSelect[2];
+let parentCount = 0;
+let ulCount		= 0;
+//console.log(ulSelect.parentNode) //jadinya malah 3
+
+// console.log(document.documentElement.parentNode)
+
+// for (var i = 0; i < ulSelect.length; i++) {
+// 	console.log('ha?: '+ulSelect.length)
+// }
+func(ulSelect);
+ function func(elt) {
+ 	parentCount=0;
+ 	console.log(ulSelect.length)
+ 	for (var i = 0; i < ulSelect.length; i++) {
+ 		elt=ulSelect[i];
+ 		//ulSelect=ulSelect[i];
+ 		console.log('t')
+ 	}
+ 	console.log(elt)
+            // Traverse up until root hit or DIV with ID found
+        while (elt && (elt.tagName != "DIV" || !elt.tagName)){
+        	parentCount++;
+        	var a=elt.tagName;
+        	console.log('Element: '+a)
+            elt = elt.parentNode;}
+        if (elt) {// Check we found a DIV with an ID
+            console.log('autoSelect: '+elt.className);
+        }
+        ulSelectChild=document.getElementsByClassName('justExample')[0].getElementsByTagName('ul')[2];
+        for (var x = 0; x < parentCount; x++) {
+
+			var a=elt.tagName;
+        	console.log('Elementx: '+parentCount+ulSelectChild.tagName+a)
+            //ulSelectChild = ulSelect[parentCount-1].parentNode;
+            ulSelectChild = ulSelectChild.parentNode;
+            if (x==parentCount-1) {console.log('hasil: '+ulSelectChild.className);ulCount++}
+		}
+
+		console.log(ulCount);
+    }
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

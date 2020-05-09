@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <style type="text/css">
+        .isiContent {
+            display: none;
+        }
+        .lblToggle{
+            background: aquamarine;
+            padding: 5px;
+            /*border-radius: 5px;*/
+            /*box-shadow: 0px 0px 5px black;*/
+            cursor: pointer;
+            display: block;
+            transition: all ease 0.5s;
+            text-align: center;
+        }
+        .lblToggle:hover{
+            
+            background: aliceblue;
+            box-shadow: 0px 0px 0px 1px black;
+        }
+      
+        .lblToggle:after {
+    content: '';
+    color: white;
+    background: url('data:image/svg+xml;utf8,<svg version="1.1" id="Chevron_down" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve"><path d="M4.516,7.548c0.436-0.446,1.043-0.481,1.576,0L10,11.295l3.908-3.747c0.533-0.481,1.141-0.446,1.574,0 c0.436,0.445,0.408,1.197,0,1.615c-0.406,0.418-4.695,4.502-4.695,4.502C10.57,13.888,10.285,14,10,14s-0.57-0.112-0.789-0.335 c0,0-4.287-4.084-4.695-4.502C4.107,8.745,4.08,7.993,4.516,7.548z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: aliceblue;
+    border-radius: 5px;
+    width: 20px;
+    height: 20px;
+    position: relative;
+    float: right;
+    right: 10px;
+    transition: all ease 0.5s;
+    /* box-shadow: 0px 0px 2px black; */
+}
+.nomorId{
+    float: left;
+    background: lightblue;
+    left: 0px;
+    top: 0px;
+    /*border-radius: 5px 0px 0px 5px;*/
+    position: relative;
+    padding: 5px 0px;
+    padding-right: 10px;
+    padding-left: 5px;
+    border-right: 5px solid black;
+}
+        .ctnBox{
+            margin: 20px 0px;
+        }.isiContent{
+            /*margin:20px 0px;*/
+            width: fill-available;
+
+            padding: 5px;
+            background: #f3f3f3;
+            border:solid aqua 1px;
+            /*border-radius: 5px;*/
+            /*box-shadow: 0px 0px 5px lightblue,0px 0px 5px black;*/
+        }
+    input:checked+label.lblToggle:after { 
+        /*font-weight: bolder !important; */
+        -webkit-transform: rotate(180deg);
+           -moz-transform: rotate(180deg);
+            -ms-transform: rotate(180deg);
+             -o-transform: rotate(180deg);
+                transform: rotate(180deg);
+        
+    }
+    input.iptToggle{
+        display: none;
+    }
+   @media only screen and (max-width: 600px) {
+    .lblToggle{
+        text-align: left;
+        text-indent: 10px;
+    }
+    .lblTitle {
+    position: relative;
+    /* left: -150px; */
+ 
+}
+.lblTitle{
+    position: relative;
+}
+
+    </style>
+
+    <div class="ctnBox">
+        <span class="nomorId">#1</span>
+        <input  class="iptToggle" id="idp2" type="checkbox">
+        <label for="idp2" class="lblToggle"><span class="lblTitle">Lihat Cara yang panjang bahkan sangat panjang</span></label>
+        <div class="isiContent" id="jwbxx">contoh Isi</div>
+    </div>
+
+
+
+    <div class="ctnBox">
+        <span class="nomorId">#2</span>
+        <input class="iptToggle" id="idp2" type="checkbox">
+        <label for="idp2" class="lblToggle"><span class="lblTitle"> Lihat Cara </span></label>   
+        <div class="isiContent" id="jwbxx">contohx</div>
+    </div>
+
+    <div class="ctnBox">
+        <span class="nomorId">#2</span>
+        <input class="iptToggle" id="idp2" type="checkbox">
+        <label for="idp2" class="lblToggle"><span class="lblTitle"> Lihat Cara </span></label>   
+        <div class="isiContent" id="jwbxx">contoh</div>
+    </div>
+
+    <div class="ctnBox">
+        <span class="nomorId">#2</span>
+        <input class="iptToggle" id="idp2" type="checkbox">
+        <label for="idp2" class="lblToggle"><span class="lblTitle"> Lihat Cara </span></label>   
+        <div class="isiContent" id="jwbxx">contoh</div>
+    </div>
+
+    <script type="text/javascript">
+        if($("#idp2").length == 1) {
+  //it doesn't exist
+  
+  randid();
+
+ 
+        function randid() {
+            //lbl=Label Jawab
+            //ipt=Input (pilih jawab) (checkbox)
+            //angka=angka untuk random id dan for , sebagai penghubung label dan input
+            let wrnrnd=("lightgreen,yellow,yellowgreen,lightblue,pink,aqua").split(',');
+            let wrnrnd2=("#ccffbc,#fff294,#a4ec77,#c0f1ff,#f5dcff,lightblue").split(',');
+            let lbl = document.getElementsByClassName('lblToggle');
+            let ipt = document.getElementsByClassName('iptToggle');
+            let isi = document.getElementsByClassName('isiContent');
+            let sblm = document.getElementsByClassName('nomorId');
+            let generateId = 0;
+            let jjk1=Math.floor(Math.random() * wrnrnd.length);
+            let jjk2=jjk1;
+            //untuk random id dan for supaya tidak di lakukan penamaan manual
+            for (var i = 0; i <= lbl.length - 1; i++) {
+
+                generateId = i;
+                jjk2=jjk1;
+                jjk1=Math.floor(Math.random() * wrnrnd.length);
+                
+
+                if (jjk1!=jjk2) {
+                let random = 'dps' + generateId + 'rnd';
+                sblm[i].innerHTML='#'+parseInt(i+1);
+                isi[i].style.borderColor=wrnrnd[jjk1];
+                isi[i].style.boxShadow='0px 0px 10px '+wrnrnd[jjk1]+' 0px 0px 2px black';
+
+                lbl[i].style.background=wrnrnd2[jjk1];
+                sblm[i].style.background=wrnrnd[jjk1];
+                lbl[i].setAttribute("for", random);
+                ipt[i].setAttribute("id", random);
+                
+            }else{
+                i=i-1;
+                console.log("sama muncul");
+            }
+            }
+
+        }
+
+        var pilihx = 0;
+
+        $(".ctnBox").click(function() {
+            console.log('masuk');
+            //coba = mendapatkan innerhtml dari ctnBox
+            let coba = $(this);
+            //mencari class iptToggle (pilihjawab)
+            $(this).find(".iptToggle").each(function() {
+                //jika  iptToggle checked
+                if ($(this).is(':checked')) {
+                    pilihx = 1;
+
+                } else {
+                    pilihx = 0;
+
+                }
+
+                if (pilihx == 1) {
+                    $(coba).find(".isiContent").each(function() {
+                        $(this).slideDown('slow');
+                    });
+
+                } else {
+                    $(coba).find(".isiContent").each(function() {
+                        $(this).slideUp('slow');
+                    });
+                }
+
+            });
+
+            //   $(this).find(".lblToggle").each(function () {
+            //      $(this).hide('slow')
+
+            // });
+
+        });
+}else{
+    console.log('tidak ada buka tutup');
+}
+
+        
+    </script>
+</body>
+
+</html>

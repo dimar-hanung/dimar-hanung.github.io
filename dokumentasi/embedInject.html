@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>embedInject</title>
+	<script src="asset/jquery.min.js"></script>
+	<script src="asset/bootstrap/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="asset/bootstrap/css/bootstrap.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style type="text/css">
+		
+		#container{
+			/*border 		: solid black 1px;*/
+			width 		: -webkit-fill-available;
+			max-width  	: 800px;
+			margin 		: 20px auto;
+		}
+
+		.border-l{
+			border: 1px solid rgba(0,0,0,.125);
+			border-radius: 0px 0px 2px 2px;
+			padding: 15px;
+
+		}
+		.errorCode{
+			font-family: monospace;
+		}
+
+	</style>
+
+</head>
+<body>
+
+<div id="container">
+	<h1 style="text-align: center;">Js Inject Story</h1><br />
+	<div class="card mb-4">
+		<div class="card-header">Target</div>
+		<div class="card-body">Melakukan Inject JavaScript / sebagainya ke Embed Browser tanpa linux</div>
+		
+
+	</div>
+
+	<div class="card mb-4">
+	    <div class="card-header">
+	        Persiapan <span class="float-right text-black-50">24/12/2019</span>
+	    </div>
+	    <div class="card-body">
+	        <h4 class="card-title mb-4">Membuat Embed Browser</h4>
+	        <h6 class="card-header bg-info text-light">Detail</h6>
+	        <ul class="list-group">
+	        	<li class="list-group-item">Membutuhkan Net framework 4</li>
+	            <li class="list-group-item">Based on Chromium</li>
+	            <li class="list-group-item">Bahasa pemrograman Visual Basic</li>
+	            <li class="list-group-item">Dibuat menggunakan Visual Studio 2019</li>
+	            <li class="list-group-item">Telerik.Ui</li>
+	            <li class="list-group-item">cefSharp.winforms</li>
+	        </ul>
+	        <h6 class="card-header bg-info text-light mt-4">Screenshot</h6>
+	        <img src="img/tsKw.png" class="img-fluid border-dark" alt="">
+	    </div>
+	</div>
+
+	<div class="card mt-5">
+
+		<div class="card-header text-danger">
+			Percobaan 1	<span class="float-right text-black-50">24/12/2019</span>
+		</div>
+		<div class="card-body">
+			<h6 class="card-header mb-4 bg-info text-light">mitm js Injecton (WSL)</h6>
+			<p class="card-text">
+				<span class="text-info">Sebelumnya telah melakukan ujicoba MitmProxy pada linux debian , untuk mengetahui aktivitas login  , menggunakan ettercap , dan berhasil</span>
+				
+				<br /><br />
+				Mencoba Melakukan Injeksi Javascript ke embedded browser menggunakan mitmProxy pada windows, menggunakan WSL Ubuntu
+			</p>
+
+			<h6 class="card-header bg-danger text-light">Hasil : Gagal</h6>
+
+			<div class="border-l">
+				
+				<ol>
+				    <li>Mendapati masalah pada saat proses install mitm <span class="badge badge-success">fixed</span></li>
+				    <li>tidak dapat menjalankan mitm <span class="badge badge-success">fixed</span></li>	   
+				    error code:
+				   <br />
+				    <pre class="errorCode">
+				   
+	Traceback (most recent call last):
+  File "/usr/bin/mitmdump", line 6, in &lt;module&gt;
+    from pkg_resources import load_entry_point
+  File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 3088, in &lt;module&gt;
+    @_call_aside
+  File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 3072, in _call_aside
+    f(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 3101, in _initialize_master_working_set
+    working_set = WorkingSet._build_master()
+  File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 576, in _build_master
+    return cls._build_from_requirements(__requires__)
+  File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 589, in _build_from_requirements
+    dists = ws.resolve(reqs, Environment())
+  File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 778, in resolve
+    raise DistributionNotFound(req, requirers)
+pkg_resources.DistributionNotFound: The 'urwid<1.4,>=1.3.1' distribution was not found and is required by mitmproxy
+				    
+				</pre>
+				 <div class="border-l mb-4">
+				    	 Akibat Ubuntu yang digunakan adalah versi 18 ,memang ada beberapa bug<br />
+				    	 https://askubuntu.com/questions/1176109/how-do-i-install-mitmproxy-on-ubuntu-18-0-4 <span class="badge badge-info">solved link</span>
+				    </div>
+				    <li>Tidak bisa melakukan port redirect (iptables) <span class="badge badge-danger">failed</span></li>
+				    error code:
+
+				    <pre class="errorCode">
+				    	
+# iptables -t nat -A PREROUTING -i wifi0 -p tcp --dport 80 -j REDIRECT --to-port 8080
+iptables v1.6.1: can't initialize iptables table `nat': Table does not exist (do you need to insmod?)
+Perhaps iptables or your kernel needs to be upgraded.</pre>
+
+
+				   <div class="border-l">
+				    	 katanya Microsoft Wsl , iptables tidak disupport :( <br />
+				    	 jadi kayaknya cara ini ga bisa dilakukan wkwk ' <br /><br />
+				    	 https://stackoverflow.com/questions/50946618/iptables-v1-6-1-cant-initialize-iptables-table-filter-ubuntu-18-04-bash-windo/50949323 <span class="badge badge-info">solved link</span>
+				    </div>
+
+				</ol>
+				
+			</div>
+		</div>
+	</div>
+
+
+	<div class="card mt-5">
+		<div class="card-header text-danger">Percobaan 2</div>
+		<div class="card-body">
+			<h6 class="card-header text-light bg-info">XSS</h6>
+			
+			<h6 class="card-header text-light bg-danger mb-4">Hasil : tidak dilakukan</h6>
+			<div class="border-l">
+			<p class="card-text">injeksi script dengan cara memasukkan pada teks field</p>
+			<div>Tidak bisa dilakukan karena walaupun dalam aplikasi ujian terdapat teks field <span class="text-danger">namun data dikirim ke server dan tidak ditampilkan lagi ke halaman ujian</span></div>
+			</div>
+		</div>
+
+	</div>
+
+<br /><br /><br />
+	<div class="card mt-5">
+		<div class="card-header text-success">Percobaan 3 <span class="text-danger">(keputusasaan wkwk)</span></div>
+		<div class="card-body">
+			<div class="card-header text-light bg-info">trik yang membutuhkan mental wkwk (tapi patut diwaspadai)</div>
+			<div class="card-header text-light bg-success">Hasil: Berhasil</div>
+			<p class="card-text mt-4">yang dibutuh kan adalah software sejenis <span class="text-success">clipboard manager</span>, saya mengetahui software yang sangat cocok yaitu "clcl"</p>
+			 <br />
+			
+			<div class="card-header bg-danger text-light">hal yang membuat trik ini patut diwaspadai</div>
+			<ul class="list-group">
+			    <li class="list-group-item">shortcut untuk menampilkan bisa di setting apasaja, misal ctrl+ctrl</li>
+			   	<li class="list-group-item">apabila di combo dengan software "system transparent" akan menjadi lebih aman</li>
+			   	<li class="list-group-item">yang harus diwaspadai aplikasi ini bisa melakukan antisipasi apabila ada razia / pengawas curiga, karena ada fitur close menggunakan shortcut misal alt+alt,karena tidak ada bukti maka pelaku tidak bisa disalahkan, apalagi pelaku pintar mengada ada</li>
+			   	<li class="list-group-item">aplikasi dapat disamarkan dengan aplikasi lain</li>
+			</ul>
+			<br />
+			Saya menemukan aplikasi ini sebelum fitur clipboard pada windows 10 ada, saya sering menggunakan aplikasi ini untuk ya biar gampang copy paste :v , soalnya udah dari dulu saya suka nulis artikel di blog hehe <br />
+			<br />
+
+			<img src="img/clcl.png" class="img-fluid" alt="">
+
+		</div>
+
+	</div>
+<br /><br />
+<br /><br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br />
+	<div class="card mt-5">
+		<div class="card-header">Kesimpulan</div>
+		<div class="card-body">Gagal inject :v, btw lagian embed browser nya juga di tes diwindows 7 (udah di install net framework juga) , malah not responding wkwk</div><center>
+		<img src="img/gagal.png" width="400"></center>
+	</div>
+
+
+	<div class="card mt-5">
+		<div class="card-header">Glosarium</div>
+		<div class="card-body">
+				<table class="table table-bordered">
+				    <thead>
+				        <tr>
+				            <th>Istilah</th>
+				            <th>Arti</th>
+				        </tr>
+				    </thead>
+				    <tbody>
+				        <tr>
+				            <td>WSL</td>
+				            <td>WSL (Windows Subsystem for Linux), adalah sebuah fitur windows 10 yang memungkinkan kita menjalankan native linux command-line tools langsung di windows.</td>
+				        </tr>
+				        <tr>
+				            <td>MitM</td>
+				            <td>MitM sendiri adalah singkatan dari Man in the Middle Attack, yang berarti serangan di mana penyerang berada di tengah-tengah, bebas mendengarkan dan mengubah percakapan antara dua pihak. Serangan Man in The Middle merupakan suatu tipe serangan yang memanfaatkan kelemahan Internet Protocol</td>
+				        </tr>
+				        <tr>
+				            <td>Embedded Browser</td>
+				            <td>browser yang menempel pada aplikasi lain</td>
+				        </tr>
+				         <tr>
+				            <td>XSS</td>
+				            <td>XSS merupakan kependekan yang digunakan untuk istilah cross site scripting. XSS merupakan salah satu jenis serangan injeksi code (code injection attack). XSS dilakukan oleh penyerang dengan cara memasukkan kode HTML atau client script code lainnya ke suatu situs.</td>
+				        </tr>
+				    </tbody>
+			</table>
+		</div>
+	</div>
+
+
+</div>
+
+<script type="text/javascript">
+	
+	 let error	= document.getElementsByClassName('errorCode');
+	 console.log(error.length)
+
+	for (let i = 0; i < error.length; i++) {
+		//console.log(error[i].innerHTML)
+		let errorLineBreak = error[i].innerHTML;
+		errorLineBreak	= errorLineBreak.split(/\r?\n/g);
+
+			let errorReplace ='';
+		for (var ii = 0; ii < errorLineBreak.length; ii++) {
+			let span='';
+			if (ii%2==1) {
+
+				span='<span style="color:red">'+errorLineBreak[ii]+'</span>';
+
+			}else{
+				span='<span style="color:blue">'+errorLineBreak[ii]+'</span>';
+			}
+
+			errorReplace+=span+'<br />';
+			document.getElementsByClassName('errorCode')[i].innerHTML=errorReplace;
+		}
+
+	}
+
+
+	 
+ 
+
+
+</script>
+
+</body>
+</html>

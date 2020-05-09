@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Fungsi return html</title>
+</head>
+<body>
+
+<div>Return :</div>
+
+<div id="output"></div>
+
+<script type="text/javascript">
+	
+
+	
+	function _return(){
+
+		var n=Math.floor(Math.random() * 100);
+		return 'angka acak: '+n;
+
+	}
+	document.getElementById('output').innerHTML=_return();
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,505 @@
+ 
+/*============================================================================================================*/
+/*============================================================================================================*/
+
+  /*90% css adalah hasil ketikan saya sendiri (dimar hanung) , apabila ada kesamaan nama class itu adalah ketidak sengajaan */
+
+/*============================================================================================================*/
+/*============================================================================================================*/
+
+
+ * {
+        margin: 0px;
+        padding: 0px;
+        /*box-sizing: border-box;*/
+    }
+
+    body {
+        overflow-y: overlay;
+        overflow-x: hidden;
+    }
+
+    hr {
+        margin: 100px 50px;
+        border-top: solid #dfe2e5 0.5px;
+    }
+
+    @font-face {
+        font-family: comic;
+        src: url(../webfonts/comic.ttf) format("truetype");
+
+    }
+
+    @font-face {
+        font-family: oretans;
+        src: url(../webfonts/oretans.ttf) format("truetype");
+
+    }
+
+    /*================================ >>>>>>>>>>>> navbar <<<<<<<<<<<< ================================*/
+    .navbar-wrap {
+        background: #0f1113;
+        height: max-content;
+        box-sizing: border-box;
+        width: 100vw;
+        position: fixed;
+        top: 0px;
+        z-index: 99;
+        display: flex;
+        color: white;
+        padding: 0px 10px;
+        transition: all ease 0.3s;
+        transform-origin: top
+    }
+
+    .nav-center {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        display: block;
+        position: relative;
+        padding: 10px 0px;
+    }
+
+    .navbar-wrap a {
+
+        user-select: none;
+        color: inherit;
+        width: max-content;
+        text-decoration: none;
+        padding: 0px 10px;
+        font-family: sans-serif;
+    }
+
+    .navbar-wrap a:hover {
+        color: yellow !important;
+    }
+
+    .nav-logo {
+        font-size: 1.25rem;
+        font-family: comic !important;
+
+    }
+
+    .nav-logo-span {
+        transition: all ease 0.4s;
+        width: auto;
+        display: inline-flex;
+        white-space: nowrap;
+    }
+
+    /*================================ xxxxxxxxxxxxx navbar xxxxxxxxxxxxx ================================*/
+
+    /*================================ >>>>>>>>>>>> header content <<<<<<<<<<<< ================================*/
+
+    .header-content-wrap {
+        height: 100vh;
+        width: 100vw;
+        display: table;
+        text-align: center;
+    }
+
+    .header-bg {
+        height: 100vh;
+        width: 100vw;
+        background: url(../img/1.jpg);
+        background-size: cover;
+        background-position: center;
+        filter: brightness(0.2);
+        z-index: -1;
+        position: absolute;
+    }
+
+    .header-content-center {
+        display: table-cell;
+        vertical-align: middle;
+        margin: auto;
+        color: white;
+    }
+
+    .main-title {
+        font-family: oretans;
+        font-size: 60px;
+    }
+
+    .main-down {
+        cursor: pointer;
+        display: table;
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        font-size: 20px;
+        margin: 50px auto;
+        background: #0000006b;
+        animation: main-down 1s infinite alternate ease-in-out;
+    }
+
+    @keyframes main-down {
+        100% {
+            transform: translateY(20px)
+        }
+    }
+
+    .main-down i {
+        font-style: normal;
+    }
+
+    .main-down-center {
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+    .main-up{
+    	position: fixed;
+    	/*display: none;*/
+    	opacity: 0;
+    	transition: all ease 0.3s;
+    	right: 10px;
+    	bottom: 10px;
+    	z-index: 999;
+    }
+
+    .flex-button {
+        margin: 20px;
+    }
+
+    .flex-button label {
+        outline: none;
+        border: none;
+        width: 80px;
+        display: inline-block;
+        cursor: pointer;
+        background: #343a40;
+        padding: 10px 0px;
+
+    }
+
+    .flex-button input {
+        display: none;
+    }
+
+    .flex-button input:checked+label {
+        background: #28a745;
+    }
+
+    /*================================ xxxxxxxxxxxxx header content xxxxxxxxxxxxx ================================*/
+    /*================================ >>>>>>>>>>>> timeline <<<<<<<<<<<< ================================*/
+
+    /*style ini murni buatan saya (dimar hanung) dengan melihat beberapa referensi di internet*/
+
+    .time-wrap {
+        z-index: 3;
+    }
+
+    .timeline-wrap {
+        /*margin: 80px;*/
+        background: white;
+        margin: 20px auto;
+        max-width: 800px;
+        padding: 50px;
+        box-shadow: 0px 0px 15px -5px black;
+        border-radius: 20px;
+        z-index: 3;
+
+    }
+
+    .timeline-desc-wrap {
+        margin: auto;
+        max-width: 800px;
+        position: relative;
+        padding: 20px 0px 20px 10px;
+        border-left: solid #17a2b8 2px;
+    }
+
+    /*.timeline-desc-wrap:before{
+		content: '';
+		width: 3px;
+		height: max-content;
+		position: relative;
+		left: -10px;
+		background: black;
+
+	}*/
+
+    .timeline-year {
+        padding: 5px 15px;
+        background: #17a2b8;
+        color: white;
+        width: max-content;
+        text-align: center;
+        border-radius: 0px 3px 3px 0px;
+        margin-left: calc(-10px);
+    }
+
+    .timeline-desc {
+        padding: 20px;
+        background: #ccc3;
+        border-left: solid #17a2b8 2px;
+        margin-top: 10px;
+        font-family: sans-serif;
+        position: relative;
+    }
+
+    .timeline-desc:before {
+        content: '';
+        position: absolute;
+        width: 13px;
+        top: 50%;
+        left: -14px;
+        height: 2px;
+        background: #17a2b8;
+    }
+
+    /*================================ xxxxxxxxxxxxx timeline xxxxxxxxxxxxx ================================*/
+
+    /*================================ >>>>>>>>>>>>> peribahasa-content <<<<<<<<<<<<< ================================*/
+
+
+    .content2-wrap {
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 30px;
+        padding-top: 200px;
+        /*margin-top: 50px;*/
+    }
+
+    .peribahasa-wrap h2 {
+        font-family: comic;
+        font-weight: normal;
+        text-align: center;
+
+
+        /*color: #2b87;*/
+    }
+
+    .peribahasa-wrap {
+        width: 75%;
+        min-width: 300px;
+        margin: auto;
+    }
+
+    .peribahasa-wrap h2{
+    	margin-bottom: 20px;
+    }
+	
+	.peribahasa-wrap hr{
+		margin: 20px 0px;
+	}
+
+    .peribahasa-text {
+        /*border:solid #ccc 0.5px;*/
+        max-width: 800px;
+        padding: 20px;
+        margin: 20px auto;
+        /*display: flex;*/
+    }
+
+    .peribahasa-box-row {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 15px;
+    }
+    .peribahasa-box-row hr{
+    	margin: 10px;
+    }
+
+    .peribahasa-box {
+        /*text-align: center; */
+        width: 25%;
+        text-align: center;
+        display: table;
+        /*vertical-align: middle;*/
+        min-width: 200px;
+        height: 200px;
+        background: #ccc3;
+        border: solid #ccc 0.5px;
+        border-radius: 5px;
+        padding: 25px;
+        margin: 10px auto;
+        transition: all ease 0.5s;
+    }
+    .peribahasa-center{
+    	display: table-cell;
+    	vertical-align: middle;
+    }
+
+    .peribahasa-box:hover {
+        transform: translateY(-10px);
+        box-shadow: 0px 10px 15px -5px black;
+    }
+
+    .peri-input{
+    	padding: 10px;
+    	outline: none;
+    	border: solid #ccc 1px;
+
+    }
+
+    /*================================ xxxxxxxxxxxxx peribahasa-content xxxxxxxxxxxxx ================================*/
+
+    /*================================ >>>>>>>>>>>>> aside <<<<<<<<<<<<< ================================*/
+
+    aside {
+        float: right;
+        width: 25%;
+        min-width: 300px;
+        margin: 0px auto;
+        display: table;
+        position: sticky;
+        top: 50px;
+
+    }
+
+    .profile-wrap {
+
+        height: max-content;
+        /*padding-bottom: 20px;*/
+        /*padding-top: 50px;*/
+        margin: 10px;
+        background: white;
+        border: solid #dfe2e5 1px;
+        border-radius: 15px;
+
+    }
+
+    .profile-wrap hr {
+        margin: 10px;
+    }
+
+    .profile-image {
+        width: 150px;
+        height: 150px;
+        margin: auto;
+        /*padding-top: 20px;*/
+        border-radius: 100%;
+        background: url(../img/dimar.jpg);
+        background-size: 100%;
+        transition: all ease 0.3s;
+    }
+
+    .profile-image:hover{
+        background-size: 170px;
+    }
+
+    .profile-name {
+        background: #343a40;
+        font-size: 18px;
+        font-weight: bold;
+        color: white;
+        text-align: center;
+        padding: 10px;
+        border-radius: 15px 15px 0px 0px;
+        margin-bottom: 20px;
+    }
+
+    .profile-desc {
+        font-size: 18px;
+        text-align: center;
+        margin: 10px;
+    }
+
+    .profile-logo {
+        position: relative;
+        margin-top: 20px;
+        font-size: 30px;
+        display: block;
+        text-align: center;
+    }
+
+    .profile-quote {
+        margin: 50px 0px;
+    }
+
+    /*================================ xxxxxxxxxxxxx aside xxxxxxxxxxxxx ================================*/
+
+
+
+	/*================================ >>>>>>>>>>>>> footer <<<<<<<<<<<<< ================================*/
+
+        footer{
+            background: #ccc3;
+        }
+
+		footer .flex{
+			padding: 20px 0px;
+			
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+		.foot-sponsor{
+			background: white;
+			padding: 10px;
+			border-radius: 5px;
+			width: max-content;
+			margin-top: 20px;
+		}
+
+		.foot-sponsor img{
+			height: 30px;
+			margin:5px 10px;
+			/*border-radius: 5px;*/
+		}
+		
+		footer>.flex>div{
+			margin: 0px 30px;
+		}
+
+		@media screen and (max-width: 469px){
+			footer>.flex>div{
+				text-align: center;
+				margin: 20px auto;
+			}
+			.nav-logo-span{
+				display: none !important;
+			}
+		}
+
+		.foot-contact div{
+			margin-bottom: 15px;
+		}
+		.foot-contact a{
+			transition: all ease 0.3s;
+			color: inherit;
+			/*width: 0px;*/
+			/*height: 10px;*/
+			margin-right: 10px;
+			display: table-cell;
+			vertical-align: middle;
+			text-align: center;
+			border-radius: 100%;
+			border: solid 5px transparent;
+			background: #ffffff42;
+			background-clip: content-box;
+		}
+
+		.foot-contact a:hover{
+			background-color: #28a745;
+			/*background-clip: border-box;*/
+			color: white;
+		}
+		.foot-contact .ft-twitter:hover{
+			background-color: #17a2b8;
+		}
+		.foot-contact .ft-facebook:hover{
+			background-color: #007bff;
+		}
+		
+		.foot-contact .ft-instagram:hover{
+			background-color: #dc3545;
+		}
+
+		.foot-contact i{
+			margin: 10px;
+			font-size: 20px;
+		}
+
+		.copyright{
+			padding: 10px;
+			font-family: monospace;
+			text-align: center;
+		}
+
+	/*================================ xxxxxxxxxxxxx footer xxxxxxxxxxxxx ================================*/
+

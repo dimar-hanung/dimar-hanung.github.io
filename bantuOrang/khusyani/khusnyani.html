@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>center</title>
+	<!-- <script src="asset/bootstrap/js/bootstrap.min.js"></script> -->
+	<link rel=stylesheet href="asset/bootstrap/css/bootstrap.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style type="text/css">
+		
+		body{
+			/*height: 2000px;*/
+		}
+
+		#child {
+       height: 90px;
+  width: 270px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+}
+.container{
+  position:relative;
+  width:90vw;
+  height: 90vh;
+  border: 3px solid steelblue;
+  margin: auto;
+}
+
+ .box {
+  position:absolute;
+  top: 0; bottom: 0; left: 0; right: 0;
+  margin: auto;
+  height: 20px; /*requires explicit height*/
+}
+
+
+	.pertama{
+		background: yellow;
+		position: fixed;
+		top: 0px;
+		height: 100vh;
+		width: 100vw;
+	}
+
+	</style>
+</head>
+<body>
+
+<div class="pertama"></div>
+
+<div class="container">
+	<div class="box">
+			<form>
+				<div class="form-group">
+				<label>user</label>
+				<input type="text" name="" class="form-control">
+				<label>pass</label>
+				<input type="password" class="form-control">
+				</div>
+				<input type="button" name="" value="tekan">
+			</form>
+			</div>
+</div>
+
+</body>
+</html>

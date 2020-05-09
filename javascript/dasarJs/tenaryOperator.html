@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>tenary operator dasar</title>
+</head>
+<body>
+
+
+
+<script type="text/javascript">
+	
+	let log='';
+	let isMember = false;
+	let status = '';
+	let s='07:05:45PM';
+
+s.indexOf('AM') > -1 ? (status = 'pagi' ,s=s.split('AM').join('')) : (status = 'malam' , s=s.split('PM').join(''))
+console.log(s+':'+status)
+
+
+
+//simpel
+console.log(isMember ? 'benar' : 'salah')
+
+var elvisLives = Math.PI > 3.14 ? log='ok' && 'tes' : 'gk';
+
+console.log(elvisLives);
+console.log(log)
+
+
+var firstCheck = true, secondCheck = false, access = firstCheck ? 'Access denied' : secondCheck ? 'Access denied' : 'Access granted'; 
+console.log(access); // logs "Access granted"
+
+
+</script>
+
+
+</body>
+</html>

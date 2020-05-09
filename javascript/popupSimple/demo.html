@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Demo PopupSimple</title>
+    <script src="jquery-3.4.1.min.js"></script>
+    <script src="popupsimple.js"></script>
+    <link rel="stylesheet" type="text/css" href="popupsimple.css">
+    <style type="text/css">
+    .container {
+        position: relative;
+        top: 10px;
+        width: -webkit-fill-available;
+        max-width: 600px;
+        margin: auto;
+
+    }
+
+    .content {
+        background: steelblue;
+        padding: 10px;
+        margin:10px;
+
+    }
+
+	.popup2 {
+		padding: 4px;
+		background: yellowgreen;
+		border:solid black 1px;
+	}
+
+	.popup3{
+		width: 100px;
+		padding: 10px;
+		background: orange;
+		border:solid black 1px;
+		animation: popupAnimationContent 1s infinite alternate ease-in-out;
+	}
+	@keyframes popupAnimationContent{
+		0%{
+			width: 150px;
+		}
+		100%{
+			width: 200px;
+		}
+	}
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="popup-content">popup demo1</div>
+        <div class="content">popup demo1</div>
+
+		<div class="popup-content">
+			<div>popup demo2: bisa disisipi HTML</div>
+			<div class="popup2">contoh isi html</div>
+		</div>
+		<div class="content">popup demo2</div>
+
+		<div class="popup-content">
+			popup demo3
+			<div class="popup3">bisa di isi animasi</div>
+		</div>
+		<div class="content">popup demo3</div>
+    </div>
+</body>
+
+</html>

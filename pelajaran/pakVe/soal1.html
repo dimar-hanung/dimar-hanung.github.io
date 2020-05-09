@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="../asset/jquery-3.4.1.min.js"></script>
+    <script src="../asset/bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../asset/bootstrap/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type="text/css">
+    	
+		.pilih{
+			transition: all ease 0.2s;
+		}
+		
+    	.pilih:hover{
+			transform: scale(0.98);
+			cursor: pointer;
+    	}
+    	:checked + label + label {
+  border: 1px solid rgba(81, 203, 238, 1);
+  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+  background: #28a745!important;
+}
+
+
+
+    </style>
+</head>
+
+<body>
+
+
+    <div class="container m-auto">
+
+        <div class="row" id="kertasSoal">
+
+
+
+            <!-- <div class="col-6 mx-auto my-3">
+                <div class="card">
+                	<div class="card-header bg-dark text-white number">#1 - Umum<small class="text-white-50 float-right">id soal 1a</small> </div>
+                    <div class="card-header">Software sistem operasi Linux kali pertama dibangun oleh seorang ahli komputer dari Finlandia yang bernama ….</div>
+                    <div class="card-body p-3 soalcek">
+
+                    	<div class="row pilih">
+                    		<input type="radio" id="1a" class="d-none" name="soal1">
+							<label for="1a" class="bg-dark text-white p-2 col-1 m-0">A</label>
+							<label for="1a" class="bg-secondary text-white p-2 col m-0">Bob Young</label>
+                    	</div>
+                    	<div class="row pilih">
+                    		<input type="radio" id="1b" class="d-none" name="soal1">
+							<label for="1b" class="bg-dark text-white p-2 col-1 m-0">B</label>
+							<label for="1b" class="bg-secondary text-white p-2 col m-0">Ian Murdock</label>
+                    	</div>
+                    	<div class="row pilih">
+                    		<input type="radio" id="1c" class="d-none" cek-x="true" name="soal1">
+							<label for="1c" class="bg-dark text-white p-2 col-1 m-0">C</label>
+							<label for="1c" class="bg-secondary text-white p-2 col m-0">Linus Benedict Torvald</label>
+                    	</div>
+                    	<div class="row pilih">
+                    		<input type="radio" id="1d" class="d-none" name="soal1">
+							<label for="1d" class="bg-dark text-white p-2 col-1 m-0">D</label>
+							<label for="1d" class="bg-secondary text-white p-2 col m-0">Mark Shuttleworks</label>
+                    	</div>
+                    	<div class="row pilih">
+                    		<input type="radio" id="1e" class="d-none" name="soal1">
+							<label for="1e" class="bg-dark text-white p-2 col-1 m-0">E</label>
+							<label for="1e" class="bg-secondary text-white p-2 col m-0">Marc Ewing</label>
+                    	</div>
+                       
+                    </div>
+                </div>
+            </div>
+	
+			 <div class="col-6 mx-auto my-3">
+                <div class="card">
+                	<div class="card-header bg-dark text-white number">#1 - Umum<small class="text-white-50 float-right">id soal 1a</small> </div>
+                    <div class="card-header">Software sistem operasi Linux kali pertama dibangun oleh seorang ahli komputer dari Finlandia yang bernama ….</div>
+                    <div class="card-body p-3 soalcek">
+
+                    	<div class="row pilih">
+                    		<input type="radio" id="2a" class="d-none" name="soal2">
+							<label for="2a" class="bg-dark text-white p-2 col-1 m-0">A</label>
+							<label for="2a" class="bg-secondary text-white p-2 col m-0">Bob Young</label>
+                    	</div>
+                    	<div class="row pilih">
+                    		<input type="radio" id="2b" class="d-none" name="soal2">
+							<label for="2b" class="bg-dark text-white p-2 col-1 m-0">B</label>
+							<label for="2b" class="bg-secondary text-white p-2 col m-0">Ian Murdock</label>
+                    	</div>
+                    	<div class="row pilih">
+                    		<input type="radio" id="2c" class="d-none" cek-x="true" name="soal2">
+							<label for="2c" class="bg-dark text-white p-2 col-1 m-0">C</label>
+							<label for="2c" class="bg-secondary text-white p-2 col m-0">Linus Benedict Torvald</label>
+                    	</div>
+                    	<div class="row pilih">
+                    		<input type="radio" id="2d" class="d-none" name="soal2">
+							<label for="2d" class="bg-dark text-white p-2 col-1 m-0">D</label>
+							<label for="2d" class="bg-secondary text-white p-2 col m-0">Mark Shuttleworks</label>
+                    	</div>
+                    	<div class="row pilih">
+                    		<input type="radio" id="2e" class="d-none" name="soal2">
+							<label for="2e" class="bg-dark text-white p-2 col-1 m-0">E</label>
+							<label for="2e" class="bg-secondary text-white p-2 col m-0">Marc Ewing</label>
+                    	</div>
+                       
+                    </div>
+                </div>
+            </div> -->
+		
+			<!-- <button class="btn btn-primary" onclick="cek()">cek</button> -->
+        </div>
+    </div>
+
+
+	<script type="text/javascript">
+		
+	
+$(document).ready(function() {
+	
+	$('input').change(function(event) {
+		/* Act on the event */
+		if ($(this).attr('cek-x')!='true') {
+			$(this).next().next().html($(this).next().next().html()+ '<kbd class="bg-danger"> - Salah</kbd>')
+		}else{
+			$(this).next().next().html($(this).next().next().html()+ '<kbd class="bg-success"> - Benar</kbd>')
+		}
+
+		//alert($(this).attr('cek-x'));
+	});;
+
+
+});
+
+
+
+	let soalData = [
+		{
+
+			id 		: 1,
+			soal 	: 'Software sistem operasi Linux kali pertama dibangun oleh seorang ahli komputer dari Finlandia yang bernama ….',
+			pilih 	: ["Bob Young","Ian Murdock","Marc Ewing","Mark Shuttleworks",["Linus Benedict Torvald","true"]],
+			jawab	: 2
+
+		},
+		{
+
+			id 		: 2,
+			soal 	: 'Suatu alat yang berfungsi untuk merubah suatu objek menjadi sebuah file disebut ....',
+			pilih 	: ["light pen","bar code","mouse","keyboard",["scanner","true"]],
+			jawab	: 3
+
+		},
+		{
+
+			id 		: 3,
+			soal 	: 'Jenis printer yang digunakan untuk keperluan grafik atau media outdoor adalah  ....',
+			pilih 	: ["Printer laser","Ink jet printer","Dot matrik ","Fax",["Plotter","true"]],
+			jawab	: 3
+
+		},
+		{
+
+			id 		: 4,
+			soal 	: 'Kebutuhan ram minimal pada sistem operasi Windows 10 64 bit adalah ….',
+			pilih 	: ["1 GB","3 GB","4 GB","5 GB",["2 GB","true"]],
+			jawab	: 3
+
+		},
+		{
+
+			id 		: 5,
+			soal 	: 'Pada jaringan komputer peer to peer, jenis kabel UTP yang digunakan antara pc dengan pc adalah ….',
+			pilih 	: ["straight","rollover","semi straight","full rollover",["semi straightr","true"]],
+			jawab	: 3
+
+		},
+		{
+
+			id 		: 6,
+			soal 	: 'Sirkulasi yang tidak baik di dalam sebuah pc dikarenakan kipas pendingin di cashing rusak akan menyebabkan …',
+			pilih 	: ["Antivirus gagal diupdate","Hardware baru tidak kompatibel","Kapasitas ram ditambah","Boros listrik",["Hardware pc akan menurun kinerjanya","true"]],
+			jawab	: 3
+
+		},
+		{
+
+			id 		: 7,
+			soal 	: 'Sistem operasi yang dikembangan oleh perusahaan Apple Inc adalah … .',
+			pilih 	: ["Windows","Microsoft","Debian","Linux",["Macintos","true"]],
+			jawab	: 3
+
+		},
+		{
+
+			id 		: 8,
+			soal 	: 'Jenis distro Linux khusus yang digunakan oleh para admin jaringan untuk pengecekan keamanan jaringan adalah ....',
+			pilih 	: ["redhat","mandrake","debian","ubuntu",["backtrack dan kali","true"]],
+			jawab	: 3
+
+		},
+		{
+
+			id 		: 9,
+			soal 	: 'Urutan perkembangan sistem operasi Microsoft dari yang paling tua adalah ….',
+			pilih 	: ["3.2.1 – dos – xp – 7 – 10","NT – dos – xp – 7 - 10","Dos – nt – xp – 7 – 10","Xp – dos – nt – vista – 7",["Dos – 3.2.1 – xp – 7 - 10","true"]],
+			jawab	: 3
+
+		},
+		{
+
+			id 		: 10,
+			soal 	: 'Sebuah VPS terinstal aplikasi bind9 dan protokol yang digunakan jenis TCP dan UDP. Maka vps ini berfungsi sebagai server ….',
+			pilih 	: ["ftp","ntp","web","mail",["dns","true"]],
+			jawab	: 3
+
+		},
+		{
+
+			id 		: 11,
+			soal 	: 'Yang termasuk network address yang terdapat di ip address kelas C adalah ….',
+			pilih 	: ["256.12.32.12","255.21.32.1","254.323.111","192.168.1.1",["192.168.1.0","true"]],
+			jawab	: 3
+
+		},
+		{
+
+			id 		: 12,
+			soal 	: 'Ciri khusus pada topologi jaringan star adalah adanya perangkat sebagai pusat jaringan, perangkat itu adalah ....',
+			pilih 	: ["bridge","nic","repeater","antena",["switch / hub","true"]],
+			jawab	: 3
+
+		},
+		{
+
+			id 		: 13,
+			soal 	: 'Sebuah komputer memiliki ip address 192.168.44.2/24. Maka jumlah host pada jaringan tersebut  adalah ....',
+			pilih 	: ["251","252","253","255",["254","true"]],
+			jawab	: 3
+
+		},
+		{
+
+			id 		: 14,
+			soal 	: 'Sebuah Server di dalam sebuah jaringan komputer memiliki kapasitas harddisk yang sangat besar. Maka server ini sangat cocok digunakan untuk .... .',
+			pilih 	: ["Dns server","Ntp server","Ssh server","Router",["File server","true"]],
+			jawab	: 3
+
+		},
+		{
+
+			id 		: 15,
+			soal 	: 'Bunyi “beep” panjang ketika sebuah komputer dihidupkan menandakan kerusakan pada …. ',
+			pilih 	: ["vga","harddisk","processor","power supply",["ram","true"]],
+			jawab	: 3
+
+		}
+
+
+	]	
+
+function shuffle(array) {
+  array.sort(() => Math.random() - 0.5);
+}
+shuffle(soalData);
+for (var i = 0; i < soalData.length; i++) {
+
+	let nomor 	= i+1;
+	let a 		= soalData[i];
+	let aCek  	= [];
+	
+
+
+	shuffle(a.pilih);
+	for (var x = 0; x <= 4; x++) {
+		if (Array.isArray(a.pilih[x])) {
+			aCek[x]=a.pilih[x][1];
+			console.log('x:'+aCek)
+			a.pilih[x]=a.pilih[x][0];
+			
+		}
+		
+	}
+	console.log('cek:'+aCek[0])
+console.log('cekx:'+aCek)
+	$('#kertasSoal').append(' <div class="col-sm-12 col-xl-6 mx-auto my-3">\
+                <div class="card shadow">\
+                	<div class="card-header m-0 text-white number" style="background:'+"hsla("+Math.floor(Math.random() * 360)+",100%,10%,1)"+'">#'+nomor+' - Umum<small class="text-white-50 float-right">id soal '+a.id+'a</small> </div>\
+                    <div class="card-header">'+a.soal+'</div>\
+                    <div class="card-body m-0 p-0 soalcek">\
+\
+                    	<div class="row m-0 pilih">\
+                    		<input type="radio" id="'+i+'a" class="d-none" cek-x="'+aCek[0]+'" name="soal'+i+'">\
+							<label for="'+i+'a" class="bg-dark text-white p-2 col-1 m-0">A</label>\
+							<label for="'+i+'a"" class="bg-secondary text-white p-2 col m-0">'+a.pilih[0]+'</label>\
+                    	</div>\
+                    	<div class="row m-0 pilih">\
+                    		<input type="radio" id="'+i+'b" class="d-none" cek-x="'+aCek[1]+'" name="soal'+i+'">\
+							<label for="'+i+'b" class="bg-dark text-white p-2 col-1 m-0">B</label>\
+							<label for="'+i+'b" class="bg-secondary text-white p-2 col m-0">'+a.pilih[1]+'</label>\
+                    	</div>\
+                    	<div class="row m-0 pilih">\
+                    		<input type="radio" id="'+i+'c" class="d-none" cek-x="'+aCek[2]+'" name="soal'+i+'">\
+							<label for="'+i+'c" class="bg-dark text-white p-2 col-1 m-0">C</label>\
+							<label for="'+i+'c" class="bg-secondary text-white p-2 col m-0">'+a.pilih[2]+'</label>\
+                    	</div>\
+                    	<div class="row m-0 pilih">\
+                    		<input type="radio" id="'+i+'d" class="d-none" cek-x="'+aCek[3]+'" name="soal'+i+'">\
+							<label for="'+i+'d" class="bg-dark text-white p-2 col-1 m-0">D</label>\
+							<label for="'+i+'d" class="bg-secondary text-white p-2 col m-0">'+a.pilih[3]+'</label>\
+                    	</div>\
+                    	<div class="row m-0 pilih">\
+                    		<input type="radio" id="'+i+'e" class="d-none" cek-x="'+aCek[4]+'" name="soal'+i+'">\
+							<label for="'+i+'e" class="bg-dark text-white p-2 col-1 m-0">E</label>\
+							<label for="'+i+'e" class="bg-secondary text-white p-2 col m-0">'+a.pilih[4]+'</label>\
+                    	</div>\
+                       \
+                    </div>\
+                </div>\
+            </div>\
+		');
+	console.log(soalData[i])
+}
+
+
+
+
+
+
+
+	// function cek(){
+
+	// 	soalcek 	= document.getElementsByClassName('soalcek')
+	// 	let benar 	= []; 
+
+	// 	for (var i = 0; i < soalcek.length; i++) {
+			
+	// 		let cekAttr = soalcek[i].getElementsByTagName('input');
+
+	// 		for (var x = 0; x < cekAttr.length; x++) {
+	// 			if (cekAttr[x].checked==true) {
+	// 				benar.push($(soalcek[i]).prev().prev().html());
+	// 				console.log(benar)
+	// 			}
+	// 		}
+
+	// 	}
+
+	// }
+
+
+	</script>
+
+
+</body>
+
+</html>
