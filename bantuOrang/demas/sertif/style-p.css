@@ -1,0 +1,100 @@
+body {
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+	background-color: #00cc99;
+}
+
+.kiri .bg1 img {
+	left: 0;
+	top: 0;
+	float: left;
+	position: absolute;
+	z-index: 1;
+}
+
+.kiri .pic1 img {
+	left: 0;
+	top: 5px;
+	float: left;
+	position: absolute;
+	width: 120px;
+	height: 140px;
+	z-index: 2;
+}
+
+.kiri .word1 {
+	left: 105px; 
+	top: 60px; 
+	position: absolute;
+	z-index:2;
+
+}
+
+.kiri .word1 a {
+	text-decoration: none;
+	color: #000;
+}
+
+/* .welcome {
+	margin-top: 20px;
+	font-size: 70px;
+	font-weight: bold;
+} */
+
+/*#my_text {
+	margin-top: 20px;
+	font-size: 70px;
+	font-weight: bold;
+} */
+
+.kanan .bg2 img {
+	right: 0;
+	top: 0;
+	position: absolute;
+	float: right;
+	z-index: 1;
+}
+
+.kanan .pic2 img {
+	right: 10px;
+	top: 15px;
+	width: 120px;
+	height: 120px;
+	position: absolute;
+	float: right;
+	z-index: 2;
+}
+
+.kanan .word2 {
+	right: 140px; 
+	top: 60px; 
+	float: right;
+	position: absolute;
+	z-index:2;
+
+}
+
+.kanan .word2 a {
+	text-decoration: none;
+	color: #000;
+}
+
+.kategori {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-left: 50px;
+	padding-right: 50px;
+	text-align: center;
+	color: #FF6600;
+	background: #006699;
+	margin-top: 250px;
+	margin-right: 450px;
+	margin-left: 450px;
+	border-radius: 25px;
+	transition: all ease 0.5s;
+}
+
+.kategori:hover{
+	transform: scale(1.1);
+}

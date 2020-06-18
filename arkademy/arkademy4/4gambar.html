@@ -1,61 +1,55 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <title>gambar</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <script type="text/javascript">
-    function cetak_gambar(besar) {
-
-
+      function cetak_gambar(besar) {
         let output = [];
-        let printOutput = '';
+        let printOutput = "";
 
         if (besar % 2 == 0) {
-            return 'harus memasukan angka ganjil';
+          return "harus memasukan angka ganjil";
         }
 
         for (var i = 0; i < besar; i++) {
-
-            let baris = '';
-            let a = 0;
-            while (a < besar) {
-                if (a == 0) { baris += '*' }
-                if (a == besar - 1) { baris += '*' }
-                if (a != 0 && a != besar - 1) {
-                    baris += '=';
-                }
-
-                a++;
-                //console.log(baris);
+          let baris = "";
+          let a = 0;
+          while (a < besar) {
+            if (a == 0) {
+              baris += "*";
+            }
+            if (a == besar - 1) {
+              baris += "*";
+            }
+            if (a != 0 && a != besar - 1) {
+              baris += "=";
             }
 
-            output.push(baris);
+            a++;
+            //console.log(baris);
+          }
 
+          output.push(baris);
         }
 
         let change = Math.floor(output.length / 2);
-        output[change] = output[change].replace(/=/g, '*');
+        output[change] = output[change].replace(/=/g, "*");
 
         for (var i = 0; i < output.length; i++) {
-            printOutput += output[i] + '\n';
+          printOutput += output[i] + "\n";
         }
 
-        return ' ' + printOutput.split('').join(' ');
+        return " " + printOutput.split("").join(" ");
+      }
 
-    }
+      //#test 1
+      console.log(cetak_gambar(5));
 
-
-
-
-    //#test 1
-    console.log(cetak_gambar(5));
-
-    //test 2
-    //console.log(cetak_gambar(10));
+      //test 2
+      //console.log(cetak_gambar(10));
     </script>
-</body>
-
+  </body>
 </html>

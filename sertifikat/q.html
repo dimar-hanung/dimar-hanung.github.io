@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    
+    
+    chat disini aja , biar ga susah kalo mau undo :v
+    
+    
+    
+    
+    <script>
+      class Contoh {
+        constructor(demo) {
+          this.demo = demo;
+        }
+
+        run() {
+            this.getRandomInt(this.demo,15);
+        }
+
+        static getRandomInt(min, max) {
+          min = Math.ceil(min)
+          max = Math.floor(max)
+          return Math.floor(Math.random() * (max - min)) + min //The maximum is exclusive and the minimum is inclusive
+        }
+      }
+
+      let contoh = new Contoh();
+      contoh.run(3)
+    </script>
+  </body>
+</html>
