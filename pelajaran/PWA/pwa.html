@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>html</title>
+    <script src="../asset/jquery-3.4.1.min.js"></script>
+    <script src="../asset/bootstrap/js/bootstrap.min.js"></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../asset/bootstrap/css/bootstrap.min.css"
+    />
+
+    <style type="text/css">
+      * {
+        font-family: calibri !important;
+      }
+      .container {
+        max-width: 860px;
+      }
+
+      .judul-utama,
+      .sub-judul-utama {
+        width: 100%;
+        padding: 10px 20px;
+        border-radius: 3px;
+        color: white;
+      }
+
+      .x-judul {
+        background-color: #343a40;
+        color: white;
+      }
+      .judul {
+        line-height: 0px;
+        margin: 50px 0px;
+        margin-bottom: 10px;
+        border: solid #ccc 1px;
+        /* border-radius: 10px; */
+        text-align: center;
+        padding: 10px;
+      }
+      .judul h4 {
+        padding: 0px;
+        margin: 0px;
+      }
+      .label-judul {
+        /* p-2 text-white text-center col-1 */
+        color: white;
+        text-align: center;
+        min-width: 80px;
+        font-weight: bolder;
+      }
+
+      .box {
+        padding: 5px;
+        border-radius: 3px;
+        border-bottom: solid #ccc 0.4px;
+        margin: 10px 0px;
+        /* max-width: 200px; */
+        /* display: inline-block; */
+      }
+      .box-wrap {
+        display: flex;
+        /* flex-direction: column; */
+        flex-wrap: wrap;
+        grid-auto-rows: 1fr;
+      }
+      .box-wrap .box {
+        width: calc(25% - 20px);
+        height: 100%;
+        margin: 0px auto;
+        /* flex: 1 0 auto; */
+      }
+      td {
+        vertical-align: top;
+        /* max-width: 150px; */
+      }
+      .subjudul {
+        position: sticky;
+        z-index: 9;
+        top: 0px;
+      }
+
+      .card-body details{
+        margin: 10px 0px;
+        transition: all ease 0.3s;
+      }
+      .card-body summary{
+        background:#dedede;
+        color: #000;
+        padding: 10px;
+        border-radius: 5px;
+        outline: none;
+        border: none;
+        display: flex;
+      }
+      .card-body summary:hover{
+        background: #efefef;
+      }
+
+      .card-body details>div{
+        background: #f7f7f7;
+        padding: 10px;
+        
+      }
+
+      .card-body details[open] div{
+        transform-origin: top;
+        animation: openanim 0.2s linear;
+      }
+      .card-body details[open]{
+        box-shadow: 0px 0px 15px -5px;
+        
+      }
+      
+      @keyframes openanim{
+
+        0%{
+          transform: scaleY(0);
+          font-size:0px;
+        }
+        100%{
+          font-size: auto;
+          transform: scaleY(1);
+        }
+
+      }
+
+      .card-body summary {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+.card-body summary::before{
+  content: '●';
+  border-radius: 5px 0px 0px 5px;
+    background: #dc3435;
+    color: #fff;
+    margin: -10px;
+    margin-left: -10px;
+    margin-right: 10px;
+    left: 0px;
+    height: auto;
+    padding: 0px;
+    display: inline-block;
+    padding: 10px;
+}
+.card-body details[open] summary::before{
+  background-color: #28a745;
+  border-radius: 5px 0px 0px 0px;
+}
+
+details summary::-webkit-details-marker {
+  display:none;
+}
+
+
+
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="text-black-50">v1.1 | 22 februari 2020, 11:50AM | 3*</div>
+      <h2 class="bg-info judul-utama">Progressive Web App</h2>
+      <h6 class="sub-judul-utama bg-success">Web Programming Id</h6>
+
+      <div id="babSatu">
+        <div class="bg-light judul">
+          <h4>Pengenalan PWA</h4>
+        </div>
+
+        <div class="card">
+          <div class="row subjudul m-0">
+            <div class="col card-header x-judul">Tujuan PWA</div>
+          </div>
+          <div class="card-body">
+            Tujuan utama PWA ialah <hr/>
+            <div class="alert alert-primary">
+              untuk memungkinkan web developer <b>
+                mengubah web yang sudah ada agar bisa berperilaku layaknya
+                aplikasi mobile native
+              </b> tanpa melakukan banyak perubahan atau menambah programmer khusus.
+            </div>
+            
+          </div>
+        </div>
+        <div class="card mt-5">
+          <div class="row subjudul m-0">
+            <div class="col card-header x-judul">Karakteristik PWA</div>
+          </div>
+          <div class="card-body">
+            <table class="table table-hover">
+              <tr>
+                <th>
+                  Karakteristik
+                </th>
+                <th>Penjelasan</th>
+              </tr>
+              <tr>
+                <td><b class="text-primary">Progresif </b></td>
+                <td>
+                  Bekerja untuk setiap pengguna. Tak peduli apapun browsernya,
+                  tidak masalah. Pasalnya, PWAs dibangun dengan peningkatan
+                  progresif sebagai konsep intinya.
+                </td>
+              </tr>
+              <tr>
+                <td><b class="text-primary">Responsif</b></td>
+                <td>
+                  Cocok dengan setiap faktor bentuk: perangkat desktop, seluler,
+                  tablet, atau apa saja yang muncul berikutnya.
+                </td>
+              </tr>
+              <tr>
+                <td><b class="text-primary">Konektivitas independen</b></td>
+                <td>
+                  Disempurnakan dengan service worker agar bisa bekerja offline
+                  atau pada jaringan berkualitas-rendah.
+                </td>
+              </tr>
+              <tr>
+                <td><b class="text-primary">Seperti-Aplikasi</b></td>
+                <td>
+                  Terasa seperti sebuah aplikasi untuk pengguna dengan interaksi
+                  dan navigasi bergaya-aplikasi karena mereka dibangun di atas
+                  model shell application.
+                </td>
+              </tr>
+              <tr>
+                <td><b class="text-primary">Fresh</b></td>
+                <td>Selalu terkini berkat proses pembaruan service worker.</td>
+              </tr>
+              <tr>
+                <td><b class="text-primary">Aman</b></td>
+                <td>
+                  Disediakan melalui HTTPS untuk mencegah snooping dan
+                  memastikan materi belum dirusak.
+                </td>
+              </tr>
+              <tr>
+                <td><b class="text-primary">Dapat ditemukan</b></td>
+                <td>
+                  Dapat diidentifikasi sebagai "aplikasi" berkat manifes W3C dan
+                  cakupan registrasi service worker. Ini memungkinkan mesin
+                  telusur untuk menemukannya.
+                </td>
+              </tr>
+              <tr>
+                <td><b class="text-primary">Re-engageable</b></td>
+                <td>
+                  Dengan fitur pemberitahuan seperti push notification, dapat
+                  mengajak (engaged) kembali pengguna untuk menggunakan
+                  aplikasi.
+                </td>
+              </tr>
+              <tr>
+                <td><b class="text-primary">Dapat dipasang</b></td>
+                <td>
+                  Memungkinkan pengguna untuk "menyimpan" aplikasi yang mereka
+                  anggap paling berguna di layar beranda tanpa kerumitan
+                  application store.
+                </td>
+              </tr>
+              <tr>
+                <td><b class="text-primary">Bisa ditautkan</b></td>
+                <td>
+                  Dapat dengan mudah dibagikan melalui URL. Pemasangannya pun
+                  mudah.
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+        <div class="card mt-5">
+          <div class="row subjudul m-0">
+            <div class="col card-header x-judul">Kelebihan PWA</div>
+          </div>
+          <div class="card-body">
+            <details>
+              <summary
+                >PWA adalah web sehingga tidak memerlukan pemasangan</summary
+              >
+              <div>
+                Berbeda dengan aplikasi mobile native yang mana pengguna harus
+                mengunduh dan memasang berkas .apk atau .ipa sebelum bisa
+                digunakan, pogressive web apps bisa dipakai tanpa mengunduh atau
+                memasang berkas apapun. Meskipun begitu, jika ingin kita juga
+                tetap bisa memasang PWA agar tampil di homescreen.
+              </div>
+            </details>
+            <details>
+              <summary>Tidak memerlukan install update</summary>
+              <div>
+                Saat programmer memperbaiki sebuah fitur atau menambah fitur
+                baru di aplikasi mobile native, pengguna harus mengunduh berkas
+                .apk atau .ipa yang baru agar bisa mendapatkan update yang
+                dikirim. Dengan PWA, pengguna bisa mendapatkan update terbaru
+                tanpa perlu mengunduh berkas apapun. Karena PWA adalah web, maka
+                untuk mendapatkan update baru pengguna cukup me-refresh aplikasi
+                tersebut.
+              </div>
+            </details>
+            <details>
+              <summary>Tidak perlu didistribusikan melalui Store</summary>
+              <div>
+                Google Play Store pada bulan Maret 2018 sudah memiliki lebih
+                dari 3.3 juta aplikasi. Membuat aplikasi baru yang bersaing
+                dengan 3.3 juta aplikasi bukan pekerjaan yang mudah. Beruntung
+                aplikasi PWA tidak perlu didistribusikan lewat Store. Pengguna
+                cukup mengunjungi website utama untuk kemudian bisa memanfaatkan
+                penerapan teknologi yang sudah dilakukan oleh developer.
+              </div>
+            </details>
+            <details>
+              <summary>Bisa memanfaatkan fitur native.</summary>
+              <div>
+                Meski integrasinya tidak sesempurna aplikasi mobile native, PWA
+                bisa berkomunikasi dengan perangkat keras yang dimiliki oleh
+                smartphone. Situs https://whatwebcando.today/ akan memberikan
+                gambaran apa saja fitur-fitur perangkat keras yang sudah bisa
+                dipakai.
+              </div>
+            </details>
+            <details>
+              <summary>Bisa membuka halaman manapun lewat tautan.</summary>
+              <div>
+                Sekali lagi, karena PWA merupakan web, maka setiap halaman bisa
+                dibuka dari mana saja, lewat sebuah tautan. seperti layaknya
+                website biasa. Di aplikasi mobile native, kita harus melalui
+                alur navigasi yang telah didesain dan tidak bisa memuat halaman
+                manapun secara sembarang.
+              </div>
+            </details>
+            <details>
+              <summary>Bersifat universal.</summary>
+              <div>
+                Mendistribusikan aplikasi melalui Store harus mengikuti
+                aturan-aturan yang diterapkan oleh pengelolanya. Dengan PWA,
+                kita sebagai developer lah yang mengatur sendiri distribusi
+                aplikasi.
+              </div>
+            </details>
+            <details>
+              <summary>Mengurangi penggunaan data.</summary>
+              <div>
+                Website e-commerce Konga, berhasil mengurangi penggunaan data
+                sebesar 92% untuk initial load dibandingkan dengan aplikasi
+                mobile native. Dengan pengurangan beban data yang besar artinya
+                pengguna bisa memuat halaman yang diinginkan lebih cepat dan
+                lebih hemat. Kelebihan ini akan sangat berguna di daerah dengan
+                koneksi Internet yang lambat.
+              </div>
+            </details>
+          </div>
+        </div>
+
+
+        <div class="card mt-5">
+            <div class="row subjudul m-0">
+            <div class="col card-header x-judul">Kelemahan PWA</div>
+            </div>
+            <div class="card-body">
+              <details>
+                <summary>Masih ada fitur native yang belum bisa dimanfaatkan PWA</summary>
+                <div>Pada pembahasan kelebihan PWA, kita melihat bahwa banyak fitur native yang sudah bisa dimanfaatkan melalui PWA. Akan tetapi, masih ada beberapa fitur penting yang belum bisa dipakai. Mayoritasnya  berkaitan dengan masalah keamanan diantaranya aplikasi kontak, sms, telepon, kalender, bookmark, alarm, pengunci layar, NFC, Bluetooth, dsb.</div>
+              </details>
+              <details>
+                <summary>Belum mendukung semua browser</summary>
+                <div>Untuk saat ini baru Google Chrome, Firefox, Opera, dan browser Android Samsung yang bisa memanfaatkan seluruh teknologi PWA, sedangkan browser lain seperti Internet Explorer, Safari, Edge dan browser-browser lainnya belum mengimplementasi keseluruhan fitur PWA.</div>
+              </details>
+              <details>
+                <summary>Tidak tersedia lewat aplikasi Store</summary>
+                <div>Poin ini memang bisa menjadi kelebihan sekaligus kekurangan PWA. Kelebihannya sudah kita bahas di atas yaitu pengguna tidak perlu mengunduh lewat aplikasi Store dan tidak perlu bersaing dengan jutaan aplikasi lain. Pengguna tidak mengunduh aplikasi lewat Store. Maka yang kita harus bisa adalah membawa user tersebut ke beranda website. Kita juga tidak bisa memanfaatkan fitur promosi yang ditawarkan oleh Store tersebut.</div>
+              </details>
+            
+            </div>
+        </div>
+
+
+        <div class="card mt-5">
+            <div class="row subjudul m-0">
+            <div class="col card-header x-judul">Komponen PWA</div>
+            </div>
+            <div class="card-body">
+              <div>Ada beberapa komponen wajib dan ada juga komponen yang opsional. Komponen wajib adalah komponen yang akan selalu digunakan setiap kali membuat PWA, sedangkan komponen opsional adalah komponen yang tidak mempengaruhi kinerja PWA namun dapat digunakan untuk memperkaya fitur PWA.</div>
+              <details>
+                <summary>Service Worker</summary>
+                <div>Service Worker adalah skrip yang dijalankan oleh browser di latar belakang, yang terpisah dengan skrip lain di halaman web browser. Service worker ditulis menggunakan bahasa pemrograman JavaScript, namun dipanggil dengan cara yang berbeda dari kode JavaScript pada umumnya. Dengan menggunakan service worker, kita dapat memanfaatkan resource yang telah disimpan di dalam cache untuk menampilkan bahkan dalam mode jaringan offline.</div>
+              </details>
+              <details>
+                <summary>App shell</summary>
+                <div>Application shell atau biasa disingkat dengan app shell adalah kerangka antarmuka aplikasi yang dibangun oleh beberapa komponen halaman dan aset lainnya. MEreka disimpan lebih dahulu di dalam cache sehingga dapat tampil secara instan saat aplikasi dibuka. Umumnya komponen halaman yang menjadi bagian dari app shell adalah komponen yang selalu ada untuk semua halaman seperti header, sidebar dan footer. Adapun komponen dari konten halaman akan dimuat secara dinamis dan asinkron.</div>
+              </details>
+              <details>
+                <summary>Cache</summary>
+                <div>Cache adalah tempat penyimpanan lokal yang digunakan  browser untuk menyimpan resource untuk dapat digunakan kembali pada pemanggilan selanjutnya tanpa perlu mengirim permintaan (request)lagi ke jaringan. Ada 2 jenis cache di browser, yaitu Browser-managed cache dan Application-managed cache. Browser-managed cache adalah cache sementara untuk menyimpan berkas unduhan browser secara otomatis. Cache jenis ini diatur oleh browser dan tidak tersedia dalam mode jaringan offline. Adapun application-managed cache adalah cache yang dibuat oleh aplikasi menggunakan Cache API dan terpisah dari cache yang dikelola oleh browser. Cache jenis inilah yang dapat kita gunakan untuk menyimpan resource dan dapat ditampilkan dalam mode jaringan offline melalui service worker.</div>
+              </details>
+              <details>
+                <summary>Web App Manifest</summary>
+                <div>Web app manifest adalah file JSON sederhana yang mengontrol bagaimana aplikasi ditampilkan dan dijalankan di sisi pengguna. Umumnya file ini diberi nama manifest.json. Saat aplikasi pertama kali dibuka di browser, browser akan membaca file manifest, mengunduh resource dan menampilkan konten.</div>
+              </details>
+              <details>
+                <summary>Fetch API</summary>
+                <div>Fetch API adalah salah satu diantara web API yang dapat digunakan untuk mengambil resource dari server di dalam dan lintas jaringan secara asinkron. Bila kamu sudah terbiasa dengan teknik AJAX, maka kamu akan sangat familiar dengan fetch API. Fetch API sama seperti penggunaan API XMLHttpRequest namun memilikk  beberapa fitur yang lebih baik.</div>
+              </details>
+              <details>
+                <summary>Progressive Enhancement</summary>
+                <div>Progressive enhancement atau peningkatan progressif adalah pendekatan dalam pengembangan web dimana kita memulai pengembangan dari fitur-fitur yang umum berjalan di semua browser. Kemudian secara bertahap kita meningkatkan fungsionalitas sesuai dengan kemampuan dari jenis browser yang digunakan oleh setiap pengguna. Setiap kali kita menggunakan suatu web API kita perlu memperhatikan apakah API tersebut sudah didukung oleh browser bawaan pengguna aplikasi kita. Kita juga perlu melakukan penanganan bilamana browser yang digunakan pengguna belum mendukung fitur web API yang kita gunakan. Misalnya melakukan fallback ke fitur sejenis yang telah didukung atau menampilkan pesan untuk memperbaharui versi browser atau  mengimbau agar menggunakan selalu browser modern.</div>
+              </details>
+              <details>
+                <summary>PWA Architecture Styles</summary>
+                <div>PWA Architecture Styles maksudnya pendekatan yang digunakan dalam membangun PWA ditinjau dari teknologi back-end yang digunakan dan kebutuhan performa aplikasi. Beberapa istilah terkait hal ini diantaranya app shell, server-side rendering, client-side rendering, dan sebagainya. Selengkapnya tentang  ulasan ini ada di bagian Pola Arsitektur PWA di bawah ini.</div>
+              </details>
+              <details>
+                <summary>IndexedDB</summary>
+                <div>IndexedDB adalah sistem penyimpanan lokal berbasis NoSQL di browser. Kita dapat menyimpan data apapun di browser pengguna untuk keperluan aplikasi. Kamu dapat melakukan aksi pencarian, pembaharuan dan penghapusan data.</div>
+              </details>
+              <details>
+                <summary>Push Notification</summary>
+                <div>Notification adalah pesan popup yang muncul di perangkat pengguna. Aplikasi PWA kita mendukung pemunculan notification untuk memberitahu pengguna terkait pembaharuan tertentu di dalam aplikasi. Aplikasi PWA juga dapat menerima event push yang dikirim oleh server dan menampilkan pesan popup meskipun pengguna sedang tidak membuka aplikasi tersebut.</div>
+              </details>
+              <details>
+                <summary>Workbox</summary>
+                <div>Workbox adalah koleksi librari dan tool yang dapat kita gunakan untuk meng-generate file service worker, precaching, routing dan runtime-caching. Workbox memudahkan kita dalam menulis kode PWA dengan sintaks yang lebih sederhana dan mudah dikelola.</div>
+              </details>
+            </div>
+        </div>
+
+
+        <div class="card mt-5">
+            <div class="row subjudul m-0">
+            <div class="col card-header x-judul">Arsitektur PWA</div>
+            </div>
+            <div class="card-body">
+              <div class="alert alert-info">Sebelum mulai membangun sebuah PWA, pertama kita perlu menentukan terlebih dahulu arsitektur aplikasi web kita.</div>
+              <div>Ada dua arsitektur yang digunakan dalam membangun sebuah web ditinjau dari <b class="text-primary">bagaimana server mengembalikan konten halaman</b>, yaitu</div>
+
+              <details>
+                <summary>Server Side Rendering (SSR)</summary>
+                <div>SSR adalah pola di mana setiap halaman webnya dirender di sisi server dan dikembalikan ke browser dalam bentuk HTML yang siap ditampilkan</div>
+              </details>
+              <details>
+                <summary>Client Side Rendering (CSR)</summary>
+                <div>CSR adalah pola dimana server hanya mengembalikan data (biasanya dalam format JSON atau XML) untuk nanti dirender di sisi klien (browser) oleh JavaScript.</div>
+              </details>
+
+
+              <div>
+                arsitektur web ditinjau dari bagaimana sebuah konten halaman dimuat :
+              </div>
+
+              <details>
+                <summary>multi-page app (MPA)</summary>
+                <div>
+                  MPA adalah nama arsitektur yang dipakai saat website kita terdiri dari beberapa halaman HTML yang menyusunnya. <hr/> 
+                  Setiap kali browser berpindah dari satu halaman ke halaman lain, browser akan memuat kembali (reload) halaman dan mengganti konten HTML dari halaman sebelumnya ke konten yang baru.
+                </div>
+              </details>
+              <details>
+                <summary>single-page app (SPA)</summary>
+                <div>
+                  <img src="img/arsitektur-SPA.png" alt="arsitektur-SPA" class="img-fluid">
+                </div>
+              </details>
+
+            </div>
+        </div>
+
+        <!-- penutup soal -->
+        
+      </div>
+      <!-- penutup container -->
+    </div>
+    <script>
+      let dataSubJudul = [
+        {
+          id: "babSatu",
+          color: "bg-info",
+          text: "",
+        },
+      ];
+
+      for (var i = 0; i < dataSubJudul.length; i++) {
+        let dataSend = dataSubJudul[i];
+        tag(dataSend.id, dataSend.color, dataSend.text);
+      }
+
+      function tag(id, color, text) {
+        let rowJudul = document
+          .getElementById(id)
+          .getElementsByClassName("subjudul");
+        // rowJudul.innerHTML += ''
+
+        for (var x = 0; x < rowJudul.length; x++) {
+          rowJudul[
+            x
+          ].innerHTML += `<div class="card-header ${color} label-judul col-1">${text} # ${parseInt(
+            x + 1
+          )}</div>`;
+        }
+      }
+    </script>
+  </body>
+</html>
