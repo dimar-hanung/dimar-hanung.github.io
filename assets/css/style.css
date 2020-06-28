@@ -47,6 +47,7 @@
         background: #0f1113;
         height: max-content;
         box-sizing: border-box;
+        box-shadow:0px 0px 15px -5px black;
         width: 100vw;
         position: fixed;
         top: 0px;
@@ -280,10 +281,10 @@
     }
 
     .porto-daftar{
-        margin: auto;
+        margin: 0px 10px;
     }
     .porto-input-wrap{
-        margin: auto;
+        margin: 0px 10px;
         max-width: 300px
     }
 
@@ -318,8 +319,9 @@
         margin-top: 15px;
     }
     .porto-box-row hr{
-    	/*margin: 10px;*/
-        border-top: 0.3px #ccc solid;
+        /*margin: 10px;*/
+        border:none;
+        border-top: 0.3px #17a2b8 solid;
     }
 
     .porto-box {
@@ -330,9 +332,9 @@
         /*vertical-align: middle;*/
         min-width: 300px;
         height: 200px;
-        background: #ccc3;
-        background-image: url(http://api.thumbr.it/whitenoise-361x370.png?background=ffffff00&noise=626262&density=29&opacity=41);
-        font-family: hamm;
+        background: #ccc0;
+        /* background-image: url(http://api.thumbr.it/whitenoise-361x370.png?background=ffffff00&noise=626262&density=29&opacity=41); */
+        font-family: calibri;
         padding-bottom: 50px;
         /*border: solid #ccc 1.5px;*/
         border-radius: 5px;
@@ -348,7 +350,7 @@
         /*border: solid #ccc 0.5px;*/
         border-bottom: none;
         border-radius:5px 5px 0px 0px;
-        background:#28a745;
+        background:#343a40;
         font-weight: normal;
         font-family: sans-serif;
         color: white;
@@ -359,7 +361,8 @@
         /*width: 100%;*/
         padding: 15px 20px;
         font-size: 15px;
-        background:#17a2b8;
+        background:#343a40;
+        box-shadow:0px 0px 15px -5px black;
         font-family: sans-serif;
         font-weight: normal;
         color: white !important;
@@ -455,7 +458,7 @@
         padding: 10px;
         background-clip: content-box;
         position: relative;
-
+        border-radius:5px;
         /*font-size: 15px;*/
     }
 
@@ -474,15 +477,17 @@
         /*border-bottom:solid 0.4px orange;*/
         position: relative;
         overflow: hidden;
+        border-radius: 5px 5px 0 0;
 
     }
 
     details.list-judul summary>.porto-hover{
         content: '';
-        background: #00b2ff40;
+        background: #ade6ff;
         width: -webkit-fill-available;
         height: -webkit-fill-available;
         z-index: -1;
+        border-radius:5px;
         transition: all cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s;
         top: 50px;
         left: -100px;
@@ -495,6 +500,9 @@
         left: 0px;
 
      }
+     details.list-judul:hover{
+         color:#000;
+     }
 
      details[open] .porto-hover{
         background: transparent !important;
@@ -502,19 +510,21 @@
 
 
     details[open]>.porto-list-desc {
-
+        color:black;
         border: solid 0.1px #17a2b8 !important;
         border-top: none !important;
+        border-radius: 0 0 5px 5px;
     }
 
     details[open]>summary {
+        color:black;
         border: solid 0.1px #17a2b8 !important;
         border-bottom: none !important;
         transform: rotate(0deg) !important;
     }
     details[open].list-judul{
         transition: all ease 0.3s;
-        background-color: #00b2ff40;
+        background-color: #ade6ff;
     }
 
 
