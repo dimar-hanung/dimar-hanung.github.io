@@ -142,7 +142,6 @@ if (typeof(Storage) !== "undefined") {
         if (scroll > 5) {
             $('.navbar-wrap').css({
                 transform: 'scale(0.9)',
-                backgroundColor: '#232b33de',
                 padding: '0rem 1rem',
                 borderRadius: '0px 0px 10px 10px'
             });
