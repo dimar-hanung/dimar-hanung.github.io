@@ -16,7 +16,7 @@
     body {
         overflow-y: overlay;
         overflow-x: hidden;
-        font-family: sans-serif;
+        font-family: calibri;
     }
 
     hr {
@@ -243,7 +243,6 @@
         background: #ccc3;
         border-left: solid #17a2b8 2px;
         margin-top: 10px;
-        font-family: sans-serif;
         position: relative;
     }
 
@@ -275,7 +274,7 @@
         font-family: comic;
         font-weight: normal;
         font-size: 25px;
-
+        
 
         /*color: #2b87;*/
     }
@@ -350,7 +349,7 @@
         /*border: solid #ccc 0.5px;*/
         border-bottom: none;
         border-radius:5px 5px 0px 0px;
-        background:#343a40;
+        background:#25542f;
         font-weight: normal;
         font-family: sans-serif;
         color: white;
@@ -361,7 +360,7 @@
         /*width: 100%;*/
         padding: 15px 20px;
         font-size: 15px;
-        background:#343a40;
+        background:#182735;
         box-shadow:0px 0px 15px -5px black;
         font-family: sans-serif;
         font-weight: normal;
