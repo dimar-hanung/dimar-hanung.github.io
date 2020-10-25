@@ -21,14 +21,21 @@ const routes = [
     name: "Maintenance",
     component: () =>
       import(/* webpackChunkName: "maintenance" */ "../views/Maintenance.vue"),
-    meta: { hideNavbar: true }
+    meta: { hideNavbar: true, reBuild:true }
   }
 ];
+
+
 
 const router = new VueRouter({
   mode: "history",
   base: process.env.BASE_URL,
   routes
 });
-
+router.beforeEach((to, from, next) => {
+  if (to.matched.some(record => record.meta.reBuild)){
+    next();
+  }
+  else{ next({ name: 'Maintenance' })}
+})
 export default router;
