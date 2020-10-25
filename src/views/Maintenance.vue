@@ -2,27 +2,25 @@
   <div class="grid place-items-center h-screen">
     <canvas id="bintangDraw"></canvas>
     <div class="z-20">
-        <div class="text-message text-3xl font-bold">
-          Sedang Maintenance
-        </div>
-        <div class="text-message text-lg">
-          Dimar Hanung
-        </div>
+      <div class="text-message text-3xl font-bold">
+        Sedang Maintenance
+      </div>
+      <div class="text-message text-lg">
+        Dimar Hanung
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import Star from "./Star.js"
+import Star from "./Star.js";
 export default {
   data() {
     return {
       emot: "😀"
     };
   },
-  methods: {
-    
-  },
+  methods: {},
   mounted() {
     Star(document.getElementById("bintangDraw"));
   }

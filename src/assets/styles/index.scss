@@ -1,6 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+body{
+    font-family: sans-serif;
+}
 .btn{
     @apply bg-red-500 text-white;
     padding:5px;

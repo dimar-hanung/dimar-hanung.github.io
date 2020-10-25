@@ -21,11 +21,9 @@ const routes = [
     name: "Maintenance",
     component: () =>
       import(/* webpackChunkName: "maintenance" */ "../views/Maintenance.vue"),
-    meta: { hideNavbar: true, reBuild:true }
+    meta: { hideNavbar: true, reBuild: true }
   }
 ];
-
-
 
 const router = new VueRouter({
   mode: "history",
