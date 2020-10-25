@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.a013e1db5932216d0d6578b96ee42469.js"
+  "/precache-manifest.ced54336e574a5ab893706b0056aacc4.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "tailwind-sass-pwa"});
