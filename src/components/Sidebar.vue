@@ -15,7 +15,7 @@
       </div>
       <div class="sidebar__title">
         <div class="sidebar__title-top">Dimar Hanung Prakoso</div>
-        <div class="sidebar__title-bot"></div>
+        <div class="sidebar__title-bot">Front-End Dev</div>
       </div>
     </div>
     <div class="sidebar__close" @click="isSidebar = false">
@@ -31,7 +31,7 @@
       <router-link to="a"
         ><font-awesome-icon :icon="['fas', 'medal']" /> Sertifikat</router-link
       >
-      <router-link to="b">Menuju</router-link>
+      <router-link to="b"><font-awesome-icon :icon="['fas', 'paint-brush']" /> Menuju</router-link>
       <router-link to="c">Menuju</router-link>
     </div>
   </div>
@@ -49,6 +49,23 @@ export default {
 
 <style lang="scss" scoped>
 $sidebar-width: 280px;
+@mixin button-link{
+   @apply block p-3 text-white;
+    font-weight: bold;
+    transition: all ease 0.3s;
+    &:hover {
+      @apply bg-purple-500 pl-5;
+    }
+    svg {
+      @apply mr-1 text-center;
+      width: 25px;
+    }
+    &.router-link-exact-active {
+      @apply bg-purple-500;
+    }
+}
+
+
 .sidebar {
   @apply bg-purple-800 text-white min-h-screen;
   transition: all ease 0.3s;
@@ -76,20 +93,6 @@ $sidebar-width: 280px;
   }
   &__header {
     @apply bg-purple-900 py-2 shadow-lg select-none z-20 relative;
-
-    &:hover .sidebar__title-bot {
-      transform: rotateX(360deg);
-
-      &::after {
-        content: "MEVN Stack... & Laravel";
-        position: absolute;
-        left: 0;
-        top: 0;
-      }
-      &::before {
-        content: "";
-      }
-    }
   }
   &__logo {
     @apply px-2;
@@ -99,32 +102,16 @@ $sidebar-width: 280px;
   }
   &__title-bot {
     @apply text-sm;
-    &::before {
-      content: "Front-End Dev";
-      position: absolute;
-      left: 0;
-      top: 0;
-    }
     position: relative;
     transition: all ease 0.3s;
     transition-delay: 1s;
   }
 
-  a,
-  .sidebar__close {
-    @apply block p-3 text-white;
-    font-weight: bold;
-    transition: all ease 0.3s;
-    &:hover {
-      @apply bg-purple-500 pl-5;
-    }
-    svg {
-      @apply mr-1 text-center;
-      width: 25px;
-    }
-    &.router-link-exact-active {
-      @apply bg-purple-500;
-    }
+  a{
+    @include button-link;
+  }
+  .sidebar__close{
+    @include button-link;
   }
 }
 </style>
