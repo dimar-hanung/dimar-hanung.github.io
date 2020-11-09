@@ -1,10 +1,10 @@
 <template>
-  <div :class="`sidebar absolute sm:relative ${isSidebar ? '--active' : ''}`">
+  <div :class="`sidebar w-full sm:w-auto absolute sm:relative ${isSidebar ? '--active' : ''}`">
     <font-awesome-icon
       @click="isSidebar = true"
       :class="
         `sidebar__bars ${
-          isSidebar ? 'opacity-0' : 'opacity-100 cursor-pointer'
+          isSidebar ? 'opacity-0 hidden' : 'opacity-100 cursor-pointer'
         }`
       "
       :icon="['fas', 'bars']"
@@ -47,7 +47,8 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
+@import "../assets/styles/variables";
 $sidebar-width: 280px;
 @mixin button-link{
    @apply block p-3 text-white;
@@ -66,15 +67,17 @@ $sidebar-width: 280px;
 }
 
 
+
 .sidebar {
-  @apply bg-purple-800 text-white min-h-screen;
+  @apply bg-purple-800 text-white min-h-screen z-30;
   transition: all ease 0.3s;
   width: $sidebar-width;
   min-width: $sidebar-width;
-  margin-left: -$sidebar-width;
+  margin-left: -100%;
   &.--active {
     margin-left: 0px;
     left: 0px;
+    
   }
   &__bars {
     @apply absolute text-black text-2xl;
@@ -85,12 +88,8 @@ $sidebar-width: 280px;
   &__close {
     @apply bg-purple-700 mb-10 cursor-pointer;
     position: relative;
-    transform: translateY(-50px);
   }
-  &:hover .sidebar__close {
-    transform: translateY(0px);
-    top: 0px;
-  }
+ 
   &__header {
     @apply bg-purple-900 py-2 shadow-lg select-none z-20 relative;
   }
@@ -114,4 +113,11 @@ $sidebar-width: 280px;
     @include button-link;
   }
 }
+
+@media screen and (min-width: $small){
+  .sidebar{
+    margin-left:-$sidebar-width;
+  }
+}
+
 </style>

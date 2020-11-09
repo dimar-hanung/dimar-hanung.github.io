@@ -12,9 +12,13 @@ library.add(fas);
 library.add(fab);
 Vue.component("font-awesome-icon", FontAwesomeIcon);
 Vue.config.productionTip = false;
-
+const req = require.context("./components/TwComponents/", true, /\.(js|vue)$/i);
+req.keys().map((key) => {
+  const name = key.match(/\w+/)[0];
+  return Vue.component(name, req(key).default);
+});
 new Vue({
   router,
   store,
-  render: h => h(App)
+  render: (h) => h(App),
 }).$mount("#app");

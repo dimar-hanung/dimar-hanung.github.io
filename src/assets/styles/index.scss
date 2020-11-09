@@ -1,8 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-body{
+@import "./variables";
+body,html{
     font-family: sans-serif;
+    height: 100%;
 }
 .btn{
     @apply bg-red-500 text-white;
@@ -10,4 +12,18 @@ body{
 }
 .container{
     @apply px-2;
+}
+
+
+
+@keyframes load {
+    0%{
+      opacity: 0;
+    }
+    100%{
+      opacity: 100;
+    }
+  }
+.fade-in{
+   animation: .5s load ease-in-out;
 }
