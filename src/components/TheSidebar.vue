@@ -21,7 +21,7 @@
     <div class="sidebar__close" @click="isSidebar = false">
       <font-awesome-icon :icon="['fas', 'times']" /> Close
     </div>
-    <div class="block bg-purple-700">
+    <div class="block bg-gray-700">
       <router-link to="/"
         ><font-awesome-icon :icon="['fas', 'home']" /> Home</router-link
       >
@@ -55,21 +55,21 @@ $sidebar-width: 280px;
     font-weight: bold;
     transition: all ease 0.3s;
     &:hover {
-      @apply bg-purple-500 pl-5;
+      @apply bg-gray-500 pl-5;
     }
     svg {
       @apply mr-1 text-center;
       width: 25px;
     }
     &.router-link-exact-active {
-      @apply bg-purple-500;
+      @apply bg-gray-500;
     }
 }
 
 
 
 .sidebar {
-  @apply bg-purple-800 text-white min-h-screen z-30;
+  @apply bg-gray-800 text-white min-h-screen z-30;
   transition: all ease 0.3s;
   width: $sidebar-width;
   min-width: $sidebar-width;
@@ -86,12 +86,12 @@ $sidebar-width: 280px;
     right: -35px;
   }
   &__close {
-    @apply bg-purple-700 mb-10 cursor-pointer;
+    @apply bg-gray-700 mb-10 cursor-pointer;
     position: relative;
   }
  
   &__header {
-    @apply bg-purple-900 py-2 shadow-lg select-none z-20 relative;
+    @apply bg-gray-900 py-2 shadow-lg select-none z-20 relative;
   }
   &__logo {
     @apply px-2;
