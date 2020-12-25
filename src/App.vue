@@ -8,13 +8,13 @@
       <font-awesome-icon :icon="['fa', 'info-circle']" /> Ada update baru nih,
       klik sini dulu yaa... 😀
     </button>
-    <div class="flex relative min-h-screen h-full bg-gray-200">
-      <v-sidebar v-if="!$route.meta.hideNavbar" />
+    <div class="relative max-h-screen overflow-hidden bg-gray-200">
+      <v-navbar />
       <!-- <sidebar-v2 v-if="!$route.meta.hideNavbar" /> -->
-      <div class="w-full h-auto">
-        <v-navbar />
+      <div class="w-full flex relative h-full">
+        <v-sidebar v-if="!$route.meta.hideNavbar" />
         <router-view
-          class="container height-calc mx-auto bg-gray-100 shadow-lg"
+          class="container relative height-calc overflow-auto mx-auto bg-gray-100 shadow-lg"
         />
       </div>
     </div>
@@ -67,6 +67,7 @@ export default {
 </script>
 <style lang="scss">
 .height-calc {
-  height: calc(100% - 80px);
+  height: calc(100vh - 65px);
+  max-height: calc(100vh - 65px);
 }
 </style>

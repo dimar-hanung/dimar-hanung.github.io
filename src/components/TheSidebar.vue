@@ -1,22 +1,12 @@
 <template>
   <div
     :class="
-      `sidebar sm:h-auto h-full w-full sm:w-auto absolute sm:relative ${
+      `sidebar sm:h-auto h-full absolute sm:relative w-full bg-gray-300 min-h-screen z-30 ${
         isSidebar ? '--active' : ''
       }`
     "
   >
-    <div class="sidebar__header flex">
-      <div class="sidebar__logo">
-        <font-awesome-icon class="h-full text-5xl" :icon="['fab', 'vuejs']" />
-      </div>
-      <div class="sidebar__title">
-        <div class="sidebar__title-top">Dimar Hanung Prakoso</div>
-        <div class="sidebar__title-bot">Front-End Dev</div>
-      </div>
-    </div>
-
-    <div class="block mt-10 bg-gray-700">
+    <div class="block mt-10 bg-gray-200">
       <router-link to="/"
         ><font-awesome-icon :icon="['fas', 'home']" /> Home</router-link
       >
@@ -46,25 +36,24 @@ export default {
 @import "../assets/styles/variables";
 $sidebar-width: 280px;
 @mixin button-link {
-  @apply block p-3 text-white;
+  @apply block p-3;
   font-weight: bold;
   transition: all ease 0.3s;
   &:hover {
-    @apply bg-gray-500 pl-5;
+    @apply bg-gray-400 pl-5;
   }
   svg {
     @apply mr-1 text-center;
     width: 25px !important;
   }
   &.router-link-exact-active {
-    @apply bg-gray-500;
+    @apply bg-gray-100;
   }
 }
 
 .sidebar {
-  @apply bg-gray-800 text-white min-h-screen z-30;
   transition: all ease 0.3s;
-  width: $sidebar-width;
+  max-width: 100%;
   min-width: $sidebar-width;
   margin-left: -100%;
   &.--active {
@@ -72,9 +61,6 @@ $sidebar-width: 280px;
     left: 0px;
   }
 
-  &__header {
-    @apply bg-gray-900 py-2 shadow-lg select-none z-20 relative;
-  }
   &__logo {
     @apply px-2;
   }
@@ -95,6 +81,7 @@ $sidebar-width: 280px;
 
 @media screen and (min-width: $small) {
   .sidebar {
+    max-width: $sidebar-width;
     margin-left: -$sidebar-width;
   }
 }
