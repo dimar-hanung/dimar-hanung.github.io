@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d0d7f8d"],{"78a7":function(n,e,a){"use strict";a.r(e);var t=function(){var n=this,e=n.$createElement,a=n._self._c||e;return a("div",[n._v(" Dimar Hanung Prakoso ")])},r=[],u={},c=u,o=a("2877"),s=Object(o["a"])(c,t,r,!1,null,"92651fde",null);e["default"]=s.exports}}]);
+//# sourceMappingURL=chunk-2d0d7f8d.f3537427.js.map
