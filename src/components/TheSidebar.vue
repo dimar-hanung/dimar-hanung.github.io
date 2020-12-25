@@ -1,14 +1,11 @@
 <template>
-  <div :class="`sidebar w-full sm:w-auto absolute sm:relative ${isSidebar ? '--active' : ''}`">
-    <font-awesome-icon
-      @click="isSidebar = true"
-      :class="
-        `sidebar__bars ${
-          isSidebar ? 'opacity-0 hidden' : 'opacity-100 cursor-pointer'
-        }`
-      "
-      :icon="['fas', 'bars']"
-    />
+  <div
+    :class="
+      `sidebar sm:h-auto h-full w-full sm:w-auto absolute sm:relative ${
+        isSidebar ? '--active' : ''
+      }`
+    "
+  >
     <div class="sidebar__header flex">
       <div class="sidebar__logo">
         <font-awesome-icon class="h-full text-5xl" :icon="['fab', 'vuejs']" />
@@ -18,10 +15,8 @@
         <div class="sidebar__title-bot">Front-End Dev</div>
       </div>
     </div>
-    <div class="sidebar__close" @click="isSidebar = false">
-      <font-awesome-icon :icon="['fas', 'times']" /> Close
-    </div>
-    <div class="block bg-gray-700">
+
+    <div class="block mt-10 bg-gray-700">
       <router-link to="/"
         ><font-awesome-icon :icon="['fas', 'home']" /> Home</router-link
       >
@@ -31,18 +26,18 @@
       <router-link to="a"
         ><font-awesome-icon :icon="['fas', 'medal']" /> Sertifikat</router-link
       >
-      <router-link to="b"><font-awesome-icon :icon="['fas', 'paint-brush']" /> Menuju</router-link>
-      <router-link to="c">Menuju</router-link>
+      <router-link to="b"
+        ><font-awesome-icon :icon="['fas', 'paint-brush']" /> Theme</router-link
+      >
     </div>
   </div>
 </template>
 
 <script>
+import { mapState } from "vuex";
 export default {
-  data() {
-    return {
-      isSidebar: true
-    };
+  computed: {
+    ...mapState(["isSidebar"])
   }
 };
 </script>
@@ -50,23 +45,21 @@ export default {
 <style lang="scss">
 @import "../assets/styles/variables";
 $sidebar-width: 280px;
-@mixin button-link{
-   @apply block p-3 text-white;
-    font-weight: bold;
-    transition: all ease 0.3s;
-    &:hover {
-      @apply bg-gray-500 pl-5;
-    }
-    svg {
-      @apply mr-1 text-center;
-      width: 25px;
-    }
-    &.router-link-exact-active {
-      @apply bg-gray-500;
-    }
+@mixin button-link {
+  @apply block p-3 text-white;
+  font-weight: bold;
+  transition: all ease 0.3s;
+  &:hover {
+    @apply bg-gray-500 pl-5;
+  }
+  svg {
+    @apply mr-1 text-center;
+    width: 25px !important;
+  }
+  &.router-link-exact-active {
+    @apply bg-gray-500;
+  }
 }
-
-
 
 .sidebar {
   @apply bg-gray-800 text-white min-h-screen z-30;
@@ -77,19 +70,8 @@ $sidebar-width: 280px;
   &.--active {
     margin-left: 0px;
     left: 0px;
-    
   }
-  &__bars {
-    @apply absolute text-black text-2xl;
-    transition: all ease 0.3s;
-    top: 10px;
-    right: -35px;
-  }
-  &__close {
-    @apply bg-gray-700 mb-10 cursor-pointer;
-    position: relative;
-  }
- 
+
   &__header {
     @apply bg-gray-900 py-2 shadow-lg select-none z-20 relative;
   }
@@ -106,18 +88,14 @@ $sidebar-width: 280px;
     transition-delay: 1s;
   }
 
-  a{
-    @include button-link;
-  }
-  .sidebar__close{
+  a {
     @include button-link;
   }
 }
 
-@media screen and (min-width: $small){
-  .sidebar{
-    margin-left:-$sidebar-width;
+@media screen and (min-width: $small) {
+  .sidebar {
+    margin-left: -$sidebar-width;
   }
 }
-
 </style>

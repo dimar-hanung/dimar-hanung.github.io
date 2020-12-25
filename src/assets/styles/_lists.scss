@@ -1,0 +1,12 @@
+dl.dl-flex{
+    @apply flex flex-wrap justify-between;
+    dd,dt{
+        @apply w-1/2 text-sm mb-1 mt-1;
+    }
+    dt{
+        @apply text-gray-600 font-bold;
+    }
+    dd{
+        text-align: right;
+    }
+}

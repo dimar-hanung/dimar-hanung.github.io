@@ -2,8 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 @import "./variables";
+@import "./lists";
+
+@font-face {
+  font-family: "poppins-regular";
+  src: url(../fonts/Poppins-Regular.ttf) format("truetype");
+}
+
 body,html{
-    font-family: sans-serif;
+    font-family: "poppins-regular";
     height: 100%;
 }
 .btn{
