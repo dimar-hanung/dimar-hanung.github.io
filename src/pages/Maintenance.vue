@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import Star from "./Star.js";
+import Star from "@/modules/star";
 export default {
   data() {
     return {

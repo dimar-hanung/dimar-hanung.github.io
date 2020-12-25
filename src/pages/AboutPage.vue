@@ -77,7 +77,7 @@
         </div>
       </div>
       <div class="w-full md:w-2/6 personal">
-        <tw-card>
+        <card-content>
           <template #header>Personal</template>
           <dl class="dl-flex">
             <dt>Nama</dt>
@@ -96,7 +96,7 @@
               >
             </dd>
           </dl>
-        </tw-card>
+        </card-content>
       </div>
     </div>
   </div>
@@ -127,12 +127,13 @@
 </style>
 
 <script>
+import CardContent from "@/components/CardContent.vue";
 // @ is an alias to /src
 // import TwCards from "@/components/TwCards.vue";
 export default {
   name: "About",
   components: {
-    // TwCards
+    CardContent
   }
 };
 </script>

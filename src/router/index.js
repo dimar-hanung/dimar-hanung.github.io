@@ -1,26 +1,24 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "../views/Home.vue";
 
 Vue.use(VueRouter);
 
 const routes = [
   {
     path: "/",
-    name: "Home",
-    component: Home
+    name: "HomePage",
+    component: () => import("../pages/HomePage.vue")
   },
   {
     path: "/about",
-    name: "About",
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/About.vue")
+    name: "AboutPage",
+    component: () => import("../pages/AboutPage.vue")
   },
   {
     path: "/maintenance",
     name: "Maintenance",
     component: () =>
-      import(/* webpackChunkName: "maintenance" */ "../views/Maintenance.vue"),
+      import(/* webpackChunkName: "maintenance" */ "../pages/Maintenance.vue"),
     meta: { hideNavbar: true, reBuild: true }
   }
 ];
