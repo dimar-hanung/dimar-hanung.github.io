@@ -2,7 +2,7 @@
   <div class="fade-in">
     <!-- <img alt="Vue logo" src="../assets/logo.png" /> -->
     <div class="flex md:flex-no-wrap flex-wrap py-4">
-      <div class="w-full md:w-4/6 pr-0 md:pr-4">
+      <div class="w-full md:w-4/6 pr-0 md:pr-4 order-2 md:order-1">
         <div class="text-lg p-4 font-bold">Tentang Saya</div>
         <div class="p-4">
           Motivasi untuk terus belajar adalah karena teknologi terus berkembang,
@@ -76,7 +76,7 @@
           </div>
         </div>
       </div>
-      <div class="w-full md:w-2/6 personal">
+      <div class="w-full md:w-2/6 order-1 md:order-2 personal">
         <card-content>
           <template #header>Personal</template>
           <dl class="dl-flex">

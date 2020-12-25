@@ -14,7 +14,7 @@
       <div class="w-full flex relative h-full">
         <v-sidebar v-if="!$route.meta.hideNavbar" />
         <router-view
-          class="container relative height-calc overflow-auto mx-auto bg-gray-100 shadow-lg"
+          class="px-1 relative height-calc overflow-auto mx-auto bg-gray-100 shadow-lg"
         />
       </div>
     </div>
