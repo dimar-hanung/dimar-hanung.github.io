@@ -1,5 +1,13 @@
 <template>
   <div id="app">
+    <button
+      class="py-2 px-4 text-sm outline-none block w-full bg-blue-200 text-blue-800 text-left relative z-50 top-0 left-0"
+      v-if="updateExists"
+      @click="refreshApp"
+    >
+      <font-awesome-icon :icon="['fa', 'info-circle']" /> Ada update baru nih,
+      klik sini dulu yaa... 😀
+    </button>
     <div class="flex relative min-h-screen h-full bg-gray-200">
       <v-sidebar v-if="!$route.meta.hideNavbar" />
       <!-- <sidebar-v2 v-if="!$route.meta.hideNavbar" /> -->
@@ -16,12 +24,44 @@
 import VSidebar from "@/components/TheSidebar.vue";
 import VNavbar from "@/components/TheNavbar.vue";
 // import SidebarV2 from "@/components/TheSidebarV2.vue";
-
 export default {
+  data() {
+    return {
+      refreshing: false,
+      registration: null,
+      updateExists: false
+    };
+  },
   components: {
     VSidebar,
     VNavbar
     // SidebarV2
+  },
+  created() {
+    document.addEventListener("swUpdated", this.showRefreshUI, {
+      once: true
+    });
+    if (navigator.serviceWorker) {
+      navigator.serviceWorker.addEventListener("controllerchange", () => {
+        if (this.refreshing) return;
+        this.refreshing = true;
+        window.location.reload();
+      });
+    }
+    console.log("done");
+  },
+  methods: {
+    showRefreshUI(e) {
+      this.registration = e.detail;
+      this.updateExists = true;
+    },
+    refreshApp() {
+      this.updateExists = false;
+      if (!this.registration || !this.registration.waiting) {
+        return;
+      }
+      this.registration.waiting.postMessage("skipWaiting");
+    }
   }
 };
 </script>

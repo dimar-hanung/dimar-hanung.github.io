@@ -1,6 +1,6 @@
 <template>
   <div>
-    la?
+    ngantuk oke, done..
   </div>
 </template>
 
