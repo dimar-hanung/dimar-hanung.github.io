@@ -4,15 +4,27 @@ import VueRouter from "vue-router";
 Vue.use(VueRouter);
 
 const routes = [
+  { path: "*", component: () => import("../components/Error404.vue") },
+  { path: "/", redirect: "/project" },
   {
-    path: "/",
-    name: "HomePage",
-    component: () => import("../pages/HomePage.vue")
+    path: "/project",
+    name: "ProjectPage",
+    component: () => import("../pages/ProjectPage.vue")
   },
   {
     path: "/about",
     name: "AboutPage",
     component: () => import("../pages/AboutPage.vue")
+  },
+  {
+    path: "/certificate",
+    name: "CertificatePage",
+    component: () => import("../pages/CertificatePage.vue")
+  },
+  {
+    path: "/settings",
+    name: "SettingsPage",
+    component: () => import("../pages/SettingsPage.vue")
   },
   {
     path: "/maintenance",

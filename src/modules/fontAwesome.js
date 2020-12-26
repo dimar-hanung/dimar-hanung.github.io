@@ -8,7 +8,7 @@ import {
   faBars,
   faInfoCircle
 } from "@fortawesome/free-solid-svg-icons";
-import { faVuejs } from "@fortawesome/free-brands-svg-icons";
+import { faVuejs, faGithub } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 library.add(
   faHome,
@@ -17,6 +17,7 @@ library.add(
   faMedal,
   faPaintBrush,
   faBars,
-  faInfoCircle
+  faInfoCircle,
+  faGithub
 );
 Vue.component("font-awesome-icon", FontAwesomeIcon);

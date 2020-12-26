@@ -7,16 +7,17 @@
     "
   >
     <div class="block mt-10 bg-gray-200">
-      <router-link to="/"
-        ><font-awesome-icon :icon="['fas', 'home']" /> Home</router-link
+      <router-link to="/project"
+        ><font-awesome-icon :icon="['fas', 'home']" /> Project
+        Lists</router-link
       >
       <router-link to="about"
         ><font-awesome-icon :icon="['fas', 'book']" /> About</router-link
       >
-      <router-link to="a"
+      <router-link to="certificate"
         ><font-awesome-icon :icon="['fas', 'medal']" /> Sertifikat</router-link
       >
-      <router-link to="b"
+      <router-link to="settings"
         ><font-awesome-icon :icon="['fas', 'paint-brush']" /> Theme</router-link
       >
     </div>
