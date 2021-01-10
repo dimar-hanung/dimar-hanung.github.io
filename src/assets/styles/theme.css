@@ -1,0 +1,20 @@
+/** purgecss start ignore */
+.theme-light {
+  --color-text-primary-active: #153e90;
+  --color-bg-primary-0: #f7fafc;
+  --color-bg-primary-1: #e1e1e1;
+  --color-bg-primary-2: #b8b8b8;
+  --color-bg-primary-3: #cbd5e0;
+  --color-primary-card: #edf2f7;
+  --color-text-white: #343a40;
+}
+.theme-dark {
+  --color-text-primary-active: #deb540;
+  --color-bg-primary-0: #383838;
+  --color-bg-primary-1: rgb(22, 22, 22);
+  --color-bg-primary-2: rgb(22, 22, 22);
+  --color-bg-primary-3: #808080;
+  --color-primary-card: rgba(44, 44, 44);
+  --color-text-white: #fff;
+}
+/** purgecss end ignore */
