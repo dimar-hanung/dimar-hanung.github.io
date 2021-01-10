@@ -17,4 +17,13 @@
   --color-primary-card: rgba(44, 44, 44);
   --color-text-white: #fff;
 }
+.theme-vue {
+  --color-text-primary-active: #153e90;
+  --color-bg-primary-0: #f0fff4;
+  --color-bg-primary-1: #c6f6d5;
+  --color-bg-primary-2: #9ae6b4;
+  --color-bg-primary-3: #68d391;
+  --color-primary-card: #c6f6d5;
+  --color-text-white: #000;
+}
 /** purgecss end ignore */

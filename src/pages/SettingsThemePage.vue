@@ -28,6 +28,20 @@
         <label for="themeDark">Dark</label>
       </div>
     </div>
+    <div class="px-2">
+      <label for="themeVue" class="theme__preview --vue"> </label>
+      <div class="my-2">
+        <input
+          @input="selectTheme('vue')"
+          ref="themeVue"
+          class="mr-1"
+          id="themeVue"
+          type="radio"
+          name="theme-select"
+        />
+        <label for="themeVue">Vue</label>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -50,6 +64,9 @@ export default {
       case "light":
         this.$refs.themeLight.checked = true;
         break;
+      case "vue":
+        this.$refs.themeVue.checked = true;
+        break;
     }
   }
 };
@@ -67,6 +84,9 @@ export default {
     }
     &.--dark {
       @apply bg-gray-900 shadow;
+    }
+    &.--vue {
+      @apply bg-green-500 shadow;
     }
   }
 }
