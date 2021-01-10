@@ -54,21 +54,11 @@ export default {
     window.onload = function() {
       if (!localStorage.getItem("theme")) {
         this.selectTheme("dark");
-      } else {
-        this.selectTheme(localStorage.getItem("theme"));
-      }
-      if (
-        localStorage.getItem("theme") == "" ||
-        localStorage.getItem("theme") == "light"
-      ) {
-        this.$refs.neon.classList.remove("neon");
-        this.$refs.middleBox.classList.remove("--line");
       }
     }.bind(this);
   },
   methods: {
     selectTheme(theme) {
-      console.log(theme);
       const d = document.getElementById("app");
       localStorage.setItem("theme", theme);
       d.setAttribute("class", `theme-${theme} text-white`);
