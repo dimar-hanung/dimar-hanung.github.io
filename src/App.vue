@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" class="theme-light">
     <button
       class="py-2 px-4 text-sm outline-none block w-full bg-blue-200 text-blue-800 text-left relative z-50 top-0 left-0"
       v-if="updateExists"
@@ -8,7 +8,7 @@
       <font-awesome-icon :icon="['fa', 'info-circle']" /> Ada update baru nih,
       klik sini dulu yaa... 😀
     </button>
-    <div class="relative max-h-screen overflow-hidden bg-gray-200">
+    <div class="relative max-h-screen overflow-hidden">
       <v-navbar />
       <!-- <sidebar-v2 v-if="!$route.meta.hideNavbar" /> -->
       <div class="w-full flex relative h-full">

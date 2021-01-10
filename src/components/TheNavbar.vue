@@ -1,5 +1,5 @@
 <template>
-  <div class="navbar bg-gray-400 align-middle flex place-items-center px-4">
+  <div class="navbar bg-primary-1 align-middle flex place-items-center px-4">
     <div class="navbar__header flex">
       <div class="navbar__logo pr-2">
         <font-awesome-icon class="h-full text-5xl" :icon="['fab', 'vuejs']" />
@@ -10,7 +10,7 @@
       </div>
     </div>
     <div
-      class="navbar__bars bg-gray-400 p-2 shadow rounded cursor-pointer"
+      class="navbar__bars p-2 border border-primary-2 w-10 text-center rounded cursor-pointer"
       @click="setSidebar"
     >
       <font-awesome-icon :icon="['fas', 'bars']" />

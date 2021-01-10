@@ -1,12 +1,12 @@
 <template>
   <div
     :class="
-      `sidebar sm:h-auto h-full absolute sm:relative w-full bg-gray-300 min-h-screen z-30 ${
+      `sidebar sm:h-auto h-full absolute sm:relative w-full bg-primary-1 min-h-screen z-30 ${
         isSidebar ? '--active' : ''
       }`
     "
   >
-    <div class="block mt-10 bg-gray-200">
+    <div class="block mt-10 ">
       <router-link to="/project"
         ><font-awesome-icon :icon="['fas', 'home']" /> Project
         Lists</router-link
@@ -41,14 +41,14 @@ $sidebar-width: 280px;
   font-weight: bold;
   transition: all ease 0.3s;
   &:hover {
-    @apply bg-gray-400 pl-5;
+    @apply bg-primary-3 pl-5;
   }
   svg {
     @apply mr-1 text-center;
     width: 25px !important;
   }
   &.router-link-exact-active {
-    @apply bg-gray-100;
+    @apply bg-primary-0 text-primary-active;
   }
 }
 

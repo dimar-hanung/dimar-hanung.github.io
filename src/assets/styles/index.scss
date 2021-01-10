@@ -9,28 +9,43 @@
   src: url(../fonts/Poppins-Regular.ttf) format("truetype");
 }
 
-body,html{
-    font-family: "poppins-regular";
-    height: 100%;
-}
-.btn{
-    @apply bg-red-500 text-white;
-    padding:5px;
-}
-.container{
-    @apply px-2;
+body,
+html {
+  font-family: "poppins-regular";
+  height: 100%;
 }
 
+.theme-light {
+  --color-text-primary-active: #153e90;
+  --color-bg-primary-0: #f7fafc;
+  --color-bg-primary-1: #e1e1e1;
+  --color-bg-primary-2: #b8b8b8;
+  --color-bg-primary-3: #cbd5e0;
+  --color-text-white: #343a40;
+}
+.theme-dark {
+  --color-bg-primary-1: rgba(44, 44, 44);
+  --color-bg-primary-2: rgb(22, 22, 22);
+  --color-bg-primary-3: rgb(28, 28, 28);
+  --color-text-white: #fff;
+}
 
+.btn {
+  @apply bg-red-500 text-white;
+  padding: 5px;
+}
+.container {
+  @apply px-2;
+}
 
 @keyframes load {
-    0%{
-      opacity: 0;
-    }
-    100%{
-      opacity: 100;
-    }
+  0% {
+    opacity: 0;
   }
-.fade-in{
-   animation: .5s load ease-in-out;
+  100% {
+    opacity: 100;
+  }
+}
+.fade-in {
+  animation: 0.5s load ease-in-out;
 }
