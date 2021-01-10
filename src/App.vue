@@ -54,6 +54,8 @@ export default {
     window.onload = function() {
       if (!localStorage.getItem("theme")) {
         this.selectTheme("dark");
+      } else {
+        this.selectTheme(localStorage.getItem("theme"));
       }
     }.bind(this);
   },
