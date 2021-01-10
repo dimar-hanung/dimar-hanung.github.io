@@ -24,7 +24,28 @@ const routes = [
   {
     path: "/settings",
     name: "SettingsPage",
-    component: () => import("../pages/SettingsPage.vue")
+    redirect: "/settings/theme",
+    component: () => import("../pages/SettingsPage.vue"),
+    children: [
+      {
+        // UserProfile will be rendered inside User's <router-view>
+        // when /user/:id/profile is matched
+        path: "theme",
+        component: () => import("../pages/SettingsThemePage.vue")
+      },
+      {
+        // UserPosts will be rendered inside User's <router-view>
+        // when /user/:id/posts is matched
+        path: "contact",
+        component: () => import("../pages/SettingsContactPage.vue")
+      },
+      {
+        // UserPosts will be rendered inside User's <router-view>
+        // when /user/:id/posts is matched
+        path: "tech-info",
+        component: () => import("../pages/SettingsTechInfoPage.vue")
+      }
+    ]
   },
   {
     path: "/maintenance",

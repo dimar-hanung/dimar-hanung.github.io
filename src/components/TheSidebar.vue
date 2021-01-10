@@ -11,13 +11,13 @@
         ><font-awesome-icon :icon="['fas', 'home']" /> Project
         Lists</router-link
       >
-      <router-link to="about" @click.native="ifMobile"
+      <router-link to="/about" @click.native="ifMobile"
         ><font-awesome-icon :icon="['fas', 'book']" /> About</router-link
       >
-      <router-link to="certificate" @click.native="ifMobile"
+      <router-link to="/certificate" @click.native="ifMobile"
         ><font-awesome-icon :icon="['fas', 'medal']" /> Sertifikat</router-link
       >
-      <router-link to="settings" @click.native="ifMobile"
+      <router-link to="/settings" @click.native="ifMobile"
         ><font-awesome-icon :icon="['fas', 'paint-brush']" /> Theme</router-link
       >
     </div>
@@ -53,7 +53,7 @@ $sidebar-width: 280px;
     @apply mr-1 text-center;
     width: 25px !important;
   }
-  &.router-link-exact-active {
+  &.router-link-active {
     @apply bg-primary-0 text-primary-active;
   }
 }

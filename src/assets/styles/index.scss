@@ -25,9 +25,12 @@ html {
   --color-text-white: #343a40;
 }
 .theme-dark {
-  --color-bg-primary-1: rgba(44, 44, 44);
+  --color-text-primary-active: #deb540;
+  --color-bg-primary-0: #383838;
+  --color-bg-primary-1: rgb(22, 22, 22);
   --color-bg-primary-2: rgb(22, 22, 22);
-  --color-bg-primary-3: rgb(28, 28, 28);
+  --color-bg-primary-3: #808080;
+  --color-primary-card: rgba(44, 44, 44);
   --color-text-white: #fff;
 }
 
