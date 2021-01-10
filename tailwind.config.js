@@ -5,6 +5,7 @@ module.exports = {
       colors: {
         primary: {
           active: "var(--color-text-primary-active)",
+          card: "var(--color-primary-card)",
           0: "var(--color-bg-primary-0)",
           1: "var(--color-bg-primary-1)",
           2: "var(--color-bg-primary-2)",

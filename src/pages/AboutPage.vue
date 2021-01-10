@@ -27,7 +27,7 @@
                 2 tahun membuat sekitar 120 artikel, namun kena phising sekitar
                 kelas 6 atau awal smp saat ingin dipasang iklan,
                 <a
-                  class="font-bold text-blue-700"
+                  class="font-bold text-primary-active"
                   href="https://www.facebook.com/photo?fbid=488344077993421&set=a.308596469301517/"
                   target="_blank"
                 >
@@ -55,9 +55,9 @@
             <div class="timeline__wrap">
               <div class="timeline__year">2020 | Kerja</div>
               <div class="timeline__desc">
-                <span class="text-blue-500">Juli - Oktober</span>, Diterima
-                dalam program kerja sama refactory x Universitas terbuka,
-                menjalani bootcamp selama 3 bulan dengan materi :
+                <span class="text-primary-active">Juli - Oktober</span>,
+                Diterima dalam program kerja sama refactory x Universitas
+                terbuka, menjalani bootcamp selama 3 bulan dengan materi :
                 <div>
                   <ol>
                     <li>Vue 2</li>
@@ -68,8 +68,8 @@
                 </div>
               </div>
               <div class="timeline__desc">
-                <span class="text-blue-500">Oktober - Sekarang</span>, Kerja
-                kontrak di Universitas Terbuka Pusat posisi Staf Ahli
+                <span class="text-primary-active">Oktober - Sekarang</span>,
+                Kerja kontrak di Universitas Terbuka Pusat posisi Staf Ahli
                 Programmer, lebih tepat nya ke FrontEnd.
               </div>
             </div>
@@ -90,7 +90,7 @@
             <dd>087793110422</dd>
 
             <dt>Linkedin</dt>
-            <dd class="font-bold text-blue-700">
+            <dd class="font-bold text-primary-active">
               <a href="https://www.linkedin.com/in/dimar-hanung-09b393195/"
                 >View Profile</a
               >
@@ -112,16 +112,16 @@
 }
 
 .timeline {
-  @apply border-l-2 border-gray-500;
+  @apply border-l-2 border-primary-3;
   &__wrap {
     @apply mt-5;
   }
   &__year {
-    @apply bg-gray-500 px-2 rounded-tr shadow text-white;
+    @apply bg-primary-3 px-2 rounded-tr shadow text-white text-sm;
     width: max-content;
   }
   &__desc {
-    @apply bg-gray-200 p-2 mb-2 rounded-r shadow;
+    @apply bg-primary-card p-2 mb-2 rounded-r shadow;
   }
 }
 </style>

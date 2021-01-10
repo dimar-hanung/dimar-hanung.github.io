@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="theme-light">
+  <div id="app" class="theme-light text-white">
     <button
       class="py-2 px-4 text-sm outline-none block w-full bg-blue-200 text-blue-800 text-left relative z-50 top-0 left-0"
       v-if="updateExists"
