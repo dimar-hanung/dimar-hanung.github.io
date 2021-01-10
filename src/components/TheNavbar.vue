@@ -11,7 +11,7 @@
     </div>
     <div
       class="navbar__bars p-2 border border-primary-2 w-10 text-center rounded cursor-pointer"
-      @click="setSidebar"
+      @click="setIsSidebar(!isSidebar)"
     >
       <font-awesome-icon :icon="['fas', 'bars']" />
     </div>
@@ -19,11 +19,17 @@
 </template>
 
 <script>
-import { mapActions } from "vuex";
+import { mapActions, mapState } from "vuex";
 
 export default {
   methods: {
-    ...mapActions(["setSidebar"])
+    ...mapActions("layoutData", ["setIsSidebar"])
+  },
+  computed: {
+    ...mapState("layoutData", ["isSidebar"])
+  },
+  mounted() {
+    window.innerWidth <= 640 && this.setIsSidebar(false);
   }
 };
 </script>

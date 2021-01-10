@@ -7,17 +7,17 @@
     "
   >
     <div class="block mt-10 ">
-      <router-link to="/project"
+      <router-link to="/project" @click.native="ifMobile"
         ><font-awesome-icon :icon="['fas', 'home']" /> Project
         Lists</router-link
       >
-      <router-link to="about"
+      <router-link to="about" @click.native="ifMobile"
         ><font-awesome-icon :icon="['fas', 'book']" /> About</router-link
       >
-      <router-link to="certificate"
+      <router-link to="certificate" @click.native="ifMobile"
         ><font-awesome-icon :icon="['fas', 'medal']" /> Sertifikat</router-link
       >
-      <router-link to="settings"
+      <router-link to="settings" @click.native="ifMobile"
         ><font-awesome-icon :icon="['fas', 'paint-brush']" /> Theme</router-link
       >
     </div>
@@ -25,10 +25,16 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapActions, mapState } from "vuex";
 export default {
   computed: {
-    ...mapState(["isSidebar"])
+    ...mapState("layoutData", ["isSidebar"])
+  },
+  methods: {
+    ...mapActions("layoutData", ["setIsSidebar"]),
+    ifMobile() {
+      window.innerWidth <= 640 && this.setIsSidebar();
+    }
   }
 };
 </script>
