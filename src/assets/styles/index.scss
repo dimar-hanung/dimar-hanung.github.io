@@ -14,7 +14,7 @@ html {
   font-family: "poppins-regular";
   height: 100%;
 }
-
+/** purgecss start ignore */
 .theme-light {
   --color-text-primary-active: #153e90;
   --color-bg-primary-0: #f7fafc;
@@ -33,7 +33,7 @@ html {
   --color-primary-card: rgba(44, 44, 44);
   --color-text-white: #fff;
 }
-
+/** purgecss end ignore */
 .btn {
   @apply bg-red-500 text-white;
   padding: 5px;
