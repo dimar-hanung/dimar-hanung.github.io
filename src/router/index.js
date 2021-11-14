@@ -1,15 +1,9 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "../views/Home.vue";
 
 Vue.use(VueRouter);
 
 const routes = [
-  {
-    path: "/",
-    name: "Home",
-    component: Home
-  },
   {
     path: "/about",
     name: "About",
@@ -21,11 +15,9 @@ const routes = [
     name: "Maintenance",
     component: () =>
       import(/* webpackChunkName: "maintenance" */ "../views/Maintenance.vue"),
-    meta: { hideNavbar: true, reBuild:true }
+    meta: { hideNavbar: true, reBuild: true }
   }
 ];
-
-
 
 const router = new VueRouter({
   mode: "history",
@@ -33,9 +25,10 @@ const router = new VueRouter({
   routes
 });
 router.beforeEach((to, from, next) => {
-  if (to.matched.some(record => record.meta.reBuild)){
+  if (to.matched.some(record => record.meta.reBuild)) {
     next();
+  } else {
+    next({ name: "Maintenance" });
   }
-  else{ next({ name: 'Maintenance' })}
-})
+});
 export default router;

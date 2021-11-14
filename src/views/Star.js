@@ -1,4 +1,4 @@
-export default function (el) {
+export default function(el) {
   class Star {
     constructor(x, y, r, color, speed) {
       this.speed = speed;
@@ -15,7 +15,7 @@ export default function (el) {
       if (this.r <= 0) {
         this.r = 0;
       }
-    //   context.fillText(this.x, this.x, this.y);
+      //   context.fillText(this.x, this.x, this.y);
       context.arc(this.x, this.y, this.r, 0, 2 * Math.PI, false);
       // context.shadowBlur = 10;
       //context.shadowColor = "lightblue";
@@ -47,13 +47,12 @@ export default function (el) {
   let C_WIDTH = (canvas.width = document.body.offsetWidth);
   let C_HEIGHT = (canvas.height = document.body.offsetHeight);
 
-  window.addEventListener('resize', function(){
+  window.addEventListener("resize", function() {
     // do stuff here
-    C_WIDTH = (canvas.width = document.body.offsetWidth);
-    C_HEIGHT = (canvas.height = document.body.offsetHeight);
+    C_WIDTH = canvas.width = document.body.offsetWidth;
+    C_HEIGHT = canvas.height = document.body.offsetHeight;
   });
 
-  
   // console.log(C_WIDTH)
   function randomColor() {
     let arrColors = ["orange", "#ffecd3", "#bfcfff", "#ffecd3", "#bfcfff"];

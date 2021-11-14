@@ -1,28 +1,32 @@
 <template>
   <div class="grid place-items-center h-screen">
-    <canvas id="bintangDraw"></canvas>
-    <div class="z-20">
-        <div class="text-message text-3xl font-bold">
-          Sedang Maintenance
-        </div>
-        <div class="text-message text-lg">
-          Dimar Hanung
-        </div>
+    <canvas class="left-0 top-0" id="bintangDraw"></canvas>
+    <div class="wrapper z-20 p-4 border rounded-md">
+      <div class="text-message text-3xl font-bold">
+        Under Maintenance
+      </div>
+      <div class="text-white text-lg">
+        Dimar Hanung
+      </div>
+      <a
+        href="https://api.whatsapp.com/send?phone=87837092992&text=%20"
+        class="text-white mt-1 hover:text-yellow-400 bloc"
+      >
+        WhatsApp : 087793110422
+      </a>
     </div>
   </div>
 </template>
 
 <script>
-import Star from "./Star.js"
+import Star from "./Star.js";
 export default {
   data() {
     return {
       emot: "😀"
     };
   },
-  methods: {
-    
-  },
+  methods: {},
   mounted() {
     Star(document.getElementById("bintangDraw"));
   }
@@ -33,6 +37,9 @@ export default {
 canvas {
   background: black;
   position: absolute;
+}
+.wrapper {
+  backdrop-filter: blur(1px);
 }
 .text-message {
   @apply text-white cursor-pointer select-none;
