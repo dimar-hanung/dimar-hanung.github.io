@@ -2,8 +2,8 @@
   <div class="grid place-items-center h-screen">
     <canvas class="left-0 top-0" id="bintangDraw"></canvas>
     <div class="wrapper z-20 p-4 border rounded-md">
-      <div class="text-message text-3xl font-bold">
-        Under Maintenance
+      <div class="text-message text-3xl">
+        <b>Happy New Year</b>
       </div>
       <div class="text-white text-lg">
         Dimar Hanung
@@ -23,7 +23,7 @@ import Star from "./Star.js";
 export default {
   data() {
     return {
-      emot: "😀"
+      emot: "🎉"
     };
   },
   methods: {},
@@ -35,17 +35,17 @@ export default {
 
 <style lang="scss" scoped>
 canvas {
-  background: black;
+  background: linear-gradient(180deg, black, #003e76);
   position: absolute;
 }
 .wrapper {
-  backdrop-filter: blur(1px);
+  // backdrop-filter: blur(1px);
 }
 .text-message {
   @apply text-white cursor-pointer select-none;
   z-index: 99;
   &::after {
-    content: " 😁";
+    content: " 🎉";
   }
   &:hover::after {
     content: " 😅";
