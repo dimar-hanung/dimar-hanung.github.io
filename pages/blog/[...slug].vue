@@ -12,10 +12,17 @@
       </ContentList>
     </aside>
     <article class="p-2 mt-4 w-full">
-      <ContentDoc :path="$route.path" />
+      <ContentDoc />
     </article>
   </main>
 </template>
+
+<script setup>
+const route = useRoute();
+const { data } = await useAsyncData("hello", () =>
+  queryContent(route.path).findOne()
+);
+</script>
 
 <style>
 #blog h1 {

@@ -10,7 +10,7 @@
         <div></div>
 
         <div class="flex gap-4 place-items-center">
-          <NuxtLink to="/blog"
+          <NuxtLink to="https://dimar-hanung.netlify.app/"
             ><div><button>Blog</button></div></NuxtLink
           >
           <div><button>Contact me</button></div>
@@ -49,10 +49,7 @@
                 <t-list
                   >🎂 {{ new Date().getFullYear() - 2002 }} year old</t-list
                 >
-                <t-list
-                  >🏢 I am currently working as a Senior Software
-                  Engineer</t-list
-                >
+
                 <t-list>🏢 Front-End Developer at Universitas Terbuka</t-list>
                 <t-list>🎓 Studies for TKJ at SMK Telkom Purwokerto</t-list>
                 <t-list
@@ -143,33 +140,30 @@
                 <div>
                   <img
                     class="rounded-full w-20"
-                    :src="api.data.value?.['userDetails']?.['avatarUrl']"
+                    :src="'https://avatars.githubusercontent.com/u/42312636?s=100'"
                     alt=""
                   />
                 </div>
                 <div class="flex justify-between w-full">
                   <div>
+                    <div>@{{ codewars.data.value?.["username"] }}</div>
                     <div>
-                      🏆 Level {{ api.data.value?.["userDetails"]?.["level"] }}
+                      🏆
+                      {{
+                        codewars.data.value?.["ranks"]?.["overall"]?.["name"]
+                      }}
                     </div>
                     <div class="mb-2">
-                      ⭐ {{ api.data.value?.["userDetails"]?.["xp"] }} XP
-                    </div>
-                    <div class="flex gap-2">
-                      <div
-                        class="py-1 px-3 border border-indigo-400 uppercase rounded-full text-xs"
-                        v-for="(badge, i) in api.data.value?.['userDetails']?.[
-                          'badges'
-                        ]"
-                        :key="i + 'badge'"
-                      >
-                        {{ badge?.name }}
-                      </div>
+                      ⭐
+                      {{
+                        codewars.data.value?.["ranks"]?.["overall"]?.["score"]
+                      }}
+                      Score
                     </div>
                   </div>
                   <a
                     class="place-self-end"
-                    href="https://www.sololearn.com/profile/12709774"
+                    href="https://www.codewars.com/users/dimar-hanung"
                     target="_blank"
                   >
                     <t-button class="h-10">Visit</t-button>
@@ -182,50 +176,23 @@
             >
               <div>
                 <img
-                  src="https://play-lh.googleusercontent.com/DHpmEI1cO-w2FQe6QHmXh_QksGEzF2hYiTAsQcgcyWPb7MFRb3R9KP5tITbzZgD1sV31"
-                  class="w-5 rounded"
+                  src="https://logoeps.com/wp-content/uploads/2014/05/37318-github-logo-icon-vector-icon-vector-eps.png"
+                  class="w-5 rounded bg-white"
                   alt=""
                 />
               </div>
               <div>GitHub</div>
             </div>
-            <t-card class="flex gap-x-2" v-if="!api?.pending.value">
-              <div>
+            <div class="mt-2 cursor-pointer">
+              <a href="https://github.com/dimar-hanung">
                 <img
-                  class="rounded-full w-20"
-                  :src="api.data.value?.['userDetails']?.['avatarUrl']"
+                  :src="`http://github-readme-streak-stats.herokuapp.com/?user=dimar-hanung&theme=${
+                    darkMode ? 'dark' : 'light'
+                  }`"
                   alt=""
                 />
-              </div>
-              <div class="flex justify-between w-full">
-                <div>
-                  <div>
-                    🏆 Level {{ api.data.value?.["userDetails"]?.["level"] }}
-                  </div>
-                  <div class="mb-2">
-                    ⭐ {{ api.data.value?.["userDetails"]?.["xp"] }} XP
-                  </div>
-                  <div class="flex gap-2">
-                    <div
-                      class="py-1 px-3 border border-indigo-400 uppercase rounded-full text-xs"
-                      v-for="(badge, i) in api.data.value?.['userDetails']?.[
-                        'badges'
-                      ]"
-                      :key="i + 'badge'"
-                    >
-                      {{ badge?.name }}
-                    </div>
-                  </div>
-                </div>
-                <a
-                  class="place-self-end"
-                  href="https://www.sololearn.com/profile/12709774"
-                  target="_blank"
-                >
-                  <t-button class="h-10">Visit</t-button>
-                </a>
-              </div>
-            </t-card>
+              </a>
+            </div>
           </section>
 
           <section class="w-1/2 flex-grow p-2 min-w-[230px]">
@@ -325,6 +292,7 @@
 </template>
 
 <script setup>
+import { getName } from "@/js-chellange/sample";
 const darkMode = useDarkMode();
 
 const toggleDarkMode = () => {
@@ -335,6 +303,8 @@ const toggleDarkMode = () => {
 const api = useFetch("https://api.sololearn.repl.co/profile/12709774", {
   initialCache: true,
 });
+
+const codewars = useFetch("https://www.codewars.com/api/v1/users/dimar-hanung");
 
 // console.log(api.data.value["userDetails"]);
 </script>
