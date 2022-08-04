@@ -3,10 +3,10 @@ import { defineNuxtConfig } from "nuxt";
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
   ssr: false,
-  target: "static",
   generate: {
     crawler: true,
   },
+
   // async routes() {
   //   const { $content } = require("@nuxt/content");
   //   const files = await $content({ deep: true })

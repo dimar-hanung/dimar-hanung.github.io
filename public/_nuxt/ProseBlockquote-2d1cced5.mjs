@@ -1,0 +1,1 @@
+import{_ as o}from"./plugin-vue_export-helper-84c1d017.mjs";import{o as r,s as t,r as s}from"./entry-a9d21564.mjs";const c={};function a(e,l){return r(),t("blockquote",null,[s(e.$slots,"default")])}var _=o(c,[["render",a]]);export{_ as default};
