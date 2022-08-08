@@ -13,7 +13,7 @@
           <NuxtLink to="https://dimar-hanung.netlify.app/"
             ><div><button>Blog</button></div></NuxtLink
           >
-          <div><button>Contact me</button></div>
+          <!-- <div><button>Contact me</button></div> -->
           <font-awesome-icon
             class="text-xl text-yellow-500 cursor-pointer"
             :icon="['fa', 'moon']"
@@ -39,6 +39,13 @@
             alt=""
           />
         </h3>
+        <div class="px-2 mt-2">
+          <div
+            class="px-2 rounded dark:bg-indigo-800 bg-indigo-200 shadow max-w-max"
+          >
+            Open to collaborate
+          </div>
+        </div>
         <hr class="my-4 border-0" />
         <main class="flex flex-wrap">
           <section class="w-1/2 flex-grow p-2 min-w-[230px]">
