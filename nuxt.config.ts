@@ -23,6 +23,11 @@ export default defineNuxtConfig({
   //   },
   // },
 
+  app: {
+    head: {
+      link: [{ rel: "icon", href: "/favicon.png" }],
+    },
+  },
   modules: ["@nuxt/content"],
   content: {
     // https://content.nuxtjs.org/api/configuration
