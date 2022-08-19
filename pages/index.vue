@@ -3,36 +3,13 @@
     class="bg-indigo-50 dark:bg-slate-800 pb-4 min-h-screen transition-all dark:text-white"
     @mousemove="cursorFollow"
   >
-    <div class="p-4 sticky top-0">
-      <div
-        class="container mx-auto bg-white dark:bg-slate-900 dark:shadow-2xl shadow-xl p-3 rounded flex justify-between border-2 border-transparent dark:border-indigo-300 dark:shadow-indigo-400"
-      >
-        <div></div>
-
-        <div class="flex gap-4 place-items-center">
-          <NuxtLink to="https://dimar-hanung.netlify.app/"
-            ><div><button>Blog</button></div></NuxtLink
-          >
-          <!-- <div><button>Contact me</button></div> -->
-          <font-awesome-icon
-            class="text-xl text-yellow-500 cursor-pointer"
-            :icon="['fa', 'moon']"
-            @click="toggleDarkMode"
-          />
-          <font-awesome-icon class="text-xl" :icon="['fa', 'language']" />
-          <img
-            src="https://flagpedia.net/data/flags/emoji/twitter/256x256/id.png"
-            alt=""
-            class="w-5 inline-block"
-          />
-        </div>
-      </div>
-    </div>
+    <t-nav></t-nav>
 
     <div class="container mx-auto">
       <div class="mt-4">
         <h3 class="text-2xl font-bold px-2">
-          Hi, My Name Dimar Hanung P.
+          {{ $t("hello", { name: "Dimar Hanung P" }) }} .
+
           <img
             class="w-8 inline-block"
             src="https://camo.githubusercontent.com/e8e7b06ecf583bc040eb60e44eb5b8e0ecc5421320a92929ce21522dbc34c891/68747470733a2f2f6d656469612e67697068792e636f6d2f6d656469612f6876524a434c467a6361737252346961377a2f67697068792e676966"
@@ -43,28 +20,46 @@
           <div
             class="px-2 rounded dark:bg-indigo-800 bg-indigo-200 shadow max-w-max"
           >
-            Open to collaborate
+            {{ $t("collab") }}
           </div>
         </div>
         <hr class="my-4 border-0" />
         <main class="flex flex-wrap">
           <section class="w-1/2 flex-grow p-2 min-w-[230px]">
             <section>
-              <h3 class="text-xl font-bold">About Me</h3>
+              <h3 class="text-xl font-bold">{{ $t("about.title") }}</h3>
               <hr class="my-4" />
               <ul class="text-lg">
                 <t-list
-                  >🎂 {{ new Date().getFullYear() - 2002 }} year old</t-list
-                >
+                  >🎂
+                  {{
+                    $t("about.year", { year: new Date().getFullYear() - 2002 })
+                  }}
+                </t-list>
 
-                <t-list>🏢 Front-End Developer at Universitas Terbuka</t-list>
-                <t-list>🎓 Studies for TKJ at SMK Telkom Purwokerto</t-list>
                 <t-list
-                  >🎓 Studies for Information System at Universitas
-                  Terbuka</t-list
+                  >🏢
+                  {{
+                    $t("about.job", {
+                      job: "Front-End Developer",
+                      at: "Universitas Terbuka",
+                    })
+                  }}</t-list
                 >
                 <t-list
-                  >🏡'Lives in Tangerang Selatan,
+                  >🎓
+                  {{
+                    $t("about.study1", { at: "SMK Telkom Purwokerto" })
+                  }}</t-list
+                >
+                <t-list
+                  >🎓
+                  {{
+                    $t("about.study2", { at: "Universitas Terbuka" })
+                  }}</t-list
+                >
+                <t-list
+                  >🏡{{ $t("about.address") }}
                   <img
                     src="https://flagpedia.net/data/flags/emoji/twitter/256x256/id.png"
                     alt=""
@@ -73,7 +68,7 @@
                   Indonesia</t-list
                 >
                 <t-list>
-                  ⚡ I like to
+                  ⚡ {{ $t("about.iLike") }}
                   <t-kbd>> code .</t-kbd>
                 </t-list>
               </ul>
@@ -200,6 +195,12 @@
                 />
               </a>
             </div>
+            <div>
+              <img
+                src="https://ghchart.rshah.org/17A2B8/dimar-hanung"
+                alt="Name Your Github chart"
+              />
+            </div>
           </section>
 
           <section class="w-1/2 flex-grow p-2 min-w-[230px]">
@@ -301,12 +302,6 @@
 <script setup>
 import { getName } from "@/js-chellange/sample";
 const darkMode = useDarkMode();
-
-const toggleDarkMode = () => {
-  localStorage.theme = "light";
-  darkMode.value = !darkMode.value;
-};
-
 const api = useFetch("https://api.sololearn.repl.co/profile/12709774", {
   initialCache: true,
 });

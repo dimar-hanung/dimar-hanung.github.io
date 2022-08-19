@@ -4,6 +4,7 @@ import {
   faLanguage,
   faMoon,
   faArrowRight,
+  faAngleDown,
 } from "@fortawesome/free-solid-svg-icons";
 
 import {
@@ -24,7 +25,8 @@ export default defineNuxtPlugin((nuxtApp) => {
     faInstagram,
     faLinkedin,
     faTwitter,
-    faWhatsapp
+    faWhatsapp,
+    faAngleDown
   );
   nuxtApp.vueApp.component("font-awesome-icon", FontAwesomeIcon as any);
 });
