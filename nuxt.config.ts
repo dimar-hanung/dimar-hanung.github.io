@@ -7,22 +7,6 @@ export default defineNuxtConfig({
     crawler: true,
   },
 
-  // async routes() {
-  //   const { $content } = require("@nuxt/content");
-  //   const files = await $content({ deep: true })
-  //     .where({ extension: { $eq: ".md" } })
-  //     .only(["path"])
-  //     .fetch();
-
-  //   return files.map((file) => (file.path === "/index" ? "/" : file.path));
-  // },
-  // nitro: {
-  //   preset: "service-worker",
-  //   prerender: {
-  //     routes: ["/sitemap.xml"],
-  //   },
-  // },
-
   app: {
     head: {
       link: [{ rel: "icon", href: "/favicon.png" }],
