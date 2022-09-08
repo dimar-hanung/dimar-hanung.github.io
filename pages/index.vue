@@ -8,7 +8,7 @@
     <div class="container mx-auto">
       <div class="mt-4">
         <h3 class="text-2xl font-bold px-2">
-          {{ $t("hello", { name: "Dimar Hanung P" }) }} .
+          {{ $t("hello", { name: "Dimar Hanung" }) }}
 
           <img
             class="w-8 inline-block"
@@ -82,7 +82,7 @@
               >
                 <div>
                   <img
-                    src="https://play-lh.googleusercontent.com/DHpmEI1cO-w2FQe6QHmXh_QksGEzF2hYiTAsQcgcyWPb7MFRb3R9KP5tITbzZgD1sV31"
+                    src="@/assets/icon/sololearn.ico"
                     class="w-5 rounded"
                     alt=""
                   />
@@ -122,7 +122,9 @@
                     href="https://www.sololearn.com/profile/12709774"
                     target="_blank"
                   >
-                    <t-button class="h-10">Visit</t-button>
+                    <t-button class="h-10"
+                      ><font-awesome-icon :icon="['fa', 'arrow-right']"
+                    /></t-button>
                   </a>
                 </div>
               </t-card>
@@ -131,7 +133,7 @@
               >
                 <div>
                   <img
-                    src="https://www.codewars.com/packs/assets/logo.61192cf7.svg"
+                    src="@/assets/icon/codewars.svg"
                     class="w-5 rounded"
                     alt=""
                   />
@@ -168,7 +170,9 @@
                     href="https://www.codewars.com/users/dimar-hanung"
                     target="_blank"
                   >
-                    <t-button class="h-10">Visit</t-button>
+                    <t-button class="h-10"
+                      ><font-awesome-icon :icon="['fa', 'arrow-right']"
+                    /></t-button>
                   </a>
                 </div>
               </t-card>
@@ -185,22 +189,27 @@
               </div>
               <div>GitHub</div>
             </div>
-            <div class="mt-2 cursor-pointer">
-              <a href="https://github.com/dimar-hanung">
+            <t-card class="flex gap-x-2">
+              <div>
                 <img
-                  :src="`http://github-readme-streak-stats.herokuapp.com/?user=dimar-hanung&theme=${
-                    darkMode ? 'dark' : 'light'
-                  }`"
+                  class="rounded-full w-20"
+                  :src="'https://avatars.githubusercontent.com/u/42312636?s=400&u=81348ae939bf84bfcdc150a0c382a39d50888c12&v=4'"
                   alt=""
                 />
-              </a>
-            </div>
-            <div>
-              <img
-                src="https://ghchart.rshah.org/17A2B8/dimar-hanung"
-                alt="Name Your Github chart"
-              />
-            </div>
+              </div>
+              <div class="flex justify-between w-full">
+                <div>@dimar-hanung</div>
+                <a
+                  class="place-self-end"
+                  href="https://www.codewars.com/users/dimar-hanung"
+                  target="_blank"
+                >
+                  <t-button class="h-10"
+                    ><font-awesome-icon :icon="['fa', 'arrow-right']"
+                  /></t-button>
+                </a>
+              </div>
+            </t-card>
           </section>
 
           <section class="w-1/2 flex-grow p-2 min-w-[230px]">
