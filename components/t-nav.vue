@@ -1,5 +1,5 @@
 <template>
-  <div class="p-4 sticky top-0">
+  <div class="p-4 sticky top-0 dark:text-white">
     <div
       class="container mx-auto bg-white dark:bg-slate-900 dark:shadow-2xl shadow-xl p-3 rounded flex justify-between border-2 border-transparent dark:border-indigo-300 dark:shadow-indigo-400"
     >
