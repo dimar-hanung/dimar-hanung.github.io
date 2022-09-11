@@ -217,11 +217,15 @@
             <hr class="my-4" />
             <div class="flex gap-4">
               <t-card class="w-1/3 cursor-pointer dark:hover:bg-slate-700">
-                <div>Certificate</div>
-                <div class="flex w-full justify-between place-items-end">
-                  <div class="text-2xl font-bold">30+</div>
-                  <div><font-awesome-icon :icon="['fa', 'arrow-right']" /></div>
-                </div>
+                <NuxtLink to="/certificates">
+                  <div>Certificate</div>
+                  <div class="flex w-full justify-between place-items-end">
+                    <div class="text-2xl font-bold">30+</div>
+                    <div>
+                      <font-awesome-icon :icon="['fa', 'arrow-right']" />
+                    </div>
+                  </div>
+                </NuxtLink>
               </t-card>
               <t-card class="w-1/3 cursor-pointer dark:hover:bg-slate-700">
                 <div>Project</div>

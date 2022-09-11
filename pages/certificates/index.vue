@@ -10,23 +10,43 @@
 
     <div class="text-white fixed top-0 z-10">{{ index }}</div>
     <div class="desc absolute left-0 z-10 h-full">
-      <div class="mt-4">Title {{ certificates?.[Math.abs(index)]?.title }}</div>
+      <Transition name="slide-fade" mode="out-in">
+        <div
+          :key="certificates?.[index]?.title"
+          class="top-1/2 -translate-y-1/2 left-11 relative"
+        >
+          <div class="text-5xl">
+            {{ certificates?.[index]?.title }}
+          </div>
+          <hr class="my-4" />
+          <div class="max-w-xs">
+            {{ certificates?.[index]?.desc }}
+          </div>
+          <t-button class="top-5 float-right relative">Visit</t-button>
+        </div>
+      </Transition>
     </div>
-    <div v-for="(item, i) in Array(10)" :key="i">
+    <div
+      v-for="(item, i) in Array(100)
+        .fill()
+        .map((v, i) => [i, i])
+        .filter((v, i) => v[1] - index >= -1 && v[1] - index <= 1)"
+      :key="i"
+    >
       <div
         class="animate py-4 certificate max-w-xl shadow-lg rounded-lg mx-auto"
         :style="{
           height: `${certificateScreen?.offsetHeight / 2}px`,
           transform: `translateY(${
-            ((certificateScreen?.offsetHeight || 0) / 2) * index +
+            ((certificateScreen?.offsetHeight || 0) / 2) * (-index % 3) +
             certificateScreen?.offsetHeight / 4
-          }px) scale(${i == Math.abs(index) ? 1 : 0.75})`,
+          }px) scale(${i == index % 3 ? 1 : 0.75})`,
         }"
       >
         <div
           class="text-white text-center absolute -right-1/2 top-1/2 -translate-y-1/2 text-9xl"
         >
-          {{ i + 1 }}
+          {{ item }}
         </div>
         <img
           class="rounded-lg block mx-auto h-full"
@@ -46,8 +66,15 @@ const isScroll = ref(false);
 const certificateScreen = ref();
 
 const certificates = reactive([
-  { imageUrl: "/assets/certificates/test-dome-js.jpg", title: "JAVASCRIPT" },
-  { imageUrl: "/assets/certificates/test-dome-js.jpg", title: "JAVASCRIPT2" },
+  {
+    imageUrl: "/assets/certificates/test-dome-js.jpg",
+    title: "JAVASCRIPT",
+    desc: "lorem ipsum lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum",
+  },
+  {
+    imageUrl: "https://www.sololearn.com/Certificate/CT-9YMKIUZA/jpg",
+    title: "CSS",
+  },
 ]);
 
 const scrollCertificate = (e) => {
@@ -55,7 +82,7 @@ const scrollCertificate = (e) => {
     clearTimeout(timer.value);
   }
   if (!isScroll.value) {
-    e.wheelDeltaY < 0 ? index.value-- : index.value++;
+    e.wheelDeltaY < 0 ? index.value++ : index.value--;
   }
   isScroll.value = true;
 
@@ -87,5 +114,23 @@ const scrollCertificate = (e) => {
   100% {
     transform: scale(1);
   }
+}
+
+/*
+  Enter and leave animations can use different
+  durations and timing functions.
+*/
+.slide-fade-enter-active {
+  transition: all 0.3s ease-out;
+}
+
+.slide-fade-leave-active {
+  transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  transform: translateY(-40px);
+  opacity: 0;
 }
 </style>
