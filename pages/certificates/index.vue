@@ -1,6 +1,6 @@
 <template>
   <div
-    class="container-certificates h-screen overflow-hidden text-white"
+    class="container-certificates h-screen overflow-hidden text-white relative"
     @mousewheel="scrollCertificate"
     ref="certificateScreen"
   >
@@ -8,7 +8,9 @@
       class="vignate pointer-events-none h-screen w-screen fixed bg-red-50 z-10"
     ></div>
 
-    <div class="text-white fixed top-0 z-10">{{ index }}</div>
+    <div class="text-white fixed top-0 z-10" style="font-size: 8rem">
+      {{ index }}
+    </div>
     <div class="desc absolute left-0 z-10 h-full">
       <Transition name="slide-fade" mode="out-in">
         <div
@@ -22,37 +24,32 @@
           <div class="max-w-xs">
             {{ certificates?.[index]?.desc }}
           </div>
-          <t-button class="top-5 float-right relative">Visit</t-button>
+          <t-button class="top-5 float-right relative"
+            >Visit
+            {{
+              Array(100)
+                .fill()
+                .map((v, i) => [i, i])
+                .filter((v, i) => v[1] - index >= -2 && v[1] - index <= 2)
+                .length
+            }}</t-button
+          >
         </div>
       </Transition>
     </div>
+
     <div
-      v-for="(item, i) in Array(100)
-        .fill()
-        .map((v, i) => [i, i])
-        .filter((v, i) => v[1] - index >= -1 && v[1] - index <= 1)"
+      class="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2"
+      v-for="(item, i) in getX(index, data.slice(index, index + 5).reverse())"
       :key="i"
     >
       <div
-        class="animate py-4 certificate max-w-xl shadow-lg rounded-lg mx-auto"
-        :style="{
-          height: `${certificateScreen?.offsetHeight / 2}px`,
-          transform: `translateY(${
-            ((certificateScreen?.offsetHeight || 0) / 2) * (-index % 3) +
-            certificateScreen?.offsetHeight / 4
-          }px) scale(${i == index % 3 ? 1 : 0.75})`,
-        }"
+        class="animate py-4 certificate max-w-xl shadow-lg rounded-lg"
+        :key="i + 'certificate'"
+        :style="getStyle(i)"
       >
-        <div
-          class="text-white text-center absolute -right-1/2 top-1/2 -translate-y-1/2 text-9xl"
-        >
-          {{ item }}
-        </div>
-        <img
-          class="rounded-lg block mx-auto h-full"
-          :src="certificates?.[i]?.imageUrl"
-          alt=""
-        />
+        <img class="rounded-lg mx-auto h-full" :src="item.imageUrl" alt="" />
+        <div class="text-2xl" style="font-size: 8rem">{{ item.id - 2 }}</div>
       </div>
     </div>
   </div>
@@ -60,10 +57,23 @@
 
 <script setup>
 const scale = ref(1);
-const index = ref(0);
+const index = ref(300);
 const timer = ref(0);
 const isScroll = ref(false);
 const certificateScreen = ref();
+const data = Array(1000)
+  .fill()
+  .map((v, i) => {
+    return {
+      id: i,
+      imageUrl: `https://picsum.photos/id/${i}/800/800`,
+      // imageUrl:
+      //   i % 2 == 0
+      //     ? "https://www.sololearn.com/Certificate/CT-9YMKIUZA/jpg"
+      //     : "/assets/certificates/test-dome-js.jpg",
+      title: "CSS",
+    };
+  });
 
 const certificates = reactive([
   {
@@ -76,6 +86,36 @@ const certificates = reactive([
     title: "CSS",
   },
 ]);
+
+function getX(n, x = [-2, -1, 0, 1, 2]) {
+  let result = [];
+  for (let i = 0; i < x.length; i++) {
+    result.push(x[(i + n) % x.length]);
+  }
+  return result;
+}
+
+const getStyle = (i) => {
+  const state = [
+    {
+      transform: `translateY(${600 * 1.5}px) scale(${0.5})`,
+    },
+    {
+      transform: `translateY(${300 * 1.5}px) scale(${0.5})`,
+    },
+    {
+      transform: `translateY(${0 * 1.5}px) scale(${1})`,
+    },
+    {
+      transform: `translateY(-${300 * 1.5}px) scale(${0.5})`,
+    },
+    {
+      transform: `translateY(-${600 * 1.5}px) scale(${0.5})`,
+    },
+  ];
+
+  return getX(index.value, state)[i];
+};
 
 const scrollCertificate = (e) => {
   if (timer.value !== null) {

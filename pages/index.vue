@@ -309,6 +309,7 @@
         </main>
       </div>
     </div>
+    <input type="text" class="registration-form_input__rWOsZ" />
   </div>
 </template>
 
@@ -323,3 +324,16 @@ const codewars = useFetch("https://www.codewars.com/api/v1/users/dimar-hanung");
 
 // console.log(api.data.value["userDetails"]);
 </script>
+<style>
+.registration-form_input__rWOsZ {
+  border: 0;
+  border-radius: 100px;
+  height: 56px;
+  background: none;
+  padding: 0 42px;
+  font-size: 14px;
+  width: 100%;
+  color: red;
+  transition: border-color 0.2s ease-in-out;
+}
+</style>
